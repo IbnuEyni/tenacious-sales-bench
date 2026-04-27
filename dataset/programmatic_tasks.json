@@ -1,0 +1,608 @@
+[
+  {
+    "task_id": "TB_PROG_001_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp25",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp25.com"
+      },
+      "signal_brief": {
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 1,
+        "hiring_velocity": "low",
+        "employee_count": 25,
+        "confidence": "low"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_002_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp25",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp25.com"
+      },
+      "signal_brief": {
+        "funding_detected": true,
+        "funding_amount": null,
+        "ai_maturity_score": 1,
+        "hiring_velocity": "medium",
+        "employee_count": 25,
+        "confidence": "medium"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_003_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp25",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp25.com"
+      },
+      "signal_brief": {
+        "funding_detected": true,
+        "funding_amount": "$15M Series B",
+        "ai_maturity_score": 2,
+        "hiring_velocity": "high",
+        "employee_count": 25,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_004_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp50",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp50.com"
+      },
+      "signal_brief": {
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 1,
+        "hiring_velocity": "low",
+        "employee_count": 50,
+        "confidence": "low"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_005_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp50",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp50.com"
+      },
+      "signal_brief": {
+        "funding_detected": true,
+        "funding_amount": null,
+        "ai_maturity_score": 1,
+        "hiring_velocity": "medium",
+        "employee_count": 50,
+        "confidence": "medium"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_006_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp50",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp50.com"
+      },
+      "signal_brief": {
+        "funding_detected": true,
+        "funding_amount": "$15M Series B",
+        "ai_maturity_score": 2,
+        "hiring_velocity": "high",
+        "employee_count": 50,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_007_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "RustCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@rustcorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Rust"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 25
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 3 senior Rust engineers. Can you help?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "rust_engineers": 0,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must acknowledge capacity gaps honestly",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_009_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "RustCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@rustcorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Rust"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 50
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 3 senior Rust engineers. Can you help?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "rust_engineers": 0,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must acknowledge capacity gaps honestly",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_011_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "PythonCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@pythoncorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Python"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 25
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 15 senior Python engineers. Can you help?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must acknowledge capacity gaps honestly",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_013_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "PythonCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@pythoncorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Python"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 50
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 15 senior Python engineers. Can you help?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem"
+      ]
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must acknowledge capacity gaps honestly",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_015_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "GoCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@gocorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Go"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 25
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 5 senior Go engineers. Can you help?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "go_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must acknowledge capacity gaps honestly",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "task_id": "TB_PROG_017_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "GoCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@gocorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Go"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 50
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 5 senior Go engineers. Can you help?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "go_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must acknowledge capacity gaps honestly",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ]
+  }
+]
