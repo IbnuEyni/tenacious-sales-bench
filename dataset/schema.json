@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tenacious-Bench Task Schema",
+  "type": "object",
+  "required": ["task_id", "category", "input", "expected_behavior", "scoring_rubric"],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "Unique identifier for the task"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["signal_grounding", "tone_consistency", "resource_honesty", "workflow_correctness"],
+      "description": "Primary failure mode being tested"
+    },
+    "difficulty": {
+      "type": "string", 
+      "enum": ["easy", "medium", "hard"],
+      "description": "Task complexity level"
+    },
+    "input": {
+      "type": "object",
+      "required": ["prospect_data"],
+      "properties": {
+        "prospect_data": {
+          "type": "object",
+          "properties": {
+            "company_name": {"type": "string"},
+            "contact_name": {"type": "string"},
+            "contact_title": {"type": "string"},
+            "contact_email": {"type": "string"}
+          }
+        },
+        "signal_brief": {
+          "type": "object",
+          "description": "Enrichment data about the prospect"
+        },
+        "conversation_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": {"type": "string", "enum": ["agent", "prospect"]},
+              "message": {"type": "string"},
+              "timestamp": {"type": "string"}
+            }
+          }
+        },
+        "bench_state": {
+          "type": "object",
+          "description": "Current availability of Tenacious resources"
+        }
+      }
+    },
+    "expected_behavior": {
+      "type": "object",
+      "properties": {
+        "should_acknowledge_gaps": {"type": "boolean"},
+        "should_use_interrogative": {"type": "boolean"},
+        "max_subject_length": {"type": "integer"},
+        "required_tone_markers": {"type": "array", "items": {"type": "string"}},
+        "banned_phrases": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "scoring_rubric": {
+      "type": "object",
+      "required": ["dimensions"],
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "signal_accuracy": {
+              "type": "object",
+              "properties": {
+                "weight": {"type": "number", "minimum": 0, "maximum": 1},
+                "criteria": {"type": "string"},
+                "verification_method": {"type": "string", "enum": ["regex", "llm_judge", "schema_check"]}
+              }
+            },
+            "tone_adherence": {
+              "type": "object", 
+              "properties": {
+                "weight": {"type": "number", "minimum": 0, "maximum": 1},
+                "criteria": {"type": "string"},
+                "verification_method": {"type": "string", "enum": ["regex", "llm_judge", "schema_check"]}
+              }
+            },
+            "resource_honesty": {
+              "type": "object",
+              "properties": {
+                "weight": {"type": "number", "minimum": 0, "maximum": 1}, 
+                "criteria": {"type": "string"},
+                "verification_method": {"type": "string", "enum": ["regex", "llm_judge", "schema_check"]}
+              }
+            },
+            "workflow_correctness": {
+              "type": "object",
+              "properties": {
+                "weight": {"type": "number", "minimum": 0, "maximum": 1},
+                "criteria": {"type": "string"},
+                "verification_method": {"type": "string", "enum": ["regex", "llm_judge", "schema_check"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    "source_mode": {
+      "type": "string",
+      "enum": ["trace_derived", "programmatic", "multi_llm_synthesis", "hand_authored"],
+      "description": "How this task was generated"
+    },
+    "probe_ids": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Related probe IDs from Week 10 library"
+    }
+  }
+}
