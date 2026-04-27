@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2026-04-27T20:31:04.184240",
+    "bucket": "dataset_authoring",
+    "service": "openrouter",
+    "amount_usd": 0.15,
+    "purpose": "Multi-LLM synthesis for adversarial tasks",
+    "model_or_resource": "qwen3-next-80b"
+  }
+]
