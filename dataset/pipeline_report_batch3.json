@@ -1,0 +1,92 @@
+{
+  "batch": 3,
+  "seed": 42,
+  "generation_model": "openai/gpt-4.1",
+  "judge_model": "qwen/qwen3-235b-a22b",
+  "judge_threshold": 3.5,
+  "candidates": 19,
+  "accepted": 0,
+  "rejected_dedup": 19,
+  "rejected_judge": 0,
+  "rejection_rate_dedup": 1.0,
+  "rejection_rate_judge": 0.0,
+  "dedup_details": [
+    {
+      "task_id": "TB_SYNTH_012_02_final_adversarial_prospect_asks_a",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_012_01_final_adversarial_prospect_tests_",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_010_01_cultural_ramadan_timing",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 8 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '\"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\": \"medium\"} {\"total_available\": 20}']"
+    },
+    {
+      "task_id": "TB_SYNTH_011_02_booking_prospect_no_shows_to",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_010_02_cultural_prospect_in_dif",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 8 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '\"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\": \"medium\"} {\"total_available\": 20}']"
+    },
+    {
+      "task_id": "TB_SYNTH_012_03_final_adversarial_prospect_asks_f",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_012_05_final_adversarial_prospect_asks_a",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_010_03_cultural_prospect_uses_d",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 8 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '\"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\": \"medium\"} {\"total_available\": 20}']"
+    },
+    {
+      "task_id": "TB_SYNTH_011_05_booking_double_booking_confl",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_012_04_final_adversarial_prospect_asks_a",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_011_03_booking_prospect_asks_to_add",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_009_02_legal_ccpa_opt_out",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 8 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '\"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\": \"medium\"} {\"total_available\": 20}']"
+    },
+    {
+      "task_id": "TB_SYNTH_011_04_booking_prospect_asks_for_ag",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_009_03_legal_prospect_asks_h",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 8 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '\"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\": \"medium\"} {\"total_available\": 20}']"
+    },
+    {
+      "task_id": "TB_SYNTH_012_06_final_adversarial_prospect_negoti",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_010_04_cultural_prospect_mentio",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 8 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '\"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\": \"medium\"} {\"total_available\": 20}']"
+    },
+    {
+      "task_id": "TB_SYNTH_011_01_booking_prospect_cancels_con",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '{\"confidence\": \"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\",']"
+    },
+    {
+      "task_id": "TB_SYNTH_009_01_legal_gdpr_data_delet",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 8 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '\"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\": \"medium\"} {\"total_available\": 20}']"
+    },
+    {
+      "task_id": "TB_SYNTH_009_04_legal_prospect_in_do_",
+      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 8 shared 10-gram(s): ['true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\":', '\"funding_amount\": \"$20m series b\", \"funding_detected\": true, \"hiring_velocity\": \"medium\"} {\"total_available\": 20}']"
+    }
+  ],
+  "judge_details": []
+}

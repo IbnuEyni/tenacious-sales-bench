@@ -43,6 +43,27 @@ Existing benchmarks (τ²-Bench, AgentBench) fail to evaluate critical dimension
 | Probes covered | 33 / 33 |
 | Budget spent | $0.15 / $10.00 |
 
+## Environment
+
+| Requirement | Version |
+|-------------|--------|
+| Python | 3.10, 3.11, or 3.12 (3.9 not supported — uses `dict[str, float]` type hints) |
+| OS | Linux, macOS, or Windows WSL2 |
+| RAM | ≥4 GB (8 GB recommended for sentence-transformers) |
+| GPU | Not required for dataset validation or scoring evaluator |
+
+```bash
+# Confirm your Python version before starting:
+python3 --version   # must be 3.10+
+
+# Install dependencies:
+pip install -r requirements.txt
+```
+
+> **Note:** `sentence-transformers` in `requirements.txt` is optional for the contamination
+> check — the script falls back to Jaccard similarity if it is not installed. All other
+> scripts run on the standard library + `jsonschema` + `numpy`.
+
 ## Quick Start
 
 ```bash

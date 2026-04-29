@@ -23,6 +23,23 @@ Reproducible authoring code for Tenacious-Bench v0.1.
 
 ## Multi-LLM Synthesis Pipeline
 
+The pipeline is implemented in [`multi_llm_pipeline.py`](multi_llm_pipeline.py) — a runnable
+script that encodes the routing table, judge thresholds, pairwise dedup logic, and seed
+controls in code. Run it directly:
+
+```bash
+# Dry-run (no API calls, tests pipeline logic against existing batch files):
+python3 generation_scripts/multi_llm_pipeline.py --dry-run --batch 1
+
+# Full run (requires OPENROUTER_API_KEY):
+OPENROUTER_API_KEY=<key> python3 generation_scripts/multi_llm_pipeline.py --batch 1
+OPENROUTER_API_KEY=<key> python3 generation_scripts/multi_llm_pipeline.py --batch 2
+OPENROUTER_API_KEY=<key> python3 generation_scripts/multi_llm_pipeline.py --batch 3
+
+# Override seed (default: 42):
+python3 generation_scripts/multi_llm_pipeline.py --dry-run --batch 1 --seed 123
+```
+
 ### Model Routing Table
 
 | Batch | Generation Model | Judge Model | Probe Focus |

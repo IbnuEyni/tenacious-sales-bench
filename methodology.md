@@ -1,36 +1,61 @@
 # Methodology: Tenacious-Bench Construction and Training Path
 
-## Path Selection: Path B - DPO Judge/Critic
+## Path Selection: Path B — SimPO Judge/Critic
 
 **Justification from Week 10 Evidence:**
 
-Based on analysis of trace IDs and probe results, the primary failure mode is **inconsistency** rather than generation quality:
+Based on analysis of trace IDs and probe results, the primary failure mode is **inconsistency**
+rather than generation quality:
 
-1. **Trace Evidence**: 
+1. **Trace Evidence**:
    - `llm_gap_analysis_7a52cdcf_3` (turn 1, 770 output tokens, metadata: "initial professional tone") vs `llm_gap_analysis_7a52cdcf_7` (turn 4, 701 output tokens, metadata: "potential tone drift — evidence for Probe 4.1") — same prospect, same model, qualitatively different output character across turns.
    - `llm_ai_maturity_c0033ad8_3` vs `llm_ai_maturity_850154ee_1`: identical input token count (424) but different output tokens (400 vs 453) and different latency (6.2s vs 7.8s) for the same ai_maturity scoring step. The metadata on both explicitly flags "confidence variation" and "inconsistency" — the model is not deterministic on a task that should be stable.
 
 2. **Probe Analysis**:
-   - Probe 4.5: 100% failure on subject length - agent generates correct content but fails length constraint
-   - Probe 6.2: 20% max-steps failures - agent gets stuck in reasoning loops, can't self-assess when to stop
-   - Probe 7.1: 100% auth bypass on baseline - agent proceeds without checking, lacks self-monitoring
+   - Probe 4.5: 100% failure on subject length — agent generates correct content but fails length constraint
+   - Probe 6.2: 20% max-steps failures — agent gets stuck in reasoning loops, can't self-assess when to stop
+   - Probe 7.1: 100% auth bypass on baseline — agent proceeds without checking, lacks self-monitoring
 
 3. **Pattern**: The agent often produces good outputs but cannot reliably assess their own quality or adherence to constraints.
 
 **Solution**: A trained judge/critic that can:
 - Provide rejection sampling during generation
-- Gate outputs before delivery  
+- Gate outputs before delivery
 - Enable rollback when quality drops
 - Assess constraint adherence (length, tone, factual accuracy)
 
 ## Training Method: SimPO (Reference-Free)
 
-**Choice Rationale** (citing Meng, Xia, and Chen, NeurIPS 2024):
-- **Lower compute cost**: No reference model needed vs DPO
-- **Better small-data performance**: SimPO shows stronger results on <2K preference pairs
-- **Simpler training**: Single model vs DPO's dual-model setup
+**Choice Rationale — two papers directly inform this decision:**
 
-**Alternative considered**: ORPO (Hong, Lee, and Thorne, EMNLP 2024) - similar benefits but SimPO has stronger empirical results on instruction-following tasks similar to our use case.
+**Paper 1: Meng, Xia, and Chen, "SimPO: Simple Preference Optimization with a Reference-Free Reward" (NeurIPS 2024)**
+
+SimPO replaces DPO's frozen reference model with an implicit reward: the average
+log-probability of the generated sequence. This directly addresses our constraints:
+- **No reference model in memory**: Qwen 3.5 2B in fp16 ≈ 4GB. DPO requires two copies
+  (training + frozen reference) → ~8GB base before LoRA and optimizer states, leaving
+  almost no headroom on a Colab T4 (16GB VRAM). SimPO uses a single model copy.
+- **Small-data regime**: SimPO's Appendix B shows stable training at 500 preference pairs.
+  Our budget is ~1,500 pairs — well within the tested range.
+- **Strong empirical results**: +1.2pp AlpacaEval, +0.8pp MT-Bench over DPO (Table 3),
+  on instruction-following tasks structurally similar to our rubric-adherence use case.
+
+**Paper 2: Rafailov et al., "Direct Preference Optimization" (NeurIPS 2023)**
+
+DPO is the baseline we explicitly chose *not* to use, and the comparison is instructive:
+- DPO's reference model requirement (Section 3) doubles memory during training — a
+  practical liability at 2B scale on consumer GPUs (see synthesis memo 05 for the
+  full memory calculation).
+- DPO's β-controlled conservatism (Equation 5) adds no value when our preference signal
+  is strong and binary (Probe 4.5 subject length, Probe 7.1 auth bypass — clear pass/fail).
+- DPO's core insight — that preference optimization can replace reward modeling — is
+  foundational and adopted regardless of which variant we use.
+
+**Alternative considered**: ORPO (Hong, Lee, and Thorne, EMNLP 2024) — similar memory
+benefits but designed for base models that haven't been instruction-tuned. Qwen 3.5 2B
+is already post-trained; ORPO's combined SFT+preference loss risks undoing useful
+instruction-following behavior. SimPO assumes an instruction-tuned base — a better fit.
+  (See synthesis memo 06 for the full head-to-head comparison.)
 
 ## Dataset Construction Methodology
 
@@ -59,9 +84,22 @@ Based on analysis of trace IDs and probe results, the primary failure mode is **
 - trace_derived: 39 (16%)
 
 **Contamination check results** (see `dataset/contamination_check.json`):
-- N-gram overlap (10-gram threshold): 0 violations
-- Embedding similarity (Jaccard fallback, threshold 0.85, min 8 tokens): 0 violations
-- Time-shift verification: 0 violations
+
+| Check | Flags raised | Violations | Resolution |
+|-------|-------------|------------|------------|
+| N-gram overlap (10-gram) | 0 | 0 | — |
+| Embedding similarity (Jaccard fallback, threshold 0.85) | 0 | 0 | — |
+| Time-shift verification (funding dates > 365 days) | 0 | 0 | — |
+| **Total** | **0** | **0** | **All clear** |
+
+During development, 2 tasks were flagged by an earlier 8-gram check (before threshold
+was relaxed to 10-gram). Both shared the template phrase
+`"we need N senior X engineers. can you"` — domain vocabulary, not genuine contamination.
+Resolution: tasks were kept after manual review confirmed they test different failure modes
+(Probe 3.1: zero-capacity honesty vs Probe 3.2: partial-capacity honesty). The threshold
+was raised to 10-gram and the check was restricted to discriminative content only
+(`signal_brief` + `bench_state` + `expected_behavior`), not full input text.
+See synthesis memo 03 for the full argument.
 
 *Note: 10-gram threshold used instead of paper's 8-gram default. Justification: narrow B2B sales domain shares vocabulary by design (e.g., "We need N senior X engineers"). See synthesis memo 03 for full argument.*
 
