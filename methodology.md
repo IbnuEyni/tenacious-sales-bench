@@ -34,6 +34,37 @@ Based on analysis of trace IDs and probe results, the primary failure mode is **
 
 ## Dataset Construction Methodology
 
+### Final Dataset Statistics (v0.1)
+
+| Metric | Value |
+|--------|-------|
+| Total tasks | 250 |
+| Valid tasks | 250 / 250 (100%) |
+| Contamination check | PASSED — 0 violations |
+| Train partition | 126 tasks (50%) |
+| Dev partition | 74 tasks (30%) |
+| Held-out partition | 50 tasks (20%) |
+| Probes covered | 33 / 33 |
+
+**Category distribution:**
+- workflow_correctness: 112 (45%)
+- resource_honesty: 52 (21%)
+- signal_grounding: 44 (18%)
+- tone_consistency: 42 (17%)
+
+**Source mode distribution:**
+- hand_authored: 83 (33%)
+- programmatic: 72 (29%)
+- multi_llm_synthesis: 56 (22%)
+- trace_derived: 39 (16%)
+
+**Contamination check results** (see `dataset/contamination_check.json`):
+- N-gram overlap (10-gram threshold): 0 violations
+- Embedding similarity (Jaccard fallback, threshold 0.85, min 8 tokens): 0 violations
+- Time-shift verification: 0 violations
+
+*Note: 10-gram threshold used instead of paper's 8-gram default. Justification: narrow B2B sales domain shares vocabulary by design (e.g., "We need N senior X engineers"). See synthesis memo 03 for full argument.*
+
 ### Four-Mode Generation Strategy
 
 **1. Trace-Derived (30% - 75 tasks)**

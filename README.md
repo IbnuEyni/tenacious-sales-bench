@@ -1,110 +1,166 @@
-# Tenacious Sales Evaluation Bench
+# Tenacious-Bench v0.1
 
 A domain-specific benchmark for evaluating B2B sales agents, built from real failure analysis of the Tenacious Conversion Engine.
 
 ## The Problem
 
-Existing agent benchmarks (τ²-Bench, AgentBench) fail to evaluate critical dimensions of B2B sales work:
+Existing benchmarks (τ²-Bench, AgentBench) fail to evaluate critical dimensions of B2B sales work:
+
 - **Signal Grounding**: Do agents fabricate claims about prospect funding, layoffs, or AI maturity?
 - **Tone Consistency**: Do agents maintain professional tone across multi-turn conversations?
 - **Resource Honesty**: Do agents over-commit when bench capacity doesn't match prospect needs?
 - **Workflow Correctness**: Do agents follow proper B2B sales sequences and respect decision-maker hierarchies?
 
-## The Solution
+## Current Status
 
-Tenacious-Bench provides 250+ machine-verifiable tasks that test these dimensions using:
-- **Real Failure Evidence**: Built from 33 documented failure modes and 200+ real agent interactions
-- **Machine Scoring**: Regex + LLM judge evaluation requiring no human intervention
-- **Multiple Difficulties**: Easy/medium/hard tasks across 4 core categories
-- **Contamination Prevention**: Rigorous train/test separation with embedding similarity checks
+| Metric | Value |
+|--------|-------|
+| Total tasks | 250 |
+| Valid tasks | 250 / 250 (100%) |
+| Contamination check | PASSED — 0 violations |
+| Train partition | 126 tasks |
+| Dev partition | 74 tasks |
+| Held-out partition | 50 tasks (sealed) |
+| Probes covered | 33 / 33 |
+| Budget spent | $0.15 / $10.00 |
 
 ## Quick Start
 
 ```bash
 # Install dependencies
-pip install jsonschema transformers
+pip install -r requirements.txt
 
-# Validate tasks against schema
+# Validate all 250 tasks against schema
 python3 validate_tasks.py
 
-# Run scoring evaluator
+# Run scoring evaluator on example tasks
 cd evaluation && python3 scoring_evaluator.py
 
-# Generate additional programmatic tasks
-cd dataset && python3 generate_tasks_fixed.py
+# Re-partition dataset (deterministic, seed=42)
+python3 dataset/partition.py
+
+# Run contamination checks
+python3 dataset/contamination_check.py
 ```
 
 ## Dataset Structure
 
 ```
+tenacious_bench_v0.1/
+├── train/train.json          # 126 tasks (50%)
+├── dev/dev.json              # 74 tasks (30%)
+├── held_out/held_out.json    # 50 tasks (20%) — sealed
+├── manifest.json             # Partition metadata
+└── contamination_check.json  # N-gram + embedding + time-shift results
+
 dataset/
-├── schema.json              # Task schema definition
-├── example_tasks.json       # 3 demonstration tasks
-├── programmatic_tasks.json  # 12 generated tasks
-└── partitions/             # Train/dev/held-out splits (coming soon)
+├── schema.json               # Task schema v0.2
+├── example_tasks.json        # 3 hand-authored demonstration tasks
+├── programmatic_tasks.json   # 38 parameter-sweep tasks
+├── prospect_response_tasks.json  # 50 prospect reply scenarios
+├── enrichment_tasks.json     # 7 enrichment stage tasks
+├── pipeline_stage_tasks.json # 6 cost/multi-thread/scheduling tasks
+├── gap_outreach_tasks.json   # 11 gap over-claiming + outreach tasks
+├── trace_derived_tasks.json  # 39 tasks from Week 10 traces
+├── synthesis_batch1_tasks.json  # 17 adversarial synthesis tasks
+├── synthesis_batch2_tasks.json  # 20 edge case synthesis tasks
+├── synthesis_batch3_tasks.json  # 19 legal/cultural/booking tasks
+└── final_40_tasks.json       # 40 tasks for probe coverage completion
 ```
 
 ## Evaluation Categories
 
-| Category | Description | Example Failure | Tasks |
-|----------|-------------|-----------------|-------|
-| **Signal Grounding** | Factual accuracy of prospect claims | "You recently raised Series A" to unfunded startup | 3 |
-| **Tone Consistency** | Style guide adherence across turns | Subject line >60 chars, banned phrases | 7 |
-| **Resource Honesty** | Capacity acknowledgment vs over-commitment | "We can deliver 15 Rust engineers" when bench has 0 | 7 |
-| **Workflow Correctness** | B2B sales process compliance | Booking calls without qualification | 0* |
+| Category | Tasks | Description |
+|----------|-------|-------------|
+| workflow_correctness | 112 | B2B sales process, decision-maker hierarchy, booking, handoff |
+| resource_honesty | 52 | Bench capacity acknowledgment vs over-commitment |
+| signal_grounding | 44 | Factual accuracy of prospect claims |
+| tone_consistency | 42 | Style guide adherence, subject length, banned phrases, emojis |
 
-*Additional categories coming in full dataset
+## Pipeline Coverage
+
+Tasks cover the full agent pipeline:
+
+1. **Enrichment** — stale data, false-positive layoffs, JS scraper failures, ICP classification blocks
+2. **Outreach** — subject line constraints, tone drift, signal grounding, gap over-claiming
+3. **Engagement** — 11 prospect reply types, adversarial personas, self-monitoring failures
+4. **Booking** — timezone handling, weekend requests, cancellations, no-shows
+5. **Handoff** — human escalation, GDPR/CCPA compliance, decision-maker hierarchy
+
+## Scoring
+
+Every task is machine-verifiable. The evaluator uses a hybrid approach:
+
+- **Regex** for hard constraints (subject length ≤60 chars, banned phrases, emoji detection, fabrication detection)
+- **LLM judge** for semantic dimensions (resource honesty, workflow correctness)
+
+```python
+from evaluation.scoring_evaluator import TenaciousBenchEvaluator
+
+evaluator = TenaciousBenchEvaluator()
+result = evaluator.score_task(task, agent_output)
+print(result.total_score, result.passed)
+```
 
 ## Connection to Week 10
 
-This benchmark derives from the Tenacious Conversion Engine analysis:
-- **Source**: [Week 10 Repository](https://github.com/IbnuEyni/10Acweek10) 
-- **Evidence**: 33 failure probes with 16% aggregate trigger rate
-- **Real Data**: 200+ agent interactions showing actual failure patterns
-- **Business Impact**: $72K-$336K annual revenue at risk from tone failures alone
+Built directly from Week 10 Conversion Engine failure analysis:
 
-Key artifacts preserved in `week10-artifacts/`:
-- `probe_library.md`: 33 structured failure modes
-- `failure_taxonomy.md`: Categorized analysis with trigger rates  
-- `trace_samples.jsonl`: Redacted examples of real agent behavior
+- **33 probes** across 10 failure categories → all covered in benchmark
+- **8 real traces** → 39 trace-derived tasks
+- **16% aggregate trigger rate** → priority dimensions for training
+- **$72K–$336K annual revenue at risk** from tone failures alone
 
-## Trained Model Component
+Week 10 artifacts preserved in `week10-artifacts/`:
+- `probe_library.md` — 33 structured failure modes
+- `failure_taxonomy.md` — categorized analysis with trigger rates
+- `trace_samples.jsonl` — redacted real agent behavior examples
 
-**Path B: DPO Judge/Critic**
+## Training Component (Path B)
+
 - **Method**: SimPO (reference-free preference optimization)
 - **Backbone**: Qwen 3.5 2B with LoRA
 - **Purpose**: Quality gate for production deployment, rejection sampling
-- **Training**: 1,500 preference pairs from real failures vs corrections
+- **Training data**: ~1,500 preference pairs from real failures vs corrections
+- **Status**: Training data preparation in progress (Act III)
 
-## Publication Artifacts
+## What's Next
 
-- **Dataset**: [HuggingFace Link] - Complete benchmark with datasheet
-- **Model**: [HuggingFace Link] - Trained judge with model card  
-- **Blog Post**: [Link] - Technical methodology and results
-- **Paper**: Submitted to [Venue] - Full evaluation framework
+- [ ] Act III: Build ~1,500 SimPO preference pairs from train partition
+- [ ] Act IV: LoRA training on Qwen 3.5 2B via Unsloth on Colab T4
+- [ ] Act IV: Delta A/B/C ablations on held-out partition
+- [ ] Act V: HuggingFace dataset + model publication
+- [ ] Act V: Technical blog post + community engagement
 
 ## Reproducibility
 
-Every claim traces to documented evidence:
 ```bash
-# Validate evidence chain
-python3 validate_evidence_chain.py
+# Regenerate all programmatic tasks
+python3 dataset/generate_tasks_fixed.py
 
-# Reproduce key results  
-python3 evaluation/reproduce_results.py
+# Regenerate prospect response tasks
+python3 dataset/generate_prospect_responses.py
+
+# Regenerate trace-derived tasks
+python3 dataset/generate_trace_derived_tasks.py
+
+# Re-run full pipeline
+python3 dataset/partition.py && python3 dataset/contamination_check.py && python3 validate_tasks.py
 ```
+
+All scripts use deterministic seed=42. Every task traces to a Week 10 probe ID.
 
 ## Citation
 
 ```bibtex
-@dataset{tenacious_bench_2024,
+@dataset{tenacious_bench_2025,
   title={Tenacious-Bench: Domain-Specific Evaluation for B2B Sales Agents},
   author={IbnuEyni},
-  year={2024},
+  year={2025},
   url={https://github.com/IbnuEyni/tenacious-sales-bench}
 }
 ```
 
 ## License
 
-CC-BY-4.0 - See LICENSE file for details.
+CC-BY-4.0 — See LICENSE file for details.
