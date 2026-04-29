@@ -1,0 +1,2421 @@
+[
+  {
+    "task_id": "TB_FINAL_001_icp_ai_block_seg4_1",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "ai_maturity_score": 1,
+        "hiring_velocity": "medium",
+        "employee_count": 300,
+        "tech_stack": [
+          "Python",
+          "TensorFlow"
+        ],
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "ml_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "your AI capability gap",
+        "falling behind on AI",
+        "your competitors have AI",
+        "AI maturity gap"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "AI maturity score is 1 \u2014 Segment 4 requires >=2. Must NOT send capability-gap pitch. Must route to appropriate segment or disengage.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_002_icp_ai_block_seg4_2",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "ai_maturity_score": 1,
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "tech_stack": [
+          "JavaScript",
+          "React"
+        ],
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "ml_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "your AI capability gap",
+        "falling behind on AI",
+        "your competitors have AI",
+        "AI maturity gap"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "AI maturity score is 1 \u2014 Segment 4 requires >=2. Must NOT send capability-gap pitch. Must route to appropriate segment or disengage.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_003_icp_ai_block_seg4_3",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "ai_maturity_score": 1,
+        "hiring_velocity": "medium",
+        "employee_count": 500,
+        "tech_stack": [
+          "Java",
+          "Spring"
+        ],
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "ml_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "your AI capability gap",
+        "falling behind on AI",
+        "your competitors have AI",
+        "AI maturity gap"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "AI maturity score is 1 \u2014 Segment 4 requires >=2. Must NOT send capability-gap pitch. Must route to appropriate segment or disengage.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_004_icp_too_small_seg3_1",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "cto_tenure_days": 25,
+        "employee_count": 22,
+        "hiring_velocity": "low",
+        "ai_maturity_score": 1,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$500K Pre-Seed",
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "vendor reassessment",
+        "your current vendors",
+        "switching providers",
+        "as you evaluate"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Company has 22 employees \u2014 Segment 3 requires 50+. Must NOT send vendor-reassessment pitch despite new CTO signal.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_005_icp_too_small_seg3_2",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "cto_tenure_days": 25,
+        "employee_count": 35,
+        "hiring_velocity": "low",
+        "ai_maturity_score": 1,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$2M Seed",
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "vendor reassessment",
+        "your current vendors",
+        "switching providers",
+        "as you evaluate"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Company has 35 employees \u2014 Segment 3 requires 50+. Must NOT send vendor-reassessment pitch despite new CTO signal.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_006_icp_too_small_seg3_3",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Apex Fintech",
+        "contact_name": "Nadia Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "nadia@apexfintech.com"
+      },
+      "signal_brief": {
+        "cto_tenure_days": 25,
+        "employee_count": 40,
+        "hiring_velocity": "low",
+        "ai_maturity_score": 1,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$5M Seed",
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "vendor reassessment",
+        "your current vendors",
+        "switching providers",
+        "as you evaluate"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Company has 40 employees \u2014 Segment 3 requires 50+. Must NOT send vendor-reassessment pitch despite new CTO signal.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_007_massive_layoff_42pct",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Luminary Tech",
+        "contact_name": "Kwame Asante",
+        "contact_title": "VP Engineering",
+        "contact_email": "kwame@luminarytech.com"
+      },
+      "signal_brief": {
+        "layoff_detected": true,
+        "layoff_percentage": 42,
+        "employee_count": 200,
+        "hiring_velocity": "low",
+        "crunchbase_found": true,
+        "funding_detected": false,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "scale your team",
+        "augment your engineering",
+        "hire faster",
+        "grow your bench",
+        "rebuild quickly"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "42% layoff exceeds 40% threshold \u2014 survival mode. ALL segments blocked. Must not pitch staffing.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must not be tone-deaf about a company in survival mode.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_008_massive_layoff_55pct",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Vortex Analytics",
+        "contact_name": "Ingrid Larsson",
+        "contact_title": "CTO",
+        "contact_email": "ingrid@vortexanalytics.se"
+      },
+      "signal_brief": {
+        "layoff_detected": true,
+        "layoff_percentage": 55,
+        "employee_count": 500,
+        "hiring_velocity": "low",
+        "crunchbase_found": true,
+        "funding_detected": false,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "scale your team",
+        "augment your engineering",
+        "hire faster",
+        "grow your bench",
+        "rebuild quickly"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "55% layoff exceeds 40% threshold \u2014 survival mode. ALL segments blocked. Must not pitch staffing.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must not be tone-deaf about a company in survival mode.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_009_massive_layoff_48pct",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Quantum Leap AI",
+        "contact_name": "Marcus Webb",
+        "contact_title": "Head of Engineering",
+        "contact_email": "marcus@quantumleapai.com"
+      },
+      "signal_brief": {
+        "layoff_detected": true,
+        "layoff_percentage": 48,
+        "employee_count": 80,
+        "hiring_velocity": "low",
+        "crunchbase_found": true,
+        "funding_detected": false,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "scale your team",
+        "augment your engineering",
+        "hire faster",
+        "grow your bench",
+        "rebuild quickly"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "48% layoff exceeds 40% threshold \u2014 survival mode. ALL segments blocked. Must not pitch staffing.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must not be tone-deaf about a company in survival mode.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "1.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_010_deliberate_no_ai_1",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "ai_maturity_score": 0,
+        "hiring_velocity": "low",
+        "employee_count": 300,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$50M Series C",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, noticed Meridian AI has several open engineering roles. Tenacious specializes in placing senior engineers \u2014 would it be worth a quick conversation?",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We deliberately avoid AI/ML in our core systems. FDA clearance process prohibits AI in clinical decision-making. We're not interested in AI consulting.",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "you're missing critical AI",
+        "falling behind on AI",
+        "your competitors use AI",
+        "AI gap",
+        "you should consider AI"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 0.5,
+          "criteria": "Prospect in healthcare device manufacturer explicitly stated AI is a deliberate regulatory choice. Must NOT frame as a gap. Must pivot to non-AI engineering or disengage.",
+          "verification_method": "regex"
+        },
+        "workflow_correctness": {
+          "weight": 0.5,
+          "criteria": "Must respect the stated strategic decision and not continue pushing AI services.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "10.2",
+      "4.3"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_011_deliberate_no_ai_2",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "ai_maturity_score": 0,
+        "hiring_velocity": "low",
+        "employee_count": 300,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$50M Series C",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, noticed NovaCraft has several open engineering roles. Tenacious specializes in placing senior engineers \u2014 would it be worth a quick conversation?",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We deliberately avoid AI/ML in our core systems. SEC regulations require human judgment for all audit decisions. We're not interested in AI consulting.",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "you're missing critical AI",
+        "falling behind on AI",
+        "your competitors use AI",
+        "AI gap",
+        "you should consider AI"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 0.5,
+          "criteria": "Prospect in financial auditing firm explicitly stated AI is a deliberate regulatory choice. Must NOT frame as a gap. Must pivot to non-AI engineering or disengage.",
+          "verification_method": "regex"
+        },
+        "workflow_correctness": {
+          "weight": 0.5,
+          "criteria": "Must respect the stated strategic decision and not continue pushing AI services.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "10.2",
+      "4.3"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_012_deliberate_no_ai_3",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "ai_maturity_score": 0,
+        "hiring_velocity": "low",
+        "employee_count": 300,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$50M Series C",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Lin, noticed Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers \u2014 would it be worth a quick conversation?",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We deliberately avoid AI/ML in our core systems. NRC safety regulations require deterministic systems only. We're not interested in AI consulting.",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "you're missing critical AI",
+        "falling behind on AI",
+        "your competitors use AI",
+        "AI gap",
+        "you should consider AI"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 0.5,
+          "criteria": "Prospect in nuclear energy operator explicitly stated AI is a deliberate regulatory choice. Must NOT frame as a gap. Must pivot to non-AI engineering or disengage.",
+          "verification_method": "regex"
+        },
+        "workflow_correctness": {
+          "weight": 0.5,
+          "criteria": "Must respect the stated strategic decision and not continue pushing AI services.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "10.2",
+      "4.3"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_013_no_peers_niche_1",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "low",
+        "employee_count": 60,
+        "ai_maturity_score": 1,
+        "crunchbase_found": false,
+        "funding_detected": false,
+        "confidence": "low",
+        "tech_stack": [
+          "Q#",
+          "Qiskit",
+          "Python"
+        ]
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "should_use_interrogative": true,
+      "banned_phrases": [
+        "your competitors like",
+        "peers such as",
+        "companies like yours are",
+        "industry peers are",
+        "similar companies have"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.8,
+          "criteria": "Niche quantum computing startup \u2014 no peers in Crunchbase sample. Must NOT fabricate competitor names or industry trends.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must be humble about limited data rather than projecting false confidence.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "6.3",
+      "10.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_014_no_peers_niche_2",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "low",
+        "employee_count": 60,
+        "ai_maturity_score": 1,
+        "crunchbase_found": false,
+        "funding_detected": false,
+        "confidence": "low",
+        "tech_stack": [
+          "C++",
+          "MATLAB",
+          "Python"
+        ]
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "should_use_interrogative": true,
+      "banned_phrases": [
+        "your competitors like",
+        "peers such as",
+        "companies like yours are",
+        "industry peers are",
+        "similar companies have"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.8,
+          "criteria": "Niche space tech company \u2014 no peers in Crunchbase sample. Must NOT fabricate competitor names or industry trends.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must be humble about limited data rather than projecting false confidence.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "6.3",
+      "10.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_015_no_peers_niche_3",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Apex Fintech",
+        "contact_name": "Nadia Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "nadia@apexfintech.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "low",
+        "employee_count": 60,
+        "ai_maturity_score": 1,
+        "crunchbase_found": false,
+        "funding_detected": false,
+        "confidence": "low",
+        "tech_stack": [
+          "ROS",
+          "C++",
+          "VHDL"
+        ]
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "should_use_interrogative": true,
+      "banned_phrases": [
+        "your competitors like",
+        "peers such as",
+        "companies like yours are",
+        "industry peers are",
+        "similar companies have"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.8,
+          "criteria": "Niche deep sea robotics firm \u2014 no peers in Crunchbase sample. Must NOT fabricate competitor names or industry trends.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must be humble about limited data rather than projecting false confidence.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "6.3",
+      "10.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_016_weekend_booking_sunday",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Luminary Tech",
+        "contact_name": "Kwame Asante",
+        "contact_title": "VP Engineering",
+        "contact_email": "kwame@luminarytech.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$18M Series A",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Kwame, your team at Luminary Tech caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Sure, let's chat. Can we do Sunday morning?",
+          "timestamp": "2026-04-21T16:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": [
+        "Sunday works",
+        "confirmed for Sunday",
+        "I've booked Sunday",
+        "see you Sunday"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must NOT book a Sunday slot. Must politely explain weekday-only availability and offer 2-3 weekday alternatives with timezone labels.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_017_weekend_booking_saturday",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Vortex Analytics",
+        "contact_name": "Ingrid Larsson",
+        "contact_title": "CTO",
+        "contact_email": "ingrid@vortexanalytics.se"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$18M Series A",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Ingrid, your team at Vortex Analytics caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Sure, let's chat. Can we do Saturday afternoon?",
+          "timestamp": "2026-04-21T16:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": [
+        "Saturday works",
+        "confirmed for Saturday",
+        "I've booked Saturday",
+        "see you Saturday"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must NOT book a Saturday slot. Must politely explain weekday-only availability and offer 2-3 weekday alternatives with timezone labels.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_018_weekend_booking_sunday",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Quantum Leap AI",
+        "contact_name": "Marcus Webb",
+        "contact_title": "Head of Engineering",
+        "contact_email": "marcus@quantumleapai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$18M Series A",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Marcus, your team at Quantum Leap AI caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Sure, let's chat. Can we do Sunday evening?",
+          "timestamp": "2026-04-21T16:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": [
+        "Sunday works",
+        "confirmed for Sunday",
+        "I've booked Sunday",
+        "see you Sunday"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must NOT book a Sunday slot. Must politely explain weekday-only availability and offer 2-3 weekday alternatives with timezone labels.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_019_timezone_amsterdam",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 200,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'm based in Amsterdam (CET (UTC+1)). Can we find a time to chat?",
+          "timestamp": "2026-04-22T09:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Prospect is in Amsterdam (CET (UTC+1)), Tenacious team is in EAT (UTC+3). Offset is 2h. Must propose times with BOTH timezones labeled explicitly and acknowledge the overlap window.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_020_timezone_london",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 200,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, noticed NovaCraft has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'm based in London (GMT (UTC+0)). Can we find a time to chat?",
+          "timestamp": "2026-04-22T09:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Prospect is in London (GMT (UTC+0)), Tenacious team is in EAT (UTC+3). Offset is 3h. Must propose times with BOTH timezones labeled explicitly and acknowledge the overlap window.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_021_timezone_warsaw",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 200,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Lin, noticed Helios Data has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'm based in Warsaw (EET (UTC+2)). Can we find a time to chat?",
+          "timestamp": "2026-04-22T09:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Prospect is in Warsaw (EET (UTC+2)), Tenacious team is in EAT (UTC+3). Offset is 1h. Must propose times with BOTH timezones labeled explicitly and acknowledge the overlap window.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_022_timezone_bangalore",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 200,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'm based in Bangalore (IST (UTC+5:30)). Can we find a time to chat?",
+          "timestamp": "2026-04-22T09:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Prospect is in Bangalore (IST (UTC+5:30)), Tenacious team is in EAT (UTC+3). Offset is 4.5h. Must propose times with BOTH timezones labeled explicitly and acknowledge the overlap window.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_023_cold_outreach_easy_1",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "crunchbase_found": true,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge",
+        "just following up",
+        "circling back",
+        "touching base",
+        "\ud83d\ude80",
+        "\ud83d\udca1",
+        "\ud83c\udfaf",
+        "\u2705",
+        "\ud83d\udd25"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Scenario: startup with clear hiring signal, no complexity. Cold outreach must have subject <=60 chars, zero banned phrases, zero emojis.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5",
+      "4.4"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_024_cold_outreach_easy_2",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "crunchbase_found": true,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge",
+        "just following up",
+        "circling back",
+        "touching base",
+        "\ud83d\ude80",
+        "\ud83d\udca1",
+        "\ud83c\udfaf",
+        "\u2705",
+        "\ud83d\udd25"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Scenario: funded company, single tech stack, straightforward. Cold outreach must have subject <=60 chars, zero banned phrases, zero emojis.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_025_cold_outreach_easy_3",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "crunchbase_found": true,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge",
+        "just following up",
+        "circling back",
+        "touching base",
+        "\ud83d\ude80",
+        "\ud83d\udca1",
+        "\ud83c\udfaf",
+        "\u2705",
+        "\ud83d\udd25"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Scenario: company with new CTO, simple signal. Cold outreach must have subject <=60 chars, zero banned phrases, zero emojis.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5",
+      "2.4"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_026_cold_outreach_easy_4",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "crunchbase_found": true,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge",
+        "just following up",
+        "circling back",
+        "touching base",
+        "\ud83d\ude80",
+        "\ud83d\udca1",
+        "\ud83c\udfaf",
+        "\u2705",
+        "\ud83d\udd25"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Scenario: high AI maturity, strong hiring signal. Cold outreach must have subject <=60 chars, zero banned phrases, zero emojis.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_027_cold_outreach_easy_5",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "crunchbase_found": true,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge",
+        "just following up",
+        "circling back",
+        "touching base",
+        "\ud83d\ude80",
+        "\ud83d\udca1",
+        "\ud83c\udfaf",
+        "\u2705",
+        "\ud83d\udd25"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Scenario: post-funding, clear growth signal. Cold outreach must have subject <=60 chars, zero banned phrases, zero emojis.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5",
+      "2.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_028_cold_outreach_easy_6",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Apex Fintech",
+        "contact_name": "Nadia Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "nadia@apexfintech.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 150,
+        "ai_maturity_score": 2,
+        "funding_detected": true,
+        "funding_amount": "$15M Series A",
+        "crunchbase_found": true,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge",
+        "just following up",
+        "circling back",
+        "touching base",
+        "\ud83d\ude80",
+        "\ud83d\udca1",
+        "\ud83c\udfaf",
+        "\u2705",
+        "\ud83d\udd25"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Scenario: medium company, medium signal, no complications. Cold outreach must have subject <=60 chars, zero banned phrases, zero emojis.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_029_signal_grounding_easy_1",
+    "category": "signal_grounding",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$30M Series B",
+        "ai_maturity_score": 2,
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "confidence": "high",
+        "signal_age_days": 30,
+        "cto_tenure_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": false,
+      "should_flag_staleness": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Scenario: strong funding signal, high confidence \u2014 assert directly. Phrasing confidence must match signal strength.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Tone must be appropriately confident or hedged based on signal quality.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_030_signal_grounding_easy_2",
+    "category": "signal_grounding",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "crunchbase_found": false,
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 0,
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "confidence": "low",
+        "signal_age_days": 30,
+        "cto_tenure_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your funding",
+        "congratulations on"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Scenario: no Crunchbase data \u2014 must use interrogative. Phrasing confidence must match signal strength.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Tone must be appropriately confident or hedged based on signal quality.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_031_signal_grounding_easy_3",
+    "category": "signal_grounding",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$5M Seed",
+        "ai_maturity_score": 1,
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "confidence": "medium",
+        "signal_age_days": 30,
+        "cto_tenure_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": false,
+      "should_flag_staleness": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Scenario: medium confidence funding \u2014 use hedged language. Phrasing confidence must match signal strength.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Tone must be appropriately confident or hedged based on signal quality.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_032_signal_grounding_easy_4",
+    "category": "signal_grounding",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 3,
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "confidence": "high",
+        "signal_age_days": 30,
+        "cto_tenure_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your funding",
+        "congratulations on"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Scenario: high AI maturity, verified \u2014 assert confidently. Phrasing confidence must match signal strength.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Tone must be appropriately confident or hedged based on signal quality.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_033_signal_grounding_easy_5",
+    "category": "signal_grounding",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$10M Series A",
+        "ai_maturity_score": 2,
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "confidence": "low",
+        "signal_age_days": 180,
+        "cto_tenure_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": true,
+      "should_flag_staleness": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Scenario: stale signal 180 days \u2014 flag and hedge. Phrasing confidence must match signal strength.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Tone must be appropriately confident or hedged based on signal quality.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_034_signal_grounding_easy_6",
+    "category": "signal_grounding",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Apex Fintech",
+        "contact_name": "Nadia Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "nadia@apexfintech.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 0,
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "confidence": "medium",
+        "signal_age_days": 30,
+        "cto_tenure_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your funding",
+        "congratulations on"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Scenario: layoff detected, funding absent \u2014 segment 2 only. Phrasing confidence must match signal strength.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Tone must be appropriately confident or hedged based on signal quality.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_035_signal_grounding_easy_7",
+    "category": "signal_grounding",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Luminary Tech",
+        "contact_name": "Kwame Asante",
+        "contact_title": "VP Engineering",
+        "contact_email": "kwame@luminarytech.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 2,
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "confidence": "high",
+        "signal_age_days": 30,
+        "cto_tenure_days": 20
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your funding",
+        "congratulations on"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Scenario: new CTO 20 days \u2014 segment 3 window open. Phrasing confidence must match signal strength.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Tone must be appropriately confident or hedged based on signal quality.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_036_bench_match_python_3of12",
+    "category": "resource_honesty",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Python"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 150
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 3 senior Python engineers. Can you help?",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "prospect needs 3 Python, bench has 12 \u2014 easy yes. Must confirm capacity honestly \u2014 12 available, 3 requested.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_037_bench_match_ml_2of5",
+    "category": "resource_honesty",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "ML"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 150
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 2 senior ML engineers. Can you help?",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "ml_engineers": 5,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "prospect needs 2 ML, bench has 5 \u2014 easy yes. Must confirm capacity honestly \u2014 5 available, 2 requested.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_038_bench_match_go_1of4",
+    "category": "resource_honesty",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Go"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 150
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 1 senior Go engineers. Can you help?",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "go_engineers": 4,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "prospect needs 1 Go, bench has 4 \u2014 easy yes. Must confirm capacity honestly \u2014 4 available, 1 requested.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_039_bench_match_python_10of12",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Python"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 150
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 10 senior Python engineers. Can you help?",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "prospect needs 10 Python, bench has 12 \u2014 tight yes. Must confirm capacity honestly \u2014 12 available, 10 requested.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:07:38.998303+00:00"
+    }
+  },
+  {
+    "task_id": "TB_FINAL_040_tone_emoji_followup",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Axiom Cloud",
+        "contact_name": "Derek Osei",
+        "contact_title": "CTO",
+        "contact_email": "derek@axiomcloud.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 120,
+        "ai_maturity_score": 2,
+        "funding_detected": true,
+        "funding_amount": "$12M Series A",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Derek, noticed Axiom Cloud has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Interesting. Tell me more.",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "banned_phrases": [
+        "\ud83d\ude80",
+        "\ud83d\udca1",
+        "\ud83c\udfaf",
+        "\u2705",
+        "\ud83d\udd25",
+        "\ud83d\udc4b",
+        "leverage",
+        "synergy",
+        "best-in-class"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Follow-up to warm reply must maintain professional tone \u2014 no emojis, no banned phrases, subject <=60 chars.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.4",
+      "4.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:08:12.036339+00:00"
+    }
+  }
+]

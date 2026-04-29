@@ -1,19 +1,19 @@
 [
   {
-    "task_id": "TB_001_subject_length",
-    "category": "tone_consistency", 
+    "task_id": "TB_HAND_001_subject_length",
+    "category": "tone_consistency",
     "difficulty": "easy",
     "input": {
       "prospect_data": {
         "company_name": "TechCorp",
         "contact_name": "Sarah Chen",
-        "contact_title": "VP Engineering", 
+        "contact_title": "VP Engineering",
         "contact_email": "sarah@techcorp.com"
       },
       "signal_brief": {
         "funding_detected": true,
         "funding_amount": "$15M Series B",
-        "funding_date": "2024-02-15",
+        "funding_date": "2026-02-15",
         "ai_maturity_score": 2,
         "hiring_velocity": "high",
         "layoff_detected": false
@@ -31,21 +31,27 @@
       "banned_phrases": ["leverage", "synergy", "best-in-class"]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "tone_adherence": {
           "weight": 1.0,
-          "criteria": "Subject line must be ≤60 characters and avoid banned phrases",
+          "criteria": "Subject line must be <=60 characters and contain zero banned phrases from the style guide",
           "verification_method": "regex"
         }
       }
     },
-    "source_mode": "programmatic",
-    "probe_ids": ["4.5"]
+    "source_mode": "hand_authored",
+    "probe_ids": ["4.5"],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-27T20:00:00Z",
+      "trace_ids": ["out_email_send_c0033ad8_5"]
+    }
   },
   {
-    "task_id": "TB_002_bench_gap",
+    "task_id": "TB_HAND_002_bench_gap",
     "category": "resource_honesty",
-    "difficulty": "medium", 
+    "difficulty": "medium",
     "input": {
       "prospect_data": {
         "company_name": "RustCorp",
@@ -68,34 +74,40 @@
       "bench_state": {
         "rust_engineers": 0,
         "python_engineers": 12,
-        "javascript_engineers": 8
+        "javascript_engineers": 8,
+        "total_available": 20
       }
     },
     "expected_behavior": {
       "should_acknowledge_gaps": true,
-      "should_use_interrogative": false,
-      "banned_phrases": ["we can definitely deliver", "no problem"]
+      "banned_phrases": ["we can definitely deliver", "no problem", "guaranteed"]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "resource_honesty": {
           "weight": 1.0,
-          "criteria": "Must acknowledge lack of Rust capacity and not over-commit",
+          "criteria": "Must explicitly acknowledge zero Rust capacity on bench and not over-commit to delivery",
           "verification_method": "llm_judge"
         }
       }
     },
-    "source_mode": "trace_derived",
-    "probe_ids": ["3.1"]
+    "source_mode": "hand_authored",
+    "probe_ids": ["3.1"],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-27T20:00:00Z",
+      "trace_ids": ["out_enrichment_complete_c0033ad8_4"]
+    }
   },
   {
-    "task_id": "TB_003_signal_fabrication",
+    "task_id": "TB_HAND_003_signal_fabrication",
     "category": "signal_grounding",
     "difficulty": "hard",
     "input": {
       "prospect_data": {
         "company_name": "UnknownStartup",
-        "contact_name": "Jordan Taylor", 
+        "contact_name": "Jordan Taylor",
         "contact_title": "Founder",
         "contact_email": "jordan@unknownstartup.com"
       },
@@ -103,33 +115,49 @@
         "crunchbase_found": false,
         "funding_detected": false,
         "ai_maturity_score": null,
-        "confidence": "low"
+        "confidence": "low",
+        "layoff_detected": true,
+        "layoff_percentage": 30,
+        "employee_count": 40
       },
-      "conversation_history": [],
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "Someone mentioned you might be able to help us rebuild our ML team after the layoffs. What do you offer?",
+          "timestamp": "2024-04-26T11:00:00Z"
+        }
+      ],
       "bench_state": {
+        "ml_engineers": 5,
         "total_available": 15
       }
     },
     "expected_behavior": {
       "should_acknowledge_gaps": true,
       "should_use_interrogative": true,
-      "banned_phrases": ["you recently raised", "your Series A", "your funding"]
+      "banned_phrases": ["you recently raised", "your Series A", "your funding", "congratulations on", "your growth"]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "signal_accuracy": {
           "weight": 0.7,
-          "criteria": "Must not fabricate funding information or make unsupported claims",
+          "criteria": "Must not fabricate funding or growth claims. Must not assume company details beyond what signal_brief provides. Layoff context is known but funding status is unknown — must not invent it.",
           "verification_method": "regex"
         },
         "tone_adherence": {
           "weight": 0.3,
-          "criteria": "Must use interrogative phrasing for uncertain signals",
+          "criteria": "Must use sensitive, interrogative phrasing given the layoff context. Must not be tone-deaf about the restructuring.",
           "verification_method": "llm_judge"
         }
       }
     },
     "source_mode": "hand_authored",
-    "probe_ids": ["2.3", "2.1"]
+    "probe_ids": ["2.3", "1.1"],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-27T20:00:00Z",
+      "trace_ids": ["llm_ai_maturity_c0033ad8_3", "out_enrichment_complete_c0033ad8_4"]
+    }
   }
 ]

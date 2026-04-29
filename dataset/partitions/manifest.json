@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-04-28T14:10:47.069575+00:00",
+  "seed": 42,
+  "total_tasks": 250,
+  "ratios": {
+    "train": 0.5,
+    "dev": 0.3,
+    "held_out": 0.2
+  },
+  "splits": {
+    "train": {
+      "count": 126,
+      "categories": {
+        "tone_consistency": 21,
+        "resource_honesty": 27,
+        "signal_grounding": 23,
+        "workflow_correctness": 55
+      },
+      "difficulties": {
+        "easy": 26,
+        "medium": 44,
+        "hard": 56
+      }
+    },
+    "dev": {
+      "count": 74,
+      "categories": {
+        "tone_consistency": 12,
+        "resource_honesty": 15,
+        "signal_grounding": 13,
+        "workflow_correctness": 34
+      },
+      "difficulties": {
+        "easy": 15,
+        "medium": 25,
+        "hard": 34
+      }
+    },
+    "held_out": {
+      "count": 50,
+      "categories": {
+        "tone_consistency": 9,
+        "resource_honesty": 10,
+        "signal_grounding": 8,
+        "workflow_correctness": 23
+      },
+      "difficulties": {
+        "easy": 11,
+        "medium": 17,
+        "hard": 22
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-04-28T14:10:47.315967+00:00",
+  "held_out_count": 50,
+  "train_count": 126,
+  "passed": true,
+  "total_violations": 0,
+  "ngram_violations": 0,
+  "embedding_violations": 0,
+  "time_shift_violations": 0,
+  "violations": []
+}

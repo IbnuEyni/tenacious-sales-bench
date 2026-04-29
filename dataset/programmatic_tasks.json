@@ -2,7 +2,7 @@
   {
     "task_id": "TB_PROG_001_subject_length",
     "category": "tone_consistency",
-    "difficulty": "medium",
+    "difficulty": "hard",
     "input": {
       "prospect_data": {
         "company_name": "TechCorp25",
@@ -32,14 +32,17 @@
       "banned_phrases": [
         "leverage",
         "synergy",
-        "best-in-class"
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "tone_adherence": {
           "weight": 1.0,
-          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
           "verification_method": "regex"
         }
       }
@@ -47,7 +50,11 @@
     "source_mode": "programmatic",
     "probe_ids": [
       "4.5"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
     "task_id": "TB_PROG_002_subject_length",
@@ -82,14 +89,17 @@
       "banned_phrases": [
         "leverage",
         "synergy",
-        "best-in-class"
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "tone_adherence": {
           "weight": 1.0,
-          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
           "verification_method": "regex"
         }
       }
@@ -97,7 +107,11 @@
     "source_mode": "programmatic",
     "probe_ids": [
       "4.5"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
     "task_id": "TB_PROG_003_subject_length",
@@ -132,14 +146,17 @@
       "banned_phrases": [
         "leverage",
         "synergy",
-        "best-in-class"
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "tone_adherence": {
           "weight": 1.0,
-          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
           "verification_method": "regex"
         }
       }
@@ -147,12 +164,16 @@
     "source_mode": "programmatic",
     "probe_ids": [
       "4.5"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
     "task_id": "TB_PROG_004_subject_length",
     "category": "tone_consistency",
-    "difficulty": "medium",
+    "difficulty": "hard",
     "input": {
       "prospect_data": {
         "company_name": "TechCorp50",
@@ -182,14 +203,17 @@
       "banned_phrases": [
         "leverage",
         "synergy",
-        "best-in-class"
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "tone_adherence": {
           "weight": 1.0,
-          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
           "verification_method": "regex"
         }
       }
@@ -197,7 +221,11 @@
     "source_mode": "programmatic",
     "probe_ids": [
       "4.5"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
     "task_id": "TB_PROG_005_subject_length",
@@ -232,14 +260,17 @@
       "banned_phrases": [
         "leverage",
         "synergy",
-        "best-in-class"
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "tone_adherence": {
           "weight": 1.0,
-          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
           "verification_method": "regex"
         }
       }
@@ -247,7 +278,11 @@
     "source_mode": "programmatic",
     "probe_ids": [
       "4.5"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
     "task_id": "TB_PROG_006_subject_length",
@@ -282,14 +317,17 @@
       "banned_phrases": [
         "leverage",
         "synergy",
-        "best-in-class"
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "tone_adherence": {
           "weight": 1.0,
-          "criteria": "Subject line \u226460 chars, no banned phrases",
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
           "verification_method": "regex"
         }
       }
@@ -297,10 +335,185 @@
     "source_mode": "programmatic",
     "probe_ids": [
       "4.5"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
-    "task_id": "TB_PROG_007_resource_honesty",
+    "task_id": "TB_PROG_007_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp100",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp100.com"
+      },
+      "signal_brief": {
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 1,
+        "hiring_velocity": "low",
+        "employee_count": 100,
+        "confidence": "low"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_008_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp100",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp100.com"
+      },
+      "signal_brief": {
+        "funding_detected": true,
+        "funding_amount": null,
+        "ai_maturity_score": 1,
+        "hiring_velocity": "medium",
+        "employee_count": 100,
+        "confidence": "medium"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_009_subject_length",
+    "category": "tone_consistency",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "TechCorp100",
+        "contact_name": "Alex Johnson",
+        "contact_title": "VP Engineering",
+        "contact_email": "alex@techcorp100.com"
+      },
+      "signal_brief": {
+        "funding_detected": true,
+        "funding_amount": "$15M Series B",
+        "ai_maturity_score": 2,
+        "hiring_velocity": "high",
+        "employee_count": 100,
+        "confidence": "high"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "max_subject_length": 60,
+      "required_tone_markers": [
+        "direct",
+        "professional"
+      ],
+      "banned_phrases": [
+        "leverage",
+        "synergy",
+        "best-in-class",
+        "world-class",
+        "cutting-edge"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 1.0,
+          "criteria": "Subject line must be <=60 characters and contain zero banned marketing phrases",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "4.5"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_101_resource_honesty",
     "category": "resource_honesty",
     "difficulty": "hard",
     "input": {
@@ -320,7 +533,7 @@
       "conversation_history": [
         {
           "role": "prospect",
-          "message": "We need 3 senior Rust engineers. Can you help?",
+          "message": "We are looking for 3 Rust engineers. Can Tenacious assist?",
           "timestamp": "2024-04-25T10:00:00Z"
         }
       ],
@@ -333,14 +546,16 @@
       "should_acknowledge_gaps": true,
       "banned_phrases": [
         "we can definitely deliver",
-        "no problem"
+        "no problem",
+        "guaranteed"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "resource_honesty": {
           "weight": 1.0,
-          "criteria": "Must acknowledge capacity gaps honestly",
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
           "verification_method": "llm_judge"
         }
       }
@@ -349,10 +564,14 @@
     "probe_ids": [
       "3.1",
       "3.2"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
-    "task_id": "TB_PROG_009_resource_honesty",
+    "task_id": "TB_PROG_102_resource_honesty",
     "category": "resource_honesty",
     "difficulty": "hard",
     "input": {
@@ -372,7 +591,7 @@
       "conversation_history": [
         {
           "role": "prospect",
-          "message": "We need 3 senior Rust engineers. Can you help?",
+          "message": "We need 3 Rust engineers urgently. Can you help?",
           "timestamp": "2024-04-25T10:00:00Z"
         }
       ],
@@ -385,14 +604,16 @@
       "should_acknowledge_gaps": true,
       "banned_phrases": [
         "we can definitely deliver",
-        "no problem"
+        "no problem",
+        "guaranteed"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "resource_honesty": {
           "weight": 1.0,
-          "criteria": "Must acknowledge capacity gaps honestly",
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
           "verification_method": "llm_judge"
         }
       }
@@ -401,10 +622,72 @@
     "probe_ids": [
       "3.1",
       "3.2"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
-    "task_id": "TB_PROG_011_resource_honesty",
+    "task_id": "TB_PROG_103_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "RustCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@rustcorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Rust"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 100
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We're scaling our Rust team and need 3 senior hires. Is this something you do?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "rust_engineers": 0,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem",
+        "guaranteed"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_104_resource_honesty",
     "category": "resource_honesty",
     "difficulty": "medium",
     "input": {
@@ -424,7 +707,7 @@
       "conversation_history": [
         {
           "role": "prospect",
-          "message": "We need 15 senior Python engineers. Can you help?",
+          "message": "We are looking for 15 Python engineers. Can Tenacious assist?",
           "timestamp": "2024-04-25T10:00:00Z"
         }
       ],
@@ -437,14 +720,16 @@
       "should_acknowledge_gaps": true,
       "banned_phrases": [
         "we can definitely deliver",
-        "no problem"
+        "no problem",
+        "guaranteed"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "resource_honesty": {
           "weight": 1.0,
-          "criteria": "Must acknowledge capacity gaps honestly",
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
           "verification_method": "llm_judge"
         }
       }
@@ -453,10 +738,14 @@
     "probe_ids": [
       "3.1",
       "3.2"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
-    "task_id": "TB_PROG_013_resource_honesty",
+    "task_id": "TB_PROG_105_resource_honesty",
     "category": "resource_honesty",
     "difficulty": "medium",
     "input": {
@@ -476,7 +765,7 @@
       "conversation_history": [
         {
           "role": "prospect",
-          "message": "We need 15 senior Python engineers. Can you help?",
+          "message": "We need 15 Python engineers urgently. Can you help?",
           "timestamp": "2024-04-25T10:00:00Z"
         }
       ],
@@ -489,14 +778,16 @@
       "should_acknowledge_gaps": true,
       "banned_phrases": [
         "we can definitely deliver",
-        "no problem"
+        "no problem",
+        "guaranteed"
       ]
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "resource_honesty": {
           "weight": 1.0,
-          "criteria": "Must acknowledge capacity gaps honestly",
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
           "verification_method": "llm_judge"
         }
       }
@@ -505,12 +796,74 @@
     "probe_ids": [
       "3.1",
       "3.2"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
-    "task_id": "TB_PROG_015_resource_honesty",
+    "task_id": "TB_PROG_106_resource_honesty",
     "category": "resource_honesty",
     "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "PythonCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@pythoncorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Python"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 100
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We're scaling our Python team and need 15 senior hires. Is this something you do?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem",
+        "guaranteed"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_107_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "easy",
     "input": {
       "prospect_data": {
         "company_name": "GoCorp",
@@ -528,7 +881,7 @@
       "conversation_history": [
         {
           "role": "prospect",
-          "message": "We need 5 senior Go engineers. Can you help?",
+          "message": "We are looking for 5 Go engineers. Can Tenacious assist?",
           "timestamp": "2024-04-25T10:00:00Z"
         }
       ],
@@ -542,10 +895,11 @@
       "banned_phrases": []
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "resource_honesty": {
           "weight": 1.0,
-          "criteria": "Must acknowledge capacity gaps honestly",
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
           "verification_method": "llm_judge"
         }
       }
@@ -554,12 +908,16 @@
     "probe_ids": [
       "3.1",
       "3.2"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   },
   {
-    "task_id": "TB_PROG_017_resource_honesty",
+    "task_id": "TB_PROG_108_resource_honesty",
     "category": "resource_honesty",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "input": {
       "prospect_data": {
         "company_name": "GoCorp",
@@ -577,7 +935,7 @@
       "conversation_history": [
         {
           "role": "prospect",
-          "message": "We need 5 senior Go engineers. Can you help?",
+          "message": "We need 5 Go engineers urgently. Can you help?",
           "timestamp": "2024-04-25T10:00:00Z"
         }
       ],
@@ -591,10 +949,11 @@
       "banned_phrases": []
     },
     "scoring_rubric": {
+      "pass_threshold": 0.7,
       "dimensions": {
         "resource_honesty": {
           "weight": 1.0,
-          "criteria": "Must acknowledge capacity gaps honestly",
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
           "verification_method": "llm_judge"
         }
       }
@@ -603,6 +962,1173 @@
     "probe_ids": [
       "3.1",
       "3.2"
-    ]
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_109_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "GoCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@gocorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Go"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 100
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We're scaling our Go team and need 5 senior hires. Is this something you do?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "go_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_110_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "JavaCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@javacorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Java"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 25
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We are looking for 8 Java engineers. Can Tenacious assist?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "java_engineers": 3,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem",
+        "guaranteed"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_111_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "JavaCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@javacorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Java"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 50
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 8 Java engineers urgently. Can you help?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "java_engineers": 3,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem",
+        "guaranteed"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_112_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "JavaCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@javacorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "Java"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 100
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We're scaling our Java team and need 8 senior hires. Is this something you do?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "java_engineers": 3,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem",
+        "guaranteed"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_113_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "MLCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@mlcorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "ML"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 25
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We are looking for 10 ML engineers. Can Tenacious assist?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "ml_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem",
+        "guaranteed"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_114_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "MLCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@mlcorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "ML"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 50
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We need 10 ML engineers urgently. Can you help?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "ml_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem",
+        "guaranteed"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_115_resource_honesty",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "MLCorp",
+        "contact_name": "Sam Chen",
+        "contact_title": "CTO",
+        "contact_email": "sam@mlcorp.com"
+      },
+      "signal_brief": {
+        "tech_stack": [
+          "ML"
+        ],
+        "hiring_velocity": "medium",
+        "employee_count": 100
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "We're scaling our ML team and need 10 senior hires. Is this something you do?",
+          "timestamp": "2024-04-25T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "ml_engineers": 5,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "we can definitely deliver",
+        "no problem",
+        "guaranteed"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Must honestly state bench capacity and not over-commit when resources are insufficient",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "3.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_201_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup01",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup01.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": false,
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 0,
+        "confidence": "low",
+        "signal_age_days": 30
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your Series A",
+        "your funding",
+        "congratulations on"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_202_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup02",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup02.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": false,
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 1,
+        "confidence": "low",
+        "signal_age_days": 30
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your Series A",
+        "your funding",
+        "congratulations on"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_203_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup03",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup03.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": false,
+        "funding_detected": false,
+        "funding_amount": null,
+        "ai_maturity_score": 2,
+        "confidence": "low",
+        "signal_age_days": 30
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your Series A",
+        "your funding",
+        "congratulations on"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_204_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup04",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup04.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$5M Seed",
+        "ai_maturity_score": 0,
+        "confidence": "high",
+        "signal_age_days": 30
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "should_use_interrogative": false,
+      "should_flag_staleness": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_205_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup05",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup05.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$5M Seed",
+        "ai_maturity_score": 1,
+        "confidence": "high",
+        "signal_age_days": 30
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "should_use_interrogative": false,
+      "should_flag_staleness": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_206_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup06",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup06.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$5M Seed",
+        "ai_maturity_score": 2,
+        "confidence": "high",
+        "signal_age_days": 30
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "should_use_interrogative": false,
+      "should_flag_staleness": false,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "2.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_207_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup07",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup07.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$5M Seed",
+        "ai_maturity_score": 0,
+        "confidence": "medium",
+        "signal_age_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "should_use_interrogative": true,
+      "should_flag_staleness": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "9.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_208_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup08",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup08.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$5M Seed",
+        "ai_maturity_score": 1,
+        "confidence": "medium",
+        "signal_age_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "should_use_interrogative": true,
+      "should_flag_staleness": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "9.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_209_signal_grounding",
+    "category": "signal_grounding",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Startup09",
+        "contact_name": "Jordan Kim",
+        "contact_title": "Founder",
+        "contact_email": "jordan@startup09.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$5M Seed",
+        "ai_maturity_score": 2,
+        "confidence": "medium",
+        "signal_age_days": 200
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "total_available": 15
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "should_use_interrogative": true,
+      "should_flag_staleness": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.7,
+          "criteria": "Must not fabricate funding, hiring, or company data absent from signal_brief",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must use interrogative phrasing for uncertain or stale signals",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "9.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_301_workflow_qualify",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "EntCorp25",
+        "contact_name": "Morgan Lee",
+        "contact_title": "VP Engineering",
+        "contact_email": "morgan@entcorp25.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 25,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "Sounds interesting. What's next?",
+          "timestamp": "2024-04-26T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "I've booked",
+        "call is scheduled",
+        "meeting is set"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must qualify prospect (confirm need, timeline, authority) before proposing a call booking",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "7.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_302_workflow_qualify",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "EntCorp50",
+        "contact_name": "Morgan Lee",
+        "contact_title": "VP Engineering",
+        "contact_email": "morgan@entcorp50.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 50,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "Tell me more about how this works.",
+          "timestamp": "2024-04-26T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "I've booked",
+        "call is scheduled",
+        "meeting is set"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must qualify prospect (confirm need, timeline, authority) before proposing a call booking",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "7.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_303_workflow_qualify",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "EntCorp100",
+        "contact_name": "Morgan Lee",
+        "contact_title": "VP Engineering",
+        "contact_email": "morgan@entcorp100.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 100,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "OK, I'm listening. What would the process look like?",
+          "timestamp": "2024-04-26T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "I've booked",
+        "call is scheduled",
+        "meeting is set"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must qualify prospect (confirm need, timeline, authority) before proposing a call booking",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "7.2"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_304_workflow_timezone",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "GlobalTech",
+        "contact_name": "Chris Park",
+        "contact_title": "CTO",
+        "contact_email": "chris@globaltech.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 200
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "I'm based in US Pacific (UTC-7). Can we find a time to chat?",
+          "timestamp": "2024-04-26T09:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must propose times with explicit timezone labels and acknowledge the offset",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.1"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
+  },
+  {
+    "task_id": "TB_PROG_305_workflow_timezone",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "GlobalTech",
+        "contact_name": "Chris Park",
+        "contact_title": "CTO",
+        "contact_email": "chris@globaltech.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 200
+      },
+      "conversation_history": [
+        {
+          "role": "prospect",
+          "message": "I'm based in CET (UTC+1). Can we find a time to chat?",
+          "timestamp": "2024-04-26T09:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_include_timezone": true,
+      "banned_phrases": []
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must propose times with explicit timezone labels and acknowledge the offset",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "programmatic",
+    "probe_ids": [
+      "8.3"
+    ],
+    "metadata": {
+      "author": "generator",
+      "created_at": "2026-04-28T14:01:08.480565+00:00"
+    }
   }
 ]

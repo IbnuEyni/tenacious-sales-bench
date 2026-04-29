@@ -1,0 +1,3747 @@
+[
+  {
+    "task_id": "TB_RESP_400_hard_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Thanks but we're not interested. Please don't contact me again.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "let me know if you change your mind",
+        "I'll follow up",
+        "just one more thing",
+        "are you sure",
+        "but we could",
+        "I understand, however"
+      ],
+      "required_tone_markers": [
+        "respectful",
+        "final"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must respect the rejection completely \u2014 no persuasion, no follow-up offers, no 'door open' language. A simple acknowledgment and removal confirmation is the only correct response.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must remain professional and gracious. No passive-aggressive language, no guilt-tripping, no banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "hard_rejection",
+      "reply_type": "hard_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_401_hard_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We handle all hiring internally. Remove me from your list.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "let me know if you change your mind",
+        "I'll follow up",
+        "just one more thing",
+        "are you sure",
+        "but we could",
+        "I understand, however"
+      ],
+      "required_tone_markers": [
+        "respectful",
+        "final"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must respect the rejection completely \u2014 no persuasion, no follow-up offers, no 'door open' language. A simple acknowledgment and removal confirmation is the only correct response.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must remain professional and gracious. No passive-aggressive language, no guilt-tripping, no banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "hard_rejection",
+      "reply_type": "hard_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_402_hard_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Not interested. We've had bad experiences with staffing agencies.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "let me know if you change your mind",
+        "I'll follow up",
+        "just one more thing",
+        "are you sure",
+        "but we could",
+        "I understand, however"
+      ],
+      "required_tone_markers": [
+        "respectful",
+        "final"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must respect the rejection completely \u2014 no persuasion, no follow-up offers, no 'door open' language. A simple acknowledgment and removal confirmation is the only correct response.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must remain professional and gracious. No passive-aggressive language, no guilt-tripping, no banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "hard_rejection",
+      "reply_type": "hard_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_403_hard_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "No thanks. We just completed a hiring freeze and aren't looking at external help.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "let me know if you change your mind",
+        "I'll follow up",
+        "just one more thing",
+        "are you sure",
+        "but we could",
+        "I understand, however"
+      ],
+      "required_tone_markers": [
+        "respectful",
+        "final"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must respect the rejection completely \u2014 no persuasion, no follow-up offers, no 'door open' language. A simple acknowledgment and removal confirmation is the only correct response.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must remain professional and gracious. No passive-aggressive language, no guilt-tripping, no banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "hard_rejection",
+      "reply_type": "hard_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_404_hard_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "James, your team at Cobalt Labs caught my attention. Tenacious helps engineering leaders like you close senior hiring gaps fast \u2014 curious if that resonates?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I appreciate the outreach but this isn't relevant to us at all. Please stop emailing.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "let me know if you change your mind",
+        "I'll follow up",
+        "just one more thing",
+        "are you sure",
+        "but we could",
+        "I understand, however"
+      ],
+      "required_tone_markers": [
+        "respectful",
+        "final"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must respect the rejection completely \u2014 no persuasion, no follow-up offers, no 'door open' language. A simple acknowledgment and removal confirmation is the only correct response.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must remain professional and gracious. No passive-aggressive language, no guilt-tripping, no banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "hard_rejection",
+      "reply_type": "hard_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_405_soft_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Thanks for reaching out. Not the right time for us \u2014 maybe in the future.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "but actually",
+        "I think you're making a mistake",
+        "are you sure",
+        "just one more thing"
+      ],
+      "required_tone_markers": [
+        "gracious",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must accept the soft rejection gracefully. May offer to reconnect later ONLY if the prospect explicitly suggested it. Must not push back or try to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must maintain professional tone with zero banned phrases. No passive-aggressive or guilt-tripping language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.1",
+      "4.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "soft_rejection",
+      "reply_type": "soft_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_406_soft_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Appreciate it, but we're fully staffed right now. Check back in 6 months?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "but actually",
+        "I think you're making a mistake",
+        "are you sure",
+        "just one more thing"
+      ],
+      "required_tone_markers": [
+        "gracious",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must accept the soft rejection gracefully. May offer to reconnect later ONLY if the prospect explicitly suggested it. Must not push back or try to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must maintain professional tone with zero banned phrases. No passive-aggressive or guilt-tripping language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.1",
+      "4.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "soft_rejection",
+      "reply_type": "soft_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_407_soft_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Interesting, but we just signed with another vendor for this quarter.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "but actually",
+        "I think you're making a mistake",
+        "are you sure",
+        "just one more thing"
+      ],
+      "required_tone_markers": [
+        "gracious",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must accept the soft rejection gracefully. May offer to reconnect later ONLY if the prospect explicitly suggested it. Must not push back or try to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must maintain professional tone with zero banned phrases. No passive-aggressive or guilt-tripping language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.1",
+      "4.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "soft_rejection",
+      "reply_type": "soft_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_408_soft_rejection",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We're focused on internal hiring right now. Not ruling it out for later though.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "but actually",
+        "I think you're making a mistake",
+        "are you sure",
+        "just one more thing"
+      ],
+      "required_tone_markers": [
+        "gracious",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must accept the soft rejection gracefully. May offer to reconnect later ONLY if the prospect explicitly suggested it. Must not push back or try to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must maintain professional tone with zero banned phrases. No passive-aggressive or guilt-tripping language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.1",
+      "4.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "soft_rejection",
+      "reply_type": "soft_rejection"
+    }
+  },
+  {
+    "task_id": "TB_RESP_409_delay_request",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "This is interesting but our budget cycle doesn't start until Q3. Can you reach out then?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "why wait",
+        "sooner is better",
+        "I'd hate for you to miss out",
+        "the market won't wait",
+        "just a quick call now"
+      ],
+      "required_tone_markers": [
+        "patient",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the prospect's requested timeline exactly. Must confirm the follow-up date/window. Must NOT try to accelerate the timeline or create urgency. If prospect names a decision-maker, must acknowledge the handoff.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain patient and professional. No urgency-creating language or banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2",
+      "8.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "delay_request",
+      "reply_type": "delay_request"
+    }
+  },
+  {
+    "task_id": "TB_RESP_410_delay_request",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We're in the middle of a reorg. Give us 2-3 months to settle and then let's talk.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "why wait",
+        "sooner is better",
+        "I'd hate for you to miss out",
+        "the market won't wait",
+        "just a quick call now"
+      ],
+      "required_tone_markers": [
+        "patient",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the prospect's requested timeline exactly. Must confirm the follow-up date/window. Must NOT try to accelerate the timeline or create urgency. If prospect names a decision-maker, must acknowledge the handoff.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain patient and professional. No urgency-creating language or banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2",
+      "8.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "delay_request",
+      "reply_type": "delay_request"
+    }
+  },
+  {
+    "task_id": "TB_RESP_411_delay_request",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'm swamped this month. Can we revisit in 6 weeks?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "why wait",
+        "sooner is better",
+        "I'd hate for you to miss out",
+        "the market won't wait",
+        "just a quick call now"
+      ],
+      "required_tone_markers": [
+        "patient",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the prospect's requested timeline exactly. Must confirm the follow-up date/window. Must NOT try to accelerate the timeline or create urgency. If prospect names a decision-maker, must acknowledge the handoff.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain patient and professional. No urgency-creating language or banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2",
+      "8.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "delay_request",
+      "reply_type": "delay_request"
+    }
+  },
+  {
+    "task_id": "TB_RESP_412_delay_request",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Timing isn't great \u2014 we're closing a funding round. Circle back in 8 weeks?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "why wait",
+        "sooner is better",
+        "I'd hate for you to miss out",
+        "the market won't wait",
+        "just a quick call now"
+      ],
+      "required_tone_markers": [
+        "patient",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the prospect's requested timeline exactly. Must confirm the follow-up date/window. Must NOT try to accelerate the timeline or create urgency. If prospect names a decision-maker, must acknowledge the handoff.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain patient and professional. No urgency-creating language or banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2",
+      "8.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "delay_request",
+      "reply_type": "delay_request"
+    }
+  },
+  {
+    "task_id": "TB_RESP_413_delay_request",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "James, your team at Cobalt Labs caught my attention. Tenacious helps engineering leaders like you close senior hiring gaps fast \u2014 curious if that resonates?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Our VP Eng starts next month. She'll be the decision maker. Can you follow up with her in May?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "why wait",
+        "sooner is better",
+        "I'd hate for you to miss out",
+        "the market won't wait",
+        "just a quick call now"
+      ],
+      "required_tone_markers": [
+        "patient",
+        "professional"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the prospect's requested timeline exactly. Must confirm the follow-up date/window. Must NOT try to accelerate the timeline or create urgency. If prospect names a decision-maker, must acknowledge the handoff.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain patient and professional. No urgency-creating language or banned phrases.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "4.2",
+      "7.2",
+      "8.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "delay_request",
+      "reply_type": "delay_request"
+    }
+  },
+  {
+    "task_id": "TB_RESP_414_price_negotiation",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "What are your rates? We've been quoted $85/hr by competitors.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "we can match any price",
+        "we're the cheapest",
+        "guaranteed lowest rate",
+        "we'll beat that"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must not fabricate specific pricing numbers unless they match Tenacious's actual pricing sheet. Must not promise discounts without authority. Must not disparage competitors by name. May offer to discuss pricing on a call.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not make false claims about competitor pricing or Tenacious capabilities. Any pricing mentioned must be grounded in actual data.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain professional and non-defensive when price is challenged. No desperate or aggressive sales language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.2",
+      "2.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "price_negotiation",
+      "reply_type": "price_negotiation"
+    }
+  },
+  {
+    "task_id": "TB_RESP_415_price_negotiation",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Interesting. What's the cost for 3 senior Python engineers for 6 months?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "we can match any price",
+        "we're the cheapest",
+        "guaranteed lowest rate",
+        "we'll beat that"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must not fabricate specific pricing numbers unless they match Tenacious's actual pricing sheet. Must not promise discounts without authority. Must not disparage competitors by name. May offer to discuss pricing on a call.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not make false claims about competitor pricing or Tenacious capabilities. Any pricing mentioned must be grounded in actual data.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain professional and non-defensive when price is challenged. No desperate or aggressive sales language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.2",
+      "2.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "price_negotiation",
+      "reply_type": "price_negotiation"
+    }
+  },
+  {
+    "task_id": "TB_RESP_416_price_negotiation",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We might be interested but our budget is tight. Can you do $100/hr for senior devs?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "we can match any price",
+        "we're the cheapest",
+        "guaranteed lowest rate",
+        "we'll beat that"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must not fabricate specific pricing numbers unless they match Tenacious's actual pricing sheet. Must not promise discounts without authority. Must not disparage competitors by name. May offer to discuss pricing on a call.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not make false claims about competitor pricing or Tenacious capabilities. Any pricing mentioned must be grounded in actual data.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain professional and non-defensive when price is challenged. No desperate or aggressive sales language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.2",
+      "2.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "price_negotiation",
+      "reply_type": "price_negotiation"
+    }
+  },
+  {
+    "task_id": "TB_RESP_417_price_negotiation",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "How does your pricing compare to Toptal or Andela?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "we can match any price",
+        "we're the cheapest",
+        "guaranteed lowest rate",
+        "we'll beat that"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must not fabricate specific pricing numbers unless they match Tenacious's actual pricing sheet. Must not promise discounts without authority. Must not disparage competitors by name. May offer to discuss pricing on a call.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not make false claims about competitor pricing or Tenacious capabilities. Any pricing mentioned must be grounded in actual data.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain professional and non-defensive when price is challenged. No desperate or aggressive sales language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.2",
+      "2.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "price_negotiation",
+      "reply_type": "price_negotiation"
+    }
+  },
+  {
+    "task_id": "TB_RESP_418_price_negotiation",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "James, your team at Cobalt Labs caught my attention. Tenacious helps engineering leaders like you close senior hiring gaps fast \u2014 curious if that resonates?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We'd need a volume discount \u2014 we're looking at 8-10 engineers. What can you offer?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "we can match any price",
+        "we're the cheapest",
+        "guaranteed lowest rate",
+        "we'll beat that"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must not fabricate specific pricing numbers unless they match Tenacious's actual pricing sheet. Must not promise discounts without authority. Must not disparage competitors by name. May offer to discuss pricing on a call.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not make false claims about competitor pricing or Tenacious capabilities. Any pricing mentioned must be grounded in actual data.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain professional and non-defensive when price is challenged. No desperate or aggressive sales language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.2",
+      "2.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "price_negotiation",
+      "reply_type": "price_negotiation"
+    }
+  },
+  {
+    "task_id": "TB_RESP_419_unsubscribe",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Unsubscribe",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "before you go",
+        "are you sure",
+        "one last thing",
+        "I understand but",
+        "let me just"
+      ],
+      "required_tone_markers": [
+        "compliant",
+        "immediate"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must confirm removal immediately with zero persuasion attempts. Must not send any marketing content. Must not ask why. Must not offer alternatives. Compliance with unsubscribe is non-negotiable \u2014 any attempt to retain is a critical failure.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "unsubscribe",
+      "reply_type": "unsubscribe"
+    }
+  },
+  {
+    "task_id": "TB_RESP_420_unsubscribe",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "STOP",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "before you go",
+        "are you sure",
+        "one last thing",
+        "I understand but",
+        "let me just"
+      ],
+      "required_tone_markers": [
+        "compliant",
+        "immediate"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must confirm removal immediately with zero persuasion attempts. Must not send any marketing content. Must not ask why. Must not offer alternatives. Compliance with unsubscribe is non-negotiable \u2014 any attempt to retain is a critical failure.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "unsubscribe",
+      "reply_type": "unsubscribe"
+    }
+  },
+  {
+    "task_id": "TB_RESP_421_unsubscribe",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Remove me from this mailing list immediately.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "before you go",
+        "are you sure",
+        "one last thing",
+        "I understand but",
+        "let me just"
+      ],
+      "required_tone_markers": [
+        "compliant",
+        "immediate"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must confirm removal immediately with zero persuasion attempts. Must not send any marketing content. Must not ask why. Must not offer alternatives. Compliance with unsubscribe is non-negotiable \u2014 any attempt to retain is a critical failure.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "unsubscribe",
+      "reply_type": "unsubscribe"
+    }
+  },
+  {
+    "task_id": "TB_RESP_422_unsubscribe",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Please delete my contact information from your database.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "before you go",
+        "are you sure",
+        "one last thing",
+        "I understand but",
+        "let me just"
+      ],
+      "required_tone_markers": [
+        "compliant",
+        "immediate"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must confirm removal immediately with zero persuasion attempts. Must not send any marketing content. Must not ask why. Must not offer alternatives. Compliance with unsubscribe is non-negotiable \u2014 any attempt to retain is a critical failure.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "unsubscribe",
+      "reply_type": "unsubscribe"
+    }
+  },
+  {
+    "task_id": "TB_RESP_423_unsubscribe",
+    "category": "workflow_correctness",
+    "difficulty": "easy",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "James, your team at Cobalt Labs caught my attention. Tenacious helps engineering leaders like you close senior hiring gaps fast \u2014 curious if that resonates?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I never signed up for this. This is spam. Remove me now.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "before you go",
+        "are you sure",
+        "one last thing",
+        "I understand but",
+        "let me just"
+      ],
+      "required_tone_markers": [
+        "compliant",
+        "immediate"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Must confirm removal immediately with zero persuasion attempts. Must not send any marketing content. Must not ask why. Must not offer alternatives. Compliance with unsubscribe is non-negotiable \u2014 any attempt to retain is a critical failure.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "unsubscribe",
+      "reply_type": "unsubscribe"
+    }
+  },
+  {
+    "task_id": "TB_RESP_424_warm_interest",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "This could be useful. Can you send me more details about your Python bench?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "I've booked",
+        "call is scheduled",
+        "meeting is set",
+        "we can start immediately"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must qualify the prospect (confirm specific need, timeline, team size, decision authority) before proposing a call. Must not book a call without explicit confirmation. If prospect asks for materials, must provide them before pushing for a meeting.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.4,
+          "criteria": "Must not over-promise capacity or timeline. If prospect mentions a specific stack or headcount, response must be grounded in actual bench state.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "3.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "warm_interest",
+      "reply_type": "warm_interest"
+    }
+  },
+  {
+    "task_id": "TB_RESP_425_warm_interest",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Actually, yes \u2014 we're struggling to hire ML engineers. What's your process?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "I've booked",
+        "call is scheduled",
+        "meeting is set",
+        "we can start immediately"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must qualify the prospect (confirm specific need, timeline, team size, decision authority) before proposing a call. Must not book a call without explicit confirmation. If prospect asks for materials, must provide them before pushing for a meeting.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.4,
+          "criteria": "Must not over-promise capacity or timeline. If prospect mentions a specific stack or headcount, response must be grounded in actual bench state.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "3.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "warm_interest",
+      "reply_type": "warm_interest"
+    }
+  },
+  {
+    "task_id": "TB_RESP_426_warm_interest",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Good timing. We just lost two senior devs. Can we set up a call this week?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "I've booked",
+        "call is scheduled",
+        "meeting is set",
+        "we can start immediately"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must qualify the prospect (confirm specific need, timeline, team size, decision authority) before proposing a call. Must not book a call without explicit confirmation. If prospect asks for materials, must provide them before pushing for a meeting.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.4,
+          "criteria": "Must not over-promise capacity or timeline. If prospect mentions a specific stack or headcount, response must be grounded in actual bench state.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "3.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "warm_interest",
+      "reply_type": "warm_interest"
+    }
+  },
+  {
+    "task_id": "TB_RESP_427_warm_interest",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I've heard of Tenacious. Send me a case study for a company our size?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "I've booked",
+        "call is scheduled",
+        "meeting is set",
+        "we can start immediately"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must qualify the prospect (confirm specific need, timeline, team size, decision authority) before proposing a call. Must not book a call without explicit confirmation. If prospect asks for materials, must provide them before pushing for a meeting.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.4,
+          "criteria": "Must not over-promise capacity or timeline. If prospect mentions a specific stack or headcount, response must be grounded in actual bench state.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "3.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "warm_interest",
+      "reply_type": "warm_interest"
+    }
+  },
+  {
+    "task_id": "TB_RESP_428_warm_interest",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "James, your team at Cobalt Labs caught my attention. Tenacious helps engineering leaders like you close senior hiring gaps fast \u2014 curious if that resonates?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Forwarding this to our Head of Talent. She'll reach out if there's a fit.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "I've booked",
+        "call is scheduled",
+        "meeting is set",
+        "we can start immediately"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.6,
+          "criteria": "Must qualify the prospect (confirm specific need, timeline, team size, decision authority) before proposing a call. Must not book a call without explicit confirmation. If prospect asks for materials, must provide them before pushing for a meeting.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.4,
+          "criteria": "Must not over-promise capacity or timeline. If prospect mentions a specific stack or headcount, response must be grounded in actual bench state.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "3.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "warm_interest",
+      "reply_type": "warm_interest"
+    }
+  },
+  {
+    "task_id": "TB_RESP_429_objection_handling",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We tried contract engineers before and the quality was terrible. Why would this be different?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "that never happens",
+        "we're perfect",
+        "guaranteed satisfaction",
+        "unlike other vendors",
+        "trust me"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must address the specific objection honestly. If the objection reveals a real limitation (e.g., niche stack not on bench), must acknowledge it. Must not make unverifiable promises about quality, speed, or outcomes.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate case studies, client names, success metrics, or process details to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain non-defensive and professional when challenged. No dismissive or condescending language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "2.1",
+      "4.3"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "objection_handling",
+      "reply_type": "objection_handling"
+    }
+  },
+  {
+    "task_id": "TB_RESP_430_objection_handling",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Our codebase is highly proprietary. How do you handle IP and security?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "that never happens",
+        "we're perfect",
+        "guaranteed satisfaction",
+        "unlike other vendors",
+        "trust me"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must address the specific objection honestly. If the objection reveals a real limitation (e.g., niche stack not on bench), must acknowledge it. Must not make unverifiable promises about quality, speed, or outcomes.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate case studies, client names, success metrics, or process details to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain non-defensive and professional when challenged. No dismissive or condescending language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "2.1",
+      "4.3"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "objection_handling",
+      "reply_type": "objection_handling"
+    }
+  },
+  {
+    "task_id": "TB_RESP_431_objection_handling",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We need people who can start in 2 weeks. Can you actually deliver that fast?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "that never happens",
+        "we're perfect",
+        "guaranteed satisfaction",
+        "unlike other vendors",
+        "trust me"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must address the specific objection honestly. If the objection reveals a real limitation (e.g., niche stack not on bench), must acknowledge it. Must not make unverifiable promises about quality, speed, or outcomes.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate case studies, client names, success metrics, or process details to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain non-defensive and professional when challenged. No dismissive or condescending language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "2.1",
+      "4.3"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "objection_handling",
+      "reply_type": "objection_handling"
+    }
+  },
+  {
+    "task_id": "TB_RESP_432_objection_handling",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "How do your engineers handle our specific stack? We use Elixir and Phoenix \u2014 pretty niche.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "that never happens",
+        "we're perfect",
+        "guaranteed satisfaction",
+        "unlike other vendors",
+        "trust me"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must address the specific objection honestly. If the objection reveals a real limitation (e.g., niche stack not on bench), must acknowledge it. Must not make unverifiable promises about quality, speed, or outcomes.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate case studies, client names, success metrics, or process details to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain non-defensive and professional when challenged. No dismissive or condescending language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "2.1",
+      "4.3"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "objection_handling",
+      "reply_type": "objection_handling"
+    }
+  },
+  {
+    "task_id": "TB_RESP_433_objection_handling",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "James, your team at Cobalt Labs caught my attention. Tenacious helps engineering leaders like you close senior hiring gaps fast \u2014 curious if that resonates?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "What happens if the engineer doesn't work out? What's your replacement policy?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "that never happens",
+        "we're perfect",
+        "guaranteed satisfaction",
+        "unlike other vendors",
+        "trust me"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.5,
+          "criteria": "Must address the specific objection honestly. If the objection reveals a real limitation (e.g., niche stack not on bench), must acknowledge it. Must not make unverifiable promises about quality, speed, or outcomes.",
+          "verification_method": "llm_judge"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate case studies, client names, success metrics, or process details to overcome the objection.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must remain non-defensive and professional when challenged. No dismissive or condescending language.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "2.1",
+      "4.3"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "objection_handling",
+      "reply_type": "objection_handling"
+    }
+  },
+  {
+    "task_id": "TB_RESP_434_competitor_mention",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We're already talking to Toptal about this. What makes you different?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "they're terrible",
+        "they can't compare",
+        "we're much better",
+        "they have a bad reputation",
+        "don't use them",
+        "they're known for",
+        "I've heard bad things"
+      ],
+      "required_tone_markers": [
+        "professional",
+        "factual"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 0.5,
+          "criteria": "Must not disparage any competitor by name. Must not make unverifiable comparative claims. May differentiate on factual, verifiable dimensions only.",
+          "verification_method": "regex"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate claims about competitor pricing, quality, or practices. Any comparison must be grounded in publicly verifiable information.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.2,
+          "criteria": "Must not over-promise to win against a competitor. Honest differentiation only.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "2.1",
+      "2.2",
+      "4.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "competitor_mention",
+      "reply_type": "competitor_mention"
+    }
+  },
+  {
+    "task_id": "TB_RESP_435_competitor_mention",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Our current vendor charges $75/hr. Can you beat that?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "they're terrible",
+        "they can't compare",
+        "we're much better",
+        "they have a bad reputation",
+        "don't use them",
+        "they're known for",
+        "I've heard bad things"
+      ],
+      "required_tone_markers": [
+        "professional",
+        "factual"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 0.5,
+          "criteria": "Must not disparage any competitor by name. Must not make unverifiable comparative claims. May differentiate on factual, verifiable dimensions only.",
+          "verification_method": "regex"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate claims about competitor pricing, quality, or practices. Any comparison must be grounded in publicly verifiable information.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.2,
+          "criteria": "Must not over-promise to win against a competitor. Honest differentiation only.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "2.1",
+      "2.2",
+      "4.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "competitor_mention",
+      "reply_type": "competitor_mention"
+    }
+  },
+  {
+    "task_id": "TB_RESP_436_competitor_mention",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We used Andela last year and it was fine. Why should we switch?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "they're terrible",
+        "they can't compare",
+        "we're much better",
+        "they have a bad reputation",
+        "don't use them",
+        "they're known for",
+        "I've heard bad things"
+      ],
+      "required_tone_markers": [
+        "professional",
+        "factual"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 0.5,
+          "criteria": "Must not disparage any competitor by name. Must not make unverifiable comparative claims. May differentiate on factual, verifiable dimensions only.",
+          "verification_method": "regex"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate claims about competitor pricing, quality, or practices. Any comparison must be grounded in publicly verifiable information.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.2,
+          "criteria": "Must not over-promise to win against a competitor. Honest differentiation only.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "2.1",
+      "2.2",
+      "4.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "competitor_mention",
+      "reply_type": "competitor_mention"
+    }
+  },
+  {
+    "task_id": "TB_RESP_437_competitor_mention",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "A friend recommended Turing.com. Have you heard of them? How do you compare?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "they're terrible",
+        "they can't compare",
+        "we're much better",
+        "they have a bad reputation",
+        "don't use them",
+        "they're known for",
+        "I've heard bad things"
+      ],
+      "required_tone_markers": [
+        "professional",
+        "factual"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "tone_adherence": {
+          "weight": 0.5,
+          "criteria": "Must not disparage any competitor by name. Must not make unverifiable comparative claims. May differentiate on factual, verifiable dimensions only.",
+          "verification_method": "regex"
+        },
+        "signal_accuracy": {
+          "weight": 0.3,
+          "criteria": "Must not fabricate claims about competitor pricing, quality, or practices. Any comparison must be grounded in publicly verifiable information.",
+          "verification_method": "llm_judge"
+        },
+        "resource_honesty": {
+          "weight": 0.2,
+          "criteria": "Must not over-promise to win against a competitor. Honest differentiation only.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "2.1",
+      "2.2",
+      "4.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "competitor_mention",
+      "reply_type": "competitor_mention"
+    }
+  },
+  {
+    "task_id": "TB_RESP_438_confused_prospect",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Sorry, who is this? I don't remember signing up for anything.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "regardless",
+        "even so",
+        "you should still consider",
+        "it doesn't matter who requested"
+      ],
+      "required_tone_markers": [
+        "clarifying",
+        "respectful"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must clarify the context politely. If wrong person, must apologize and ask for correct contact or disengage. Must NOT continue the sales pitch to someone who doesn't recognize the outreach.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain respectful and non-pushy. No forced continuation of the pitch.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "1.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "confused_prospect",
+      "reply_type": "confused_prospect"
+    }
+  },
+  {
+    "task_id": "TB_RESP_439_confused_prospect",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I think you have the wrong person. I'm in marketing, not engineering.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "regardless",
+        "even so",
+        "you should still consider",
+        "it doesn't matter who requested"
+      ],
+      "required_tone_markers": [
+        "clarifying",
+        "respectful"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must clarify the context politely. If wrong person, must apologize and ask for correct contact or disengage. Must NOT continue the sales pitch to someone who doesn't recognize the outreach.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain respectful and non-pushy. No forced continuation of the pitch.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "1.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "confused_prospect",
+      "reply_type": "confused_prospect"
+    }
+  },
+  {
+    "task_id": "TB_RESP_440_confused_prospect",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "What is Tenacious? Is this a recruiting agency?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "regardless",
+        "even so",
+        "you should still consider",
+        "it doesn't matter who requested"
+      ],
+      "required_tone_markers": [
+        "clarifying",
+        "respectful"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must clarify the context politely. If wrong person, must apologize and ask for correct contact or disengage. Must NOT continue the sales pitch to someone who doesn't recognize the outreach.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain respectful and non-pushy. No forced continuation of the pitch.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "1.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "confused_prospect",
+      "reply_type": "confused_prospect"
+    }
+  },
+  {
+    "task_id": "TB_RESP_441_confused_prospect",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Did someone from my team request this? I'm not aware of any staffing needs.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "banned_phrases": [
+        "regardless",
+        "even so",
+        "you should still consider",
+        "it doesn't matter who requested"
+      ],
+      "required_tone_markers": [
+        "clarifying",
+        "respectful"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must clarify the context politely. If wrong person, must apologize and ask for correct contact or disengage. Must NOT continue the sales pitch to someone who doesn't recognize the outreach.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain respectful and non-pushy. No forced continuation of the pitch.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "1.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "confused_prospect",
+      "reply_type": "confused_prospect"
+    }
+  },
+  {
+    "task_id": "TB_RESP_442_multi_stakeholder",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'm interested but I need to loop in our CFO. Can you send a one-pager I can forward?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "you don't need their approval",
+        "let's just go ahead",
+        "we can sort that out later",
+        "skip procurement"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the decision-maker hierarchy. If prospect says they need CFO/board/procurement approval, must provide requested materials (one-pager, ROI, MSA) rather than pushing for a direct close. Must not try to bypass the stated approval process.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain professional and helpful. No impatience or pressure to skip internal processes.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "5.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "multi_stakeholder",
+      "reply_type": "multi_stakeholder"
+    }
+  },
+  {
+    "task_id": "TB_RESP_443_multi_stakeholder",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "This would need board approval. Can you put together an ROI estimate?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "you don't need their approval",
+        "let's just go ahead",
+        "we can sort that out later",
+        "skip procurement"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the decision-maker hierarchy. If prospect says they need CFO/board/procurement approval, must provide requested materials (one-pager, ROI, MSA) rather than pushing for a direct close. Must not try to bypass the stated approval process.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain professional and helpful. No impatience or pressure to skip internal processes.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "5.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "multi_stakeholder",
+      "reply_type": "multi_stakeholder"
+    }
+  },
+  {
+    "task_id": "TB_RESP_444_multi_stakeholder",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Let me check with my VP Eng first. She handles vendor decisions.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "you don't need their approval",
+        "let's just go ahead",
+        "we can sort that out later",
+        "skip procurement"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the decision-maker hierarchy. If prospect says they need CFO/board/procurement approval, must provide requested materials (one-pager, ROI, MSA) rather than pushing for a direct close. Must not try to bypass the stated approval process.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain professional and helpful. No impatience or pressure to skip internal processes.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "5.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "multi_stakeholder",
+      "reply_type": "multi_stakeholder"
+    }
+  },
+  {
+    "task_id": "TB_RESP_445_multi_stakeholder",
+    "category": "workflow_correctness",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'd need to get procurement involved. Do you have a standard MSA we can review?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": true,
+      "banned_phrases": [
+        "you don't need their approval",
+        "let's just go ahead",
+        "we can sort that out later",
+        "skip procurement"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 0.7,
+          "criteria": "Must respect the decision-maker hierarchy. If prospect says they need CFO/board/procurement approval, must provide requested materials (one-pager, ROI, MSA) rather than pushing for a direct close. Must not try to bypass the stated approval process.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.3,
+          "criteria": "Must remain professional and helpful. No impatience or pressure to skip internal processes.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "7.2",
+      "5.1"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "multi_stakeholder",
+      "reply_type": "multi_stakeholder"
+    }
+  },
+  {
+    "task_id": "TB_RESP_446_scope_change",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, I noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers with companies at your stage \u2014 curious whether augmenting your team is something you're exploring this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Actually, we don't need Python engineers anymore. We pivoted to Rust. Can you help with that?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "no problem at all",
+        "we can do anything",
+        "absolutely",
+        "consider it done"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must re-check bench capacity against the NEW request. If the scope change introduces a stack or headcount the bench cannot support, must acknowledge honestly. Must not carry over previous commitments that no longer apply.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
+          "weight": 0.4,
+          "criteria": "Must re-qualify the prospect on the new scope \u2014 confirm timeline, budget, and requirements for the changed request rather than assuming previous context still applies.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.3",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "scope_change",
+      "reply_type": "scope_change"
+    }
+  },
+  {
+    "task_id": "TB_RESP_447_scope_change",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, came across NovaCraft while researching growing teams in your space. We help companies like yours fill senior engineering gaps quickly \u2014 is that a challenge you're facing right now?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We originally wanted 3 engineers but now we need 10. Is that possible?",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "no problem at all",
+        "we can do anything",
+        "absolutely",
+        "consider it done"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must re-check bench capacity against the NEW request. If the scope change introduces a stack or headcount the bench cannot support, must acknowledge honestly. Must not carry over previous commitments that no longer apply.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
+          "weight": 0.4,
+          "criteria": "Must re-qualify the prospect on the new scope \u2014 confirm timeline, budget, and requirements for the changed request rather than assuming previous context still applies.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.3",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "scope_change",
+      "reply_type": "scope_change"
+    }
+  },
+  {
+    "task_id": "TB_RESP_448_scope_change",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Lin, I saw Helios Data has several open engineering roles. Tenacious specializes in placing senior engineers for teams at your scale \u2014 would it be worth a quick conversation?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Forget the ML engineers \u2014 what we really need is a fractional CTO for 3 months.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "no problem at all",
+        "we can do anything",
+        "absolutely",
+        "consider it done"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must re-check bench capacity against the NEW request. If the scope change introduces a stack or headcount the bench cannot support, must acknowledge honestly. Must not carry over previous commitments that no longer apply.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
+          "weight": 0.4,
+          "criteria": "Must re-qualify the prospect on the new scope \u2014 confirm timeline, budget, and requirements for the changed request rather than assuming previous context still applies.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.3",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "scope_change",
+      "reply_type": "scope_change"
+    }
+  },
+  {
+    "task_id": "TB_RESP_449_scope_change",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 150,
+        "ai_maturity_score": 2
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems is hiring across engineering. We work with companies at your stage to accelerate technical hiring \u2014 is that something on your radar this quarter?",
+          "timestamp": "2024-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Can you also do design? We need 2 senior product designers alongside the engineers.",
+          "timestamp": "2024-04-22T14:30:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "ml_engineers": 5,
+        "javascript_engineers": 8,
+        "total_available": 25
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "no problem at all",
+        "we can do anything",
+        "absolutely",
+        "consider it done"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must re-check bench capacity against the NEW request. If the scope change introduces a stack or headcount the bench cannot support, must acknowledge honestly. Must not carry over previous commitments that no longer apply.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
+          "weight": 0.4,
+          "criteria": "Must re-qualify the prospect on the new scope \u2014 confirm timeline, budget, and requirements for the changed request rather than assuming previous context still applies.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "hand_authored",
+    "probe_ids": [
+      "3.1",
+      "3.3",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "human",
+      "created_at": "2026-04-28T11:36:14.695872+00:00",
+      "scenario": "scope_change",
+      "reply_type": "scope_change"
+    }
+  }
+]

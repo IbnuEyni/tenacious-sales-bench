@@ -1,119 +1,149 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Tenacious-Bench Task Schema",
+  "title": "Tenacious-Bench Task Schema v0.2",
+  "description": "Machine-verifiable evaluation task for B2B sales agent benchmarking",
   "type": "object",
-  "required": ["task_id", "category", "input", "expected_behavior", "scoring_rubric"],
+  "required": ["task_id", "category", "difficulty", "input", "expected_behavior", "scoring_rubric", "source_mode", "probe_ids"],
+  "additionalProperties": false,
   "properties": {
     "task_id": {
       "type": "string",
-      "description": "Unique identifier for the task"
+      "pattern": "^TB_[A-Z]+_[0-9]{3}_[a-z0-9_]+$",
+      "description": "Unique identifier: TB_{SOURCE}_{NUM}_{slug}"
     },
     "category": {
       "type": "string",
       "enum": ["signal_grounding", "tone_consistency", "resource_honesty", "workflow_correctness"],
-      "description": "Primary failure mode being tested"
+      "description": "Primary failure dimension being tested"
     },
     "difficulty": {
-      "type": "string", 
+      "type": "string",
       "enum": ["easy", "medium", "hard"],
       "description": "Task complexity level"
     },
     "input": {
       "type": "object",
-      "required": ["prospect_data"],
+      "required": ["prospect_data", "bench_state"],
+      "additionalProperties": false,
       "properties": {
         "prospect_data": {
           "type": "object",
+          "required": ["company_name", "contact_name", "contact_title"],
           "properties": {
-            "company_name": {"type": "string"},
-            "contact_name": {"type": "string"},
-            "contact_title": {"type": "string"},
+            "company_name": {"type": "string", "minLength": 1},
+            "contact_name": {"type": "string", "minLength": 1},
+            "contact_title": {"type": "string", "minLength": 1},
             "contact_email": {"type": "string"}
-          }
+          },
+          "additionalProperties": false
         },
         "signal_brief": {
           "type": "object",
-          "description": "Enrichment data about the prospect"
+          "description": "Enrichment data about the prospect",
+          "properties": {
+            "funding_detected": {"type": "boolean"},
+            "funding_amount": {"type": ["string", "null"]},
+            "funding_date": {"type": "string"},
+            "ai_maturity_score": {"type": ["integer", "null"], "minimum": 0, "maximum": 3},
+            "hiring_velocity": {"type": "string", "enum": ["low", "medium", "high"]},
+            "layoff_detected": {"type": "boolean"},
+            "layoff_percentage": {"type": "number", "minimum": 0, "maximum": 100},
+            "employee_count": {"type": "integer", "minimum": 1},
+            "tech_stack": {"type": "array", "items": {"type": "string"}},
+            "open_roles": {"type": "integer", "minimum": 0},
+            "crunchbase_found": {"type": "boolean"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "signal_age_days": {"type": "integer", "minimum": 0},
+            "cto_tenure_days": {"type": "integer", "minimum": 0}
+          }
         },
         "conversation_history": {
           "type": "array",
           "items": {
             "type": "object",
+            "required": ["role", "message"],
             "properties": {
               "role": {"type": "string", "enum": ["agent", "prospect"]},
-              "message": {"type": "string"},
+              "message": {"type": "string", "minLength": 1},
               "timestamp": {"type": "string"}
-            }
+            },
+            "additionalProperties": false
           }
         },
         "bench_state": {
           "type": "object",
-          "description": "Current availability of Tenacious resources"
+          "required": ["total_available"],
+          "properties": {
+            "total_available": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": true
         }
       }
     },
     "expected_behavior": {
       "type": "object",
+      "minProperties": 1,
       "properties": {
         "should_acknowledge_gaps": {"type": "boolean"},
         "should_use_interrogative": {"type": "boolean"},
-        "max_subject_length": {"type": "integer"},
+        "should_flag_staleness": {"type": "boolean"},
+        "should_include_timezone": {"type": "boolean"},
+        "should_qualify_before_booking": {"type": "boolean"},
+        "max_subject_length": {"type": "integer", "minimum": 1},
         "required_tone_markers": {"type": "array", "items": {"type": "string"}},
-        "banned_phrases": {"type": "array", "items": {"type": "string"}}
+        "banned_phrases": {"type": "array", "items": {"type": "string"}},
+        "required_fields_in_output": {"type": "array", "items": {"type": "string"}}
       }
     },
     "scoring_rubric": {
       "type": "object",
-      "required": ["dimensions"],
+      "required": ["dimensions", "pass_threshold"],
       "properties": {
         "dimensions": {
           "type": "object",
-          "properties": {
-            "signal_accuracy": {
+          "minProperties": 1,
+          "patternProperties": {
+            "^(signal_accuracy|tone_adherence|resource_honesty|workflow_correctness)$": {
               "type": "object",
+              "required": ["weight", "criteria", "verification_method"],
               "properties": {
                 "weight": {"type": "number", "minimum": 0, "maximum": 1},
-                "criteria": {"type": "string"},
+                "criteria": {"type": "string", "minLength": 10},
                 "verification_method": {"type": "string", "enum": ["regex", "llm_judge", "schema_check"]}
-              }
-            },
-            "tone_adherence": {
-              "type": "object", 
-              "properties": {
-                "weight": {"type": "number", "minimum": 0, "maximum": 1},
-                "criteria": {"type": "string"},
-                "verification_method": {"type": "string", "enum": ["regex", "llm_judge", "schema_check"]}
-              }
-            },
-            "resource_honesty": {
-              "type": "object",
-              "properties": {
-                "weight": {"type": "number", "minimum": 0, "maximum": 1}, 
-                "criteria": {"type": "string"},
-                "verification_method": {"type": "string", "enum": ["regex", "llm_judge", "schema_check"]}
-              }
-            },
-            "workflow_correctness": {
-              "type": "object",
-              "properties": {
-                "weight": {"type": "number", "minimum": 0, "maximum": 1},
-                "criteria": {"type": "string"},
-                "verification_method": {"type": "string", "enum": ["regex", "llm_judge", "schema_check"]}
-              }
+              },
+              "additionalProperties": false
             }
-          }
+          },
+          "additionalProperties": false
+        },
+        "pass_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.7
         }
       }
     },
     "source_mode": {
       "type": "string",
-      "enum": ["trace_derived", "programmatic", "multi_llm_synthesis", "hand_authored"],
-      "description": "How this task was generated"
+      "enum": ["trace_derived", "programmatic", "multi_llm_synthesis", "hand_authored"]
     },
     "probe_ids": {
       "type": "array",
-      "items": {"type": "string"},
-      "description": "Related probe IDs from Week 10 library"
+      "items": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+      "minItems": 1,
+      "description": "Week 10 probe IDs this task derives from"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "author": {"type": "string"},
+        "created_at": {"type": "string"},
+        "trace_ids": {"type": "array", "items": {"type": "string"}},
+        "generation_model": {"type": "string"},
+        "judge_model": {"type": "string"},
+        "judge_score": {"type": "number", "minimum": 1, "maximum": 5}
+      }
     }
   }
 }
