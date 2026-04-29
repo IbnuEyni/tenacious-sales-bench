@@ -2,6 +2,25 @@
 
 A domain-specific benchmark for evaluating B2B sales agents, built from real failure analysis of the Tenacious Conversion Engine.
 
+## Grader Navigation
+
+If you are grading this submission, here is the direct path to each deliverable:
+
+| Rubric Criterion | File |
+|-----------------|------|
+| Audit Memo | [`dataset/audit_memo.md`](dataset/audit_memo.md) |
+| Gap Identification with Week 10 Evidence | [`dataset/audit_memo.md`](dataset/audit_memo.md) + [`methodology.md`](methodology.md) |
+| Scoring Evaluator | [`evaluation/scoring_evaluator.py`](evaluation/scoring_evaluator.py) |
+| Generation Pipeline, Routing and Judge Filter | [`generation_scripts/README.md`](generation_scripts/README.md) |
+| Datasheet (Gebru + Pushkarna) | [`datasheet.md`](datasheet.md) |
+| Methodology Rationale | [`methodology.md`](methodology.md) |
+| Synthesis Memos | [`synthesis_memos/`](synthesis_memos/) (8 memos, 01–08) |
+| Inter-Rater Agreement | [`inter_rater_agreement.md`](inter_rater_agreement.md) |
+| Week 10 Artifacts | [`week10-artifacts/`](week10-artifacts/) |
+| Interim Report | [`interim_report.md`](interim_report.md) |
+
+---
+
 ## The Problem
 
 Existing benchmarks (τ²-Bench, AgentBench) fail to evaluate critical dimensions of B2B sales work:

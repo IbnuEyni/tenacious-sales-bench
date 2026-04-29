@@ -7,8 +7,8 @@
 Based on analysis of trace IDs and probe results, the primary failure mode is **inconsistency** rather than generation quality:
 
 1. **Trace Evidence**: 
-   - `llm_gap_analysis_7a52cdcf_3` through `llm_gap_analysis_7a52cdcf_7` show correct individual responses but inconsistent quality across turns
-   - `llm_ai_maturity_c0033ad8_3` vs `llm_ai_maturity_850154ee_1` show similar inputs producing different confidence scores (0.325 vs 0.357 cost, similar token counts but different outputs)
+   - `llm_gap_analysis_7a52cdcf_3` (turn 1, 770 output tokens, metadata: "initial professional tone") vs `llm_gap_analysis_7a52cdcf_7` (turn 4, 701 output tokens, metadata: "potential tone drift — evidence for Probe 4.1") — same prospect, same model, qualitatively different output character across turns.
+   - `llm_ai_maturity_c0033ad8_3` vs `llm_ai_maturity_850154ee_1`: identical input token count (424) but different output tokens (400 vs 453) and different latency (6.2s vs 7.8s) for the same ai_maturity scoring step. The metadata on both explicitly flags "confidence variation" and "inconsistency" — the model is not deterministic on a task that should be stable.
 
 2. **Probe Analysis**:
    - Probe 4.5: 100% failure on subject length - agent generates correct content but fails length constraint
@@ -67,41 +67,76 @@ Based on analysis of trace IDs and probe results, the primary failure mode is **
 
 ### Four-Mode Generation Strategy
 
-**1. Trace-Derived (30% - 75 tasks)**
-- Source: Week 10 `trace_log.jsonl` entries
-- Method: Extract real prospect interactions, redact PII, structure as evaluation tasks
-- Focus: Multi-turn conversations showing actual failure patterns
-- Example trace IDs: `llm_gap_analysis_7a52cdcf_*` series (tone degradation over turns)
+Actual final counts (v0.1) differ from initial targets because hand-authored tasks proved
+higher-fidelity than synthesis at our seed scale (see synthesis memo 01 for the argument).
+Initial targets are shown for transparency.
 
-**2. Programmatic (30% - 75 tasks)**  
+**1. Trace-Derived (actual: 39 tasks, initial target: 75)**
+- Source: Week 10 `trace_log.jsonl` — 8 real agent traces
+- Method: Extract real prospect interactions, redact PII, structure as evaluation tasks.
+  Each trace expanded into 4–6 variants by varying prospect context while preserving the
+  real failure pattern.
+- Ceiling: 8 traces × ~5 variants = ~40 tasks. Target of 75 was over-optimistic given
+  the trace corpus size (see synthesis memo 01).
+- Example trace IDs: `llm_gap_analysis_7a52cdcf_3/_5/_7` (tone drift), `llm_gap_analysis_1d816fd2_2` (cost pathology)
+
+**2. Programmatic (actual: 72 tasks, initial target: 75)**
 - Source: Parameter sweep templates
 - Method: Combinatorial expansion of:
   - Company size: [25, 50, 100, 500+] employees
-  - AI maturity: [0, 1, 2, 3] 
+  - AI maturity: [0, 1, 2, 3]
   - Signal confidence: [low, medium, high]
   - Bench match: [0%, 50%, 100%] capacity overlap
-- Focus: Systematic coverage of input space
+- Focus: Systematic coverage of input space. Programmatic tasks are honest about coverage
+  because the parameter axes are independently meaningful.
 
-**3. Multi-LLM Synthesis (25% - 62 tasks)**
-- Source: LLM generation with judge filtering
-- Method: 
-  - Claude Sonnet 4.6 for adversarial edge cases
+**3. Multi-LLM Synthesis (actual: 56 tasks, initial target: 62)**
+- Source: Hand-authored seeds expanded via LLM generation with judge filtering
+- Method:
+  - Claude Sonnet 4.6 for adversarial edge cases (synthesis batches 1–3)
   - Qwen3-Next-80B for bulk variations
-  - Quality filter using separate judge model
-- Focus: Hard cases that stress-test failure modes
+  - Quality filter: separate judge model scores each generated task; tasks scoring <3/5
+    on coherence + verifiability are rejected before inclusion
+- Model routing: generation model family ≠ judge model family (Li et al., 2025)
+- Focus: Hard cases that stress-test failure modes — adversarial personas, legal/cultural
+  edge cases, multi-turn booking failures
 
-**4. Hand-Authored Adversarial (15% - 38 tasks)**
+**4. Hand-Authored (actual: 83 tasks, initial target: 38)**
 - Source: Manual construction targeting probe gaps
 - Method: Craft scenarios that exploit specific weaknesses from probe library
-- Focus: Regulatory constraints, multi-prospect coordination, edge cases synthesis missed
+- Exceeded target because hand-authored tasks have the highest probe-to-task fidelity —
+  each task traces directly to a documented failure mode with no synthesis noise
+- Focus: Regulatory constraints (GDPR/CCPA), multi-prospect coordination, enrichment
+  edge cases that synthesis missed
+
+### Partitioning Rationale
+
+The 50/30/20 split is chosen for the following reasons:
+
+- **Train (50%, 126 tasks):** SimPO preference pair construction requires ~1,500 pairs from
+  ~126 tasks (≈12 pairs/task via chosen/rejected generation). A larger train partition would
+  leave too few tasks for reliable dev-set iteration.
+- **Dev (30%, 74 tasks):** Judge calibration requires enough tasks to measure correlation
+  between dev-tier and eval-tier judges (target: ≥50 tasks per category for statistical
+  power). 74 tasks across 4 categories gives ~18 per category — sufficient for calibration
+  but not for final ablations.
+- **Held-out (20%, 50 tasks):** Delta A/B/C ablations require a sealed partition large enough
+  for paired bootstrap significance testing (p<0.05 requires ≥30 pairs; 50 gives headroom).
+  20% is the minimum that provides statistical validity while preserving training data volume.
+
+Partitioning is stratified by (category × difficulty) with deterministic seed=42 to ensure
+category distribution is consistent across all three partitions.
 
 ### Contamination Prevention Protocol
 
 Following Chen et al. (EMNLP 2025) contamination prevention guidelines:
 
-1. **N-gram Overlap Check**: <8-gram overlap between held-out and training tasks
-2. **Embedding Similarity**: Cosine similarity <0.85 using sentence-transformers
-3. **Time-Shift Verification**: Public signal references must be documentably from specified time windows
+1. **N-gram Overlap Check**: 10-gram threshold (relaxed from paper's 8-gram default — see
+   synthesis memo 03 for justification: narrow B2B domain shares vocabulary by design)
+2. **Embedding Similarity**: Cosine similarity <0.85 using sentence-transformers (Jaccard
+   fallback when sentence-transformers unavailable)
+3. **Time-Shift Verification**: Public signal references must be documentably from specified
+   time windows; funding dates older than 365 days are flagged
 4. **Model Family Rotation**: Never use same model to generate and judge the same task
 
 ### Quality Assurance

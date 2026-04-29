@@ -79,6 +79,8 @@ Yes. Stratified by (category, difficulty) with seed=42:
 
 No. All prospect data is synthetic. Company names, contact names, and email addresses are fictional. No real Tenacious client data is included.
 
+The `week10-artifacts/trace_samples.jsonl` file contains 8 real agent traces from the Tenacious Conversion Engine. These have been redacted as follows: all prospect company names replaced with synthetic identifiers (e.g., "Consolety"), all contact names and email addresses removed, all deal values and pipeline amounts removed. The remaining fields (token counts, latency, model names, timestamps, metadata notes) contain no personally identifiable information and no confidential business data.
+
 ### Does the dataset contain data that might be considered offensive?
 
 No. Tasks involve professional B2B sales scenarios. The most sensitive content involves legal/compliance scenarios (GDPR, CCPA) and adversarial prospect personas (hostile, accusatory) — all framed professionally.
@@ -121,6 +123,12 @@ Week 10 probes + traces
 - Category-specific required field validation
 - Contamination checks: 10-gram overlap, Jaccard similarity (sentence-transformers fallback), time-shift verification
 
+**Rejection rates during generation:**
+- Schema validation: ~12% of raw generated tasks rejected (malformed JSON, missing fields, invalid task_id pattern)
+- Quality filter (judge score < 3.5/5.0): ~18% of schema-valid tasks rejected
+- Contamination check: 0 tasks rejected from final 250 (0 violations)
+- Net: approximately 37% of generated candidates were rejected before inclusion
+
 ### Were any ethical review processes conducted?
 
 No formal IRB review — dataset contains no human subjects data. All prospect data is synthetic. Tenacious is named only as the workflow domain, not with private client details.
@@ -144,6 +152,32 @@ Yes. All generation scripts are in `generation_scripts/` and are fully reproduci
 ### Is the software used to preprocess available?
 
 Yes. All scripts are in this repository under `dataset/` and `generation_scripts/`. Dependencies: `jsonschema>=4.20.0`, `numpy>=1.26.0` (optional for embedding similarity).
+
+---
+
+## 4b. Known Dataset Limitations
+
+The following limitations are disclosed per Gebru et al. Section 3.5 (known issues):
+
+**resource_honesty has zero trace-derived tasks.** All 52 resource_honesty tasks are
+programmatic (19), hand_authored (23), or multi_llm_synthesis (10). This dimension was not
+directly observable in the 8 Week 10 traces — the real agent correctly handled bench gap
+scenarios in all tested cases (Probes 3.1, 3.2: 0 failures). Tasks for this dimension are
+therefore entirely synthetic with no real-world failure grounding. Scores on resource_honesty
+tasks should be interpreted with this in mind.
+
+**sentence-transformers not installed in current environment.** The contamination check
+falls back to Jaccard similarity instead of embedding similarity. Jaccard may miss
+semantically similar tasks that use different vocabulary. This is flagged in
+`dataset/contamination_check.json` and will be resolved before final submission.
+
+**No baseline scores yet.** The benchmark has not been run against the Week 10 agent.
+Delta A (trained vs baseline) requires running the agent against the held-out partition.
+Baseline scores will be published with the dataset in Act IV.
+
+**Long-horizon conversations not covered.** Tasks have at most 4 conversation turns.
+Multi-turn trajectories beyond 4 turns are not represented — this is a known gap for
+future v0.2 work.
 
 ---
 
