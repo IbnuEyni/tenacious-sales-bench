@@ -1,110 +1,121 @@
 #!/usr/bin/env python3
 """
-Cost Tracking for Week 11 Tenacious-Bench
-Budget: $10 total
+Cost Tracking for Week 11 Tenacious-Bench.
+Budget: $10 total across 4 buckets.
 """
 
 import json
-import datetime
-from typing import Dict, List
-from dataclasses import dataclass, asdict
+import logging
+import threading
+from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
 
-@dataclass
+logger = logging.getLogger(__name__)
+
+BUDGET_TOTAL = 10.0
+BUCKET_LIMITS: dict[str, float] = {
+    "dataset_authoring": 5.0,
+    "training": 5.0,
+    "evaluation": 3.0,
+    "reserve": 2.0,
+}
+
+
+@dataclass(frozen=True)
 class CostEntry:
     timestamp: str
-    bucket: str  # dataset_authoring, training, evaluation, reserve
-    service: str  # openrouter, runpod, colab, etc.
+    bucket: str
+    service: str
     amount_usd: float
     purpose: str
     model_or_resource: str
 
+
 class CostTracker:
-    def __init__(self, budget_usd: float = 10.0):
-        self.budget_usd = budget_usd
-        self.entries: List[CostEntry] = []
-        self.load_existing()
-    
-    def log_cost(self, bucket: str, service: str, amount_usd: float, 
-                 purpose: str, model_or_resource: str):
-        """Log a new cost entry"""
+    def __init__(self, log_path: Path | str = "cost_log.json", budget_usd: float = BUDGET_TOTAL):
+        self._path = Path(log_path).resolve()
+        self._budget = budget_usd
+        self._lock = threading.Lock()
+        self._entries: list[CostEntry] = self._load()
+
+    def _load(self) -> list[CostEntry]:
+        if not self._path.exists():
+            return []
+        with open(self._path) as f:
+            return [CostEntry(**e) for e in json.load(f)]
+
+    def _save(self) -> None:
+        with open(self._path, "w") as f:
+            json.dump([asdict(e) for e in self._entries], f, indent=2)
+
+    def log(self, bucket: str, service: str, amount_usd: float,
+            purpose: str, model_or_resource: str) -> dict[str, Any]:
+        if bucket not in BUCKET_LIMITS:
+            raise ValueError(f"Invalid bucket '{bucket}'. Valid: {list(BUCKET_LIMITS)}")
+        if amount_usd <= 0:
+            raise ValueError("amount_usd must be positive")
+
         entry = CostEntry(
-            timestamp=datetime.datetime.utcnow().isoformat(),
+            timestamp=datetime.now(timezone.utc).isoformat(),
             bucket=bucket,
             service=service,
-            amount_usd=amount_usd,
+            amount_usd=round(amount_usd, 6),
             purpose=purpose,
-            model_or_resource=model_or_resource
+            model_or_resource=model_or_resource,
         )
-        self.entries.append(entry)
-        self.save()
-        
-        # Check budget
-        total_spent = self.get_total_spent()
-        remaining = self.budget_usd - total_spent
-        
-        print(f"💰 Cost logged: ${amount_usd:.4f} ({bucket})")
-        print(f"📊 Total spent: ${total_spent:.4f} / ${self.budget_usd:.2f}")
-        print(f"💳 Remaining: ${remaining:.4f}")
-        
-        if remaining < 0:
-            print("⚠️  BUDGET EXCEEDED!")
-        elif remaining < 1.0:
-            print("⚠️  Less than $1 remaining")
-    
-    def get_total_spent(self) -> float:
-        return sum(entry.amount_usd for entry in self.entries)
-    
-    def get_spending_by_bucket(self) -> Dict[str, float]:
-        buckets = {}
-        for entry in self.entries:
-            buckets[entry.bucket] = buckets.get(entry.bucket, 0) + entry.amount_usd
-        return buckets
-    
-    def save(self):
-        """Save cost log to JSON file"""
-        data = [asdict(entry) for entry in self.entries]
-        with open("cost_log.json", "w") as f:
-            json.dump(data, f, indent=2)
-    
-    def load_existing(self):
-        """Load existing cost log if it exists"""
-        try:
-            with open("cost_log.json", "r") as f:
-                data = json.load(f)
-                self.entries = [CostEntry(**entry) for entry in data]
-        except FileNotFoundError:
-            self.entries = []
-    
-    def print_summary(self):
-        """Print cost summary"""
-        total = self.get_total_spent()
-        by_bucket = self.get_spending_by_bucket()
-        
-        print(f"\n=== COST SUMMARY ===")
-        print(f"Total Spent: ${total:.4f} / ${self.budget_usd:.2f}")
-        print(f"Remaining: ${self.budget_usd - total:.4f}")
-        print(f"\nBy Bucket:")
-        for bucket, amount in by_bucket.items():
-            print(f"  {bucket}: ${amount:.4f}")
-        
-        print(f"\nRecent Entries:")
-        for entry in self.entries[-5:]:
-            print(f"  {entry.timestamp[:19]} | {entry.bucket} | ${entry.amount_usd:.4f} | {entry.purpose}")
+
+        with self._lock:
+            self._entries.append(entry)
+            self._save()
+
+        summary = self.summary()
+        bucket_spent = summary["by_bucket"].get(bucket, 0)
+        bucket_limit = BUCKET_LIMITS[bucket]
+
+        if summary["remaining"] < 0:
+            logger.warning("BUDGET EXCEEDED: spent $%.4f / $%.2f", summary["total_spent"], self._budget)
+        if bucket_spent > bucket_limit:
+            logger.warning("Bucket '%s' over limit: $%.4f / $%.2f", bucket, bucket_spent, bucket_limit)
+
+        logger.info(
+            "Cost: $%.4f (%s) | Total: $%.4f / $%.2f | Remaining: $%.4f",
+            amount_usd, bucket, summary["total_spent"], self._budget, summary["remaining"],
+        )
+        return summary
+
+    def summary(self) -> dict[str, Any]:
+        with self._lock:
+            total = sum(e.amount_usd for e in self._entries)
+            by_bucket: dict[str, float] = {}
+            for e in self._entries:
+                by_bucket[e.bucket] = by_bucket.get(e.bucket, 0) + e.amount_usd
+            return {
+                "total_spent": round(total, 6),
+                "budget": self._budget,
+                "remaining": round(self._budget - total, 6),
+                "by_bucket": {k: round(v, 6) for k, v in by_bucket.items()},
+                "entry_count": len(self._entries),
+            }
+
+    def print_summary(self) -> None:
+        s = self.summary()
+        print(f"\n{'='*40}")
+        print(f"COST SUMMARY")
+        print(f"{'='*40}")
+        print(f"Spent:     ${s['total_spent']:.4f} / ${s['budget']:.2f}")
+        print(f"Remaining: ${s['remaining']:.4f}")
+        for bucket, amount in s["by_bucket"].items():
+            limit = BUCKET_LIMITS.get(bucket, 0)
+            print(f"  {bucket}: ${amount:.4f} / ${limit:.2f}")
+
 
 def main():
-    """Example usage"""
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
     tracker = CostTracker()
-    
-    # Example cost entries
-    tracker.log_cost(
-        bucket="dataset_authoring",
-        service="openrouter", 
-        amount_usd=0.15,
-        purpose="Multi-LLM synthesis for adversarial tasks",
-        model_or_resource="qwen3-next-80b"
-    )
-    
     tracker.print_summary()
+
 
 if __name__ == "__main__":
     main()
