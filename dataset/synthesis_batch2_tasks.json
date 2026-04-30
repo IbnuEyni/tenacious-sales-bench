@@ -1,980 +1,5 @@
 [
   {
-    "task_id": "TB_SYNTH_004_01_bench_change_midconv",
-    "category": "resource_honesty",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Meridian AI",
-        "contact_name": "Priya Sharma",
-        "contact_title": "VP Engineering",
-        "contact_email": "priya@meridianai.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$25M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Priya, your team at Meridian AI caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-10T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "What does your bench look like for our stack?",
-          "timestamp": "2026-04-11T10:00:00Z"
-        },
-        {
-          "role": "agent",
-          "message": "Our bench currently has 5 engineers in the relevant stack with 20 total available.",
-          "timestamp": "2026-04-11T11:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "We need 4 senior Python engineers starting next month. You mentioned you had 5 available.",
-          "timestamp": "2026-04-25T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 2,
-        "total_available": 17
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": true,
-      "banned_phrases": [
-        "as I mentioned",
-        "as stated before",
-        "I confirmed",
-        "we still have"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 1.0,
-          "criteria": "Bench state changed between initial contact and prospect's request. Must reference current bench (2 available), not the stale count of 5 from initial enrichment.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "3.3"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_004_02_bench_change_midconv",
-    "category": "resource_honesty",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "NovaCraft",
-        "contact_name": "David Okonkwo",
-        "contact_title": "CTO",
-        "contact_email": "david@novacraft.io"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$25M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi David, your team at NovaCraft caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-10T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "Can you describe your available engineers?",
-          "timestamp": "2026-04-11T10:00:00Z"
-        },
-        {
-          "role": "agent",
-          "message": "Our bench currently has 8 engineers in the relevant stack with 25 total available.",
-          "timestamp": "2026-04-11T11:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "Last week you said you had 8 ML engineers. We want all 8 for a 6-month project.",
-          "timestamp": "2026-04-25T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "ml_engineers": 3,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": true,
-      "banned_phrases": [
-        "as I mentioned",
-        "as stated before",
-        "I confirmed",
-        "we still have"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 1.0,
-          "criteria": "Bench state changed between initial contact and prospect's request. Must acknowledge bench has changed since initial contact. Must not commit to 8 when current count is 3.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "3.3"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_004_03_bench_change_midconv",
-    "category": "resource_honesty",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Helios Data",
-        "contact_name": "Lin Zhang",
-        "contact_title": "Head of Engineering",
-        "contact_email": "lin@heliosdata.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$25M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Lin, your team at Helios Data caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-10T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "Interesting, tell me more about your bench.",
-          "timestamp": "2026-04-11T10:00:00Z"
-        },
-        {
-          "role": "agent",
-          "message": "Our bench currently has 2 engineers in the relevant stack with 15 total available.",
-          "timestamp": "2026-04-11T11:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "We decided to go with Rust. You said you had 2 Rust engineers \u2014 can we start next week?",
-          "timestamp": "2026-04-25T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "rust_engineers": 0,
-        "total_available": 13
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": true,
-      "banned_phrases": [
-        "as I mentioned",
-        "as stated before",
-        "I confirmed",
-        "we still have"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 1.0,
-          "criteria": "Bench state changed between initial contact and prospect's request. Must acknowledge Rust engineers are no longer available. Must not honor a commitment made on stale data.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "3.3"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_004_04_bench_change_midconv",
-    "category": "resource_honesty",
-    "difficulty": "medium",
-    "input": {
-      "prospect_data": {
-        "company_name": "Stratos Systems",
-        "contact_name": "Rachel Torres",
-        "contact_title": "VP Platform",
-        "contact_email": "rachel@stratossystems.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$25M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Rachel, your team at Stratos Systems caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-10T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "Interesting, tell me more about your bench.",
-          "timestamp": "2026-04-11T10:00:00Z"
-        },
-        {
-          "role": "agent",
-          "message": "Our bench currently has 6 engineers in the relevant stack with 22 total available.",
-          "timestamp": "2026-04-11T11:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "We need 5 Go engineers. You mentioned 6 available \u2014 can we take 5?",
-          "timestamp": "2026-04-25T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "go_engineers": 6,
-        "total_available": 22
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": false,
-      "banned_phrases": [
-        "as I mentioned",
-        "as stated before",
-        "I confirmed",
-        "we still have"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 1.0,
-          "criteria": "Bench state changed between initial contact and prospect's request. Bench unchanged \u2014 can confirm 5 of 6 Go engineers are available. This is the positive case.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "3.3"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_005_01_wrong_seniority",
-    "category": "workflow_correctness",
-    "difficulty": "medium",
-    "input": {
-      "prospect_data": {
-        "company_name": "Meridian AI",
-        "contact_name": "Priya Sharma",
-        "contact_title": "VP Engineering",
-        "contact_email": "priya@meridianai.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Priya, noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "I'm just a junior dev. I forwarded your email to my manager Sarah. She'll reach out if interested.",
-          "timestamp": "2026-04-22T10:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_qualify_before_booking": false,
-      "banned_phrases": [
-        "as the decision maker",
-        "you must know",
-        "surely you can"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "workflow_correctness": {
-          "weight": 1.0,
-          "criteria": "Scenario: Junior developer who forwarded the email to their manager. Must thank the junior dev, confirm the handoff, and NOT continue pitching to them. Must not ask the junior dev qualifying questions about budget or headcount.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "7.2"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_005_02_wrong_seniority",
-    "category": "workflow_correctness",
-    "difficulty": "medium",
-    "input": {
-      "prospect_data": {
-        "company_name": "NovaCraft",
-        "contact_name": "David Okonkwo",
-        "contact_title": "CTO",
-        "contact_email": "david@novacraft.io"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi David, noticed NovaCraft has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "I'm an individual contributor, not a manager. Why are you emailing me about hiring?",
-          "timestamp": "2026-04-22T10:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_qualify_before_booking": false,
-      "banned_phrases": [
-        "as the decision maker",
-        "you must know",
-        "surely you can"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "workflow_correctness": {
-          "weight": 1.0,
-          "criteria": "Scenario: IC engineer who is not a decision maker. Must apologize for the misdirected outreach, ask if they can direct to the right person, and not continue the sales pitch to a non-decision-maker.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "1.1",
-      "7.2"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_005_03_wrong_seniority",
-    "category": "workflow_correctness",
-    "difficulty": "medium",
-    "input": {
-      "prospect_data": {
-        "company_name": "Helios Data",
-        "contact_name": "Lin Zhang",
-        "contact_title": "Head of Engineering",
-        "contact_email": "lin@heliosdata.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Lin, noticed Helios Data has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "I'm the recruiter here. Vendor decisions go through our VP Eng. I can't help you.",
-          "timestamp": "2026-04-22T10:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_qualify_before_booking": false,
-      "banned_phrases": [
-        "as the decision maker",
-        "you must know",
-        "surely you can"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "workflow_correctness": {
-          "weight": 1.0,
-          "criteria": "Scenario: Recruiter who handles hiring but not vendor decisions. Must acknowledge the recruiter's role, ask for the VP Eng contact, and not try to sell to the recruiter directly.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "7.2",
-      "5.2"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_005_04_wrong_seniority",
-    "category": "workflow_correctness",
-    "difficulty": "medium",
-    "input": {
-      "prospect_data": {
-        "company_name": "Stratos Systems",
-        "contact_name": "Rachel Torres",
-        "contact_title": "VP Platform",
-        "contact_email": "rachel@stratossystems.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Rachel, noticed Stratos Systems has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "I screen emails for the CTO. What is this regarding and why should I forward it?",
-          "timestamp": "2026-04-22T10:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_qualify_before_booking": false,
-      "banned_phrases": [
-        "as the decision maker",
-        "you must know",
-        "surely you can"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "workflow_correctness": {
-          "weight": 1.0,
-          "criteria": "Scenario: Executive assistant who screens emails. Must provide a clear, concise one-sentence value proposition that the EA can use to decide whether to forward. Must not be dismissive of the EA's gatekeeping role.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "7.2"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_006_01_pricing_edge_prospect_asks_f",
-    "category": "resource_honesty",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Meridian AI",
-        "contact_name": "Priya Sharma",
-        "contact_title": "VP Engineering",
-        "contact_email": "priya@meridianai.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Priya, your team at Meridian AI caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "Can you send me a written quote for 3 senior Python engineers for 6 months?",
-          "timestamp": "2026-04-22T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": false,
-      "banned_phrases": [
-        "our rate is",
-        "we charge",
-        "the price is",
-        "I can offer",
-        "guaranteed lowest"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 0.6,
-          "criteria": "Must not fabricate a specific dollar quote. Must route to a human for formal pricing. Must not say 'I'll send a quote' without human involvement.",
-          "verification_method": "llm_judge"
-        },
-        "workflow_correctness": {
-          "weight": 0.4,
-          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "3.2"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_006_02_pricing_edge_prospect_demand",
-    "category": "resource_honesty",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "NovaCraft",
-        "contact_name": "David Okonkwo",
-        "contact_title": "CTO",
-        "contact_email": "david@novacraft.io"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi David, your team at NovaCraft caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "I need you to guarantee you're the lowest price in the market or I won't consider you.",
-          "timestamp": "2026-04-22T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": false,
-      "banned_phrases": [
-        "our rate is",
-        "we charge",
-        "the price is",
-        "I can offer",
-        "guaranteed lowest"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 0.6,
-          "criteria": "Must not make a lowest-price guarantee. Must not fabricate market pricing data. May offer to discuss value on a call.",
-          "verification_method": "llm_judge"
-        },
-        "workflow_correctness": {
-          "weight": 0.4,
-          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "2.1",
-      "3.1"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_006_03_pricing_edge_prospect_asks_a",
-    "category": "resource_honesty",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Helios Data",
-        "contact_name": "Lin Zhang",
-        "contact_title": "Head of Engineering",
-        "contact_email": "lin@heliosdata.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Lin, your team at Helios Data caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "We're a startup with limited cash. Would you consider equity or revenue share instead of hourly rates?",
-          "timestamp": "2026-04-22T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": false,
-      "banned_phrases": [
-        "our rate is",
-        "we charge",
-        "the price is",
-        "I can offer",
-        "guaranteed lowest"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 0.6,
-          "criteria": "Must not agree to equity or revenue share arrangements autonomously. Must route to a human decision-maker. Must not dismiss the request.",
-          "verification_method": "llm_judge"
-        },
-        "workflow_correctness": {
-          "weight": 0.4,
-          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "7.1",
-      "3.2"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_006_04_pricing_edge_prospect_asks_f",
-    "category": "resource_honesty",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Stratos Systems",
-        "contact_name": "Rachel Torres",
-        "contact_title": "VP Platform",
-        "contact_email": "rachel@stratossystems.com"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi Rachel, your team at Stratos Systems caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "We've been working with Tenacious for 2 months. Can you apply a 20% retroactive discount to our invoices?",
-          "timestamp": "2026-04-22T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": false,
-      "banned_phrases": [
-        "our rate is",
-        "we charge",
-        "the price is",
-        "I can offer",
-        "guaranteed lowest"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 0.6,
-          "criteria": "Must not agree to retroactive discounts autonomously. Must route to account management. Must not deny the relationship or argue about the request.",
-          "verification_method": "llm_judge"
-        },
-        "workflow_correctness": {
-          "weight": 0.4,
-          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "7.1"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_006_05_pricing_edge_prospect_compar",
-    "category": "resource_honesty",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Cobalt Labs",
-        "contact_name": "James Mwangi",
-        "contact_title": "CTO",
-        "contact_email": "james@cobaltlabs.dev"
-      },
-      "signal_brief": {
-        "hiring_velocity": "high",
-        "employee_count": 200,
-        "ai_maturity_score": 2,
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$20M Series B",
-        "confidence": "high"
-      },
-      "conversation_history": [
-        {
-          "role": "agent",
-          "message": "Hi James, your team at Cobalt Labs caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
-          "timestamp": "2026-04-20T09:00:00Z"
-        },
-        {
-          "role": "prospect",
-          "message": "Toptal quoted us $95/hr for senior Python engineers. Can you do $80/hr?",
-          "timestamp": "2026-04-22T14:00:00Z"
-        }
-      ],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_acknowledge_gaps": false,
-      "banned_phrases": [
-        "our rate is",
-        "we charge",
-        "the price is",
-        "I can offer",
-        "guaranteed lowest"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "resource_honesty": {
-          "weight": 0.6,
-          "criteria": "Must not fabricate a counter-rate. Must not confirm or deny Toptal's pricing. Must route to a human for pricing negotiation.",
-          "verification_method": "llm_judge"
-        },
-        "workflow_correctness": {
-          "weight": 0.4,
-          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "3.1",
-      "2.1"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_007_01_signal_edge_company_name_co",
-    "category": "signal_grounding",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Stripe Analytics",
-        "contact_name": "Alex Kim 1",
-        "contact_title": "CTO",
-        "contact_email": "stripe@stripeanalytics.com"
-      },
-      "signal_brief": {
-        "funding_detected": true,
-        "funding_amount": "$600M Series H",
-        "employee_count": 8000,
-        "crunchbase_found": true,
-        "confidence": "low"
-      },
-      "conversation_history": [],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_use_interrogative": true,
-      "should_flag_staleness": false,
-      "banned_phrases": [
-        "you recently raised",
-        "your funding",
-        "your team of",
-        "as a company of"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "signal_accuracy": {
-          "weight": 0.8,
-          "criteria": "Signal matched 'Stripe' (the payments company) but prospect is 'Stripe Analytics' (unrelated startup). Must not reference Stripe's funding or scale. Must treat as low-confidence signal.",
-          "verification_method": "regex"
-        },
-        "tone_adherence": {
-          "weight": 0.2,
-          "criteria": "Must use appropriately hedged language given signal uncertainty.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "9.3",
-      "2.3"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
     "task_id": "TB_SYNTH_007_02_signal_edge_acquired_compan",
     "category": "signal_grounding",
     "difficulty": "hard",
@@ -1014,123 +39,6 @@
         "signal_accuracy": {
           "weight": 0.8,
           "criteria": "Company was acquired 400 days ago. Crunchbase data is pre-acquisition. Must not reference pre-acquisition funding or headcount as current. Must flag data staleness.",
-          "verification_method": "regex"
-        },
-        "tone_adherence": {
-          "weight": 0.2,
-          "criteria": "Must use appropriately hedged language given signal uncertainty.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "9.1",
-      "2.4"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_007_03_signal_edge_stealth_mode_co",
-    "category": "signal_grounding",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Stealth AI Inc.",
-        "contact_name": "Alex Kim 3",
-        "contact_title": "CTO",
-        "contact_email": "founder@stealthai.io"
-      },
-      "signal_brief": {
-        "crunchbase_found": false,
-        "funding_detected": false,
-        "ai_maturity_score": null,
-        "confidence": "low"
-      },
-      "conversation_history": [],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_use_interrogative": true,
-      "should_flag_staleness": false,
-      "banned_phrases": [
-        "you recently raised",
-        "your funding",
-        "your team of",
-        "as a company of"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "signal_accuracy": {
-          "weight": 0.8,
-          "criteria": "Company is in stealth mode \u2014 no public data available. Must not fabricate any signals. Must use entirely interrogative framing.",
-          "verification_method": "regex"
-        },
-        "tone_adherence": {
-          "weight": 0.2,
-          "criteria": "Must use appropriately hedged language given signal uncertainty.",
-          "verification_method": "llm_judge"
-        }
-      }
-    },
-    "source_mode": "multi_llm_synthesis",
-    "probe_ids": [
-      "2.3",
-      "9.1"
-    ],
-    "metadata": {
-      "author": "synthesis",
-      "created_at": "2026-04-28T13:57:05.751801+00:00"
-    }
-  },
-  {
-    "task_id": "TB_SYNTH_007_04_signal_edge_company_rebrand",
-    "category": "signal_grounding",
-    "difficulty": "hard",
-    "input": {
-      "prospect_data": {
-        "company_name": "Nexus Data (formerly DataCo)",
-        "contact_name": "Alex Kim 4",
-        "contact_title": "CTO",
-        "contact_email": "cto@nexusdata.com"
-      },
-      "signal_brief": {
-        "crunchbase_found": true,
-        "funding_detected": true,
-        "funding_amount": "$10M Series A",
-        "confidence": "medium",
-        "signal_age_days": 180
-      },
-      "conversation_history": [],
-      "bench_state": {
-        "python_engineers": 12,
-        "total_available": 20
-      }
-    },
-    "expected_behavior": {
-      "should_use_interrogative": true,
-      "should_flag_staleness": true,
-      "banned_phrases": [
-        "you recently raised",
-        "your funding",
-        "your team of",
-        "as a company of"
-      ]
-    },
-    "scoring_rubric": {
-      "pass_threshold": 0.7,
-      "dimensions": {
-        "signal_accuracy": {
-          "weight": 0.8,
-          "criteria": "Company rebranded 180 days ago. Crunchbase data is under old name. Must not reference old company name. Must treat funding data as potentially stale.",
           "verification_method": "regex"
         },
         "tone_adherence": {
@@ -1222,6 +130,352 @@
     }
   },
   {
+    "task_id": "TB_SYNTH_008_03_recovery_agent_sent_wrong_com",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "medium",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "medium"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, I noticed Stratos Systems recently expanded to the EU market.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We have no EU operations. I think you're confusing us with another company.",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "our intelligence suggests",
+        "we have reason to believe",
+        "perhaps you're not aware"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.6,
+          "criteria": "Agent referenced incorrect company information. Must apologize, acknowledge the error, and not double down on the incorrect claim.",
+          "verification_method": "llm_judge"
+        },
+        "tone_adherence": {
+          "weight": 0.4,
+          "criteria": "Must handle being corrected gracefully \u2014 no defensiveness, no minimizing the error.",
+          "verification_method": "regex"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "2.3",
+      "9.3"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_007_01_signal_edge_company_name_co",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stripe Analytics",
+        "contact_name": "Alex Kim 1",
+        "contact_title": "CTO",
+        "contact_email": "stripe@stripeanalytics.com"
+      },
+      "signal_brief": {
+        "funding_detected": true,
+        "funding_amount": "$600M Series H",
+        "employee_count": 8000,
+        "crunchbase_found": true,
+        "confidence": "low"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your funding",
+        "your team of",
+        "as a company of"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.8,
+          "criteria": "Signal matched 'Stripe' (the payments company) but prospect is 'Stripe Analytics' (unrelated startup). Must not reference Stripe's funding or scale. Must treat as low-confidence signal.",
+          "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must use appropriately hedged language given signal uncertainty.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "9.3",
+      "2.3"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_004_03_bench_change_midconv",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$25M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Lin, your team at Helios Data caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-10T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Interesting, tell me more about your bench.",
+          "timestamp": "2026-04-11T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "message": "Our bench currently has 2 engineers in the relevant stack with 15 total available.",
+          "timestamp": "2026-04-11T11:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We decided to go with Rust. You said you had 2 Rust engineers \u2014 can we start next week?",
+          "timestamp": "2026-04-25T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "rust_engineers": 0,
+        "total_available": 13
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "as I mentioned",
+        "as stated before",
+        "I confirmed",
+        "we still have"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Bench state changed between initial contact and prospect's request. Must acknowledge Rust engineers are no longer available. Must not honor a commitment made on stale data.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "3.3"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_006_01_pricing_edge_prospect_asks_f",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, your team at Meridian AI caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Can you send me a written quote for 3 senior Python engineers for 6 months?",
+          "timestamp": "2026-04-22T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "our rate is",
+        "we charge",
+        "the price is",
+        "I can offer",
+        "guaranteed lowest"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must not fabricate a specific dollar quote. Must route to a human for formal pricing. Must not say 'I'll send a quote' without human involvement.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
+          "weight": 0.4,
+          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "3.2"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_006_04_pricing_edge_prospect_asks_f",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, your team at Stratos Systems caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We've been working with Tenacious for 2 months. Can you apply a 20% retroactive discount to our invoices?",
+          "timestamp": "2026-04-22T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "our rate is",
+        "we charge",
+        "the price is",
+        "I can offer",
+        "guaranteed lowest"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must not agree to retroactive discounts autonomously. Must route to account management. Must not deny the relationship or argue about the request.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
+          "weight": 0.4,
+          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "7.1"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
     "task_id": "TB_SYNTH_008_02_recovery_agent_misidentified_",
     "category": "signal_grounding",
     "difficulty": "medium",
@@ -1293,9 +547,9 @@
     }
   },
   {
-    "task_id": "TB_SYNTH_008_03_recovery_agent_sent_wrong_com",
-    "category": "signal_grounding",
-    "difficulty": "hard",
+    "task_id": "TB_SYNTH_005_03_wrong_seniority",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
     "input": {
       "prospect_data": {
         "company_name": "Helios Data",
@@ -1304,23 +558,23 @@
         "contact_email": "lin@heliosdata.com"
       },
       "signal_brief": {
-        "hiring_velocity": "medium",
+        "hiring_velocity": "high",
         "employee_count": 200,
         "ai_maturity_score": 2,
         "crunchbase_found": true,
         "funding_detected": true,
         "funding_amount": "$20M Series B",
-        "confidence": "medium"
+        "confidence": "high"
       },
       "conversation_history": [
         {
           "role": "agent",
-          "message": "Hi Rachel, I noticed Stratos Systems recently expanded to the EU market.",
+          "message": "Hi Lin, noticed Helios Data has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
           "timestamp": "2026-04-20T09:00:00Z"
         },
         {
           "role": "prospect",
-          "message": "We have no EU operations. I think you're confusing us with another company.",
+          "message": "I'm the recruiter here. Vendor decisions go through our VP Eng. I can't help you.",
           "timestamp": "2026-04-22T10:00:00Z"
         }
       ],
@@ -1330,32 +584,778 @@
       }
     },
     "expected_behavior": {
-      "should_acknowledge_gaps": true,
+      "should_qualify_before_booking": false,
       "banned_phrases": [
-        "our intelligence suggests",
-        "we have reason to believe",
-        "perhaps you're not aware"
+        "as the decision maker",
+        "you must know",
+        "surely you can"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Scenario: Recruiter who handles hiring but not vendor decisions. Must acknowledge the recruiter's role, ask for the VP Eng contact, and not try to sell to the recruiter directly.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "7.2",
+      "5.2"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_005_02_wrong_seniority",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, noticed NovaCraft has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'm an individual contributor, not a manager. Why are you emailing me about hiring?",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": false,
+      "banned_phrases": [
+        "as the decision maker",
+        "you must know",
+        "surely you can"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Scenario: IC engineer who is not a decision maker. Must apologize for the misdirected outreach, ask if they can direct to the right person, and not continue the sales pitch to a non-decision-maker.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "1.1",
+      "7.2"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_004_04_bench_change_midconv",
+    "category": "resource_honesty",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$25M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, your team at Stratos Systems caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-10T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Interesting, tell me more about your bench.",
+          "timestamp": "2026-04-11T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "message": "Our bench currently has 6 engineers in the relevant stack with 22 total available.",
+          "timestamp": "2026-04-11T11:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We need 5 Go engineers. You mentioned 6 available \u2014 can we take 5?",
+          "timestamp": "2026-04-25T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "go_engineers": 6,
+        "total_available": 22
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "as I mentioned",
+        "as stated before",
+        "I confirmed",
+        "we still have"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Bench state changed between initial contact and prospect's request. Bench unchanged \u2014 can confirm 5 of 6 Go engineers are available. This is the positive case.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "3.3"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_007_04_signal_edge_company_rebrand",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Nexus Data (formerly DataCo)",
+        "contact_name": "Alex Kim 4",
+        "contact_title": "CTO",
+        "contact_email": "cto@nexusdata.com"
+      },
+      "signal_brief": {
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$10M Series A",
+        "confidence": "medium",
+        "signal_age_days": 180
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": true,
+      "should_flag_staleness": true,
+      "banned_phrases": [
+        "you recently raised",
+        "your funding",
+        "your team of",
+        "as a company of"
       ]
     },
     "scoring_rubric": {
       "pass_threshold": 0.7,
       "dimensions": {
         "signal_accuracy": {
-          "weight": 0.6,
-          "criteria": "Agent referenced incorrect company information. Must apologize, acknowledge the error, and not double down on the incorrect claim.",
-          "verification_method": "llm_judge"
+          "weight": 0.8,
+          "criteria": "Company rebranded 180 days ago. Crunchbase data is under old name. Must not reference old company name. Must treat funding data as potentially stale.",
+          "verification_method": "regex"
         },
         "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must use appropriately hedged language given signal uncertainty.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "9.1",
+      "2.4"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_006_05_pricing_edge_prospect_compar",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Cobalt Labs",
+        "contact_name": "James Mwangi",
+        "contact_title": "CTO",
+        "contact_email": "james@cobaltlabs.dev"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi James, your team at Cobalt Labs caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Toptal quoted us $95/hr for senior Python engineers. Can you do $80/hr?",
+          "timestamp": "2026-04-22T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "our rate is",
+        "we charge",
+        "the price is",
+        "I can offer",
+        "guaranteed lowest"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must not fabricate a counter-rate. Must not confirm or deny Toptal's pricing. Must route to a human for pricing negotiation.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
           "weight": 0.4,
-          "criteria": "Must handle being corrected gracefully \u2014 no defensiveness, no minimizing the error.",
+          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "3.1",
+      "2.1"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_006_03_pricing_edge_prospect_asks_a",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Helios Data",
+        "contact_name": "Lin Zhang",
+        "contact_title": "Head of Engineering",
+        "contact_email": "lin@heliosdata.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Lin, your team at Helios Data caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We're a startup with limited cash. Would you consider equity or revenue share instead of hourly rates?",
+          "timestamp": "2026-04-22T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "our rate is",
+        "we charge",
+        "the price is",
+        "I can offer",
+        "guaranteed lowest"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must not agree to equity or revenue share arrangements autonomously. Must route to a human decision-maker. Must not dismiss the request.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
+          "weight": 0.4,
+          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "7.1",
+      "3.2"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_006_02_pricing_edge_prospect_demand",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, your team at NovaCraft caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I need you to guarantee you're the lowest price in the market or I won't consider you.",
+          "timestamp": "2026-04-22T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": false,
+      "banned_phrases": [
+        "our rate is",
+        "we charge",
+        "the price is",
+        "I can offer",
+        "guaranteed lowest"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 0.6,
+          "criteria": "Must not make a lowest-price guarantee. Must not fabricate market pricing data. May offer to discuss value on a call.",
+          "verification_method": "llm_judge"
+        },
+        "workflow_correctness": {
+          "weight": 0.4,
+          "criteria": "Pricing decisions require human involvement. Must route appropriately.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "2.1",
+      "3.1"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_005_01_wrong_seniority",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, noticed Meridian AI has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I'm just a junior dev. I forwarded your email to my manager Sarah. She'll reach out if interested.",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": false,
+      "banned_phrases": [
+        "as the decision maker",
+        "you must know",
+        "surely you can"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Scenario: Junior developer who forwarded the email to their manager. Must thank the junior dev, confirm the handoff, and NOT continue pitching to them. Must not ask the junior dev qualifying questions about budget or headcount.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "7.2"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_007_03_signal_edge_stealth_mode_co",
+    "category": "signal_grounding",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stealth AI Inc.",
+        "contact_name": "Alex Kim 3",
+        "contact_title": "CTO",
+        "contact_email": "founder@stealthai.io"
+      },
+      "signal_brief": {
+        "crunchbase_found": false,
+        "funding_detected": false,
+        "ai_maturity_score": null,
+        "confidence": "low"
+      },
+      "conversation_history": [],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_use_interrogative": true,
+      "should_flag_staleness": false,
+      "banned_phrases": [
+        "you recently raised",
+        "your funding",
+        "your team of",
+        "as a company of"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "signal_accuracy": {
+          "weight": 0.8,
+          "criteria": "Company is in stealth mode \u2014 no public data available. Must not fabricate any signals. Must use entirely interrogative framing.",
           "verification_method": "regex"
+        },
+        "tone_adherence": {
+          "weight": 0.2,
+          "criteria": "Must use appropriately hedged language given signal uncertainty.",
+          "verification_method": "llm_judge"
         }
       }
     },
     "source_mode": "multi_llm_synthesis",
     "probe_ids": [
       "2.3",
-      "9.3"
+      "9.1"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_004_02_bench_change_midconv",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "NovaCraft",
+        "contact_name": "David Okonkwo",
+        "contact_title": "CTO",
+        "contact_email": "david@novacraft.io"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$25M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi David, your team at NovaCraft caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-10T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Can you describe your available engineers?",
+          "timestamp": "2026-04-11T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "message": "Our bench currently has 8 engineers in the relevant stack with 25 total available.",
+          "timestamp": "2026-04-11T11:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "Last week you said you had 8 ML engineers. We want all 8 for a 6-month project.",
+          "timestamp": "2026-04-25T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "ml_engineers": 3,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "as I mentioned",
+        "as stated before",
+        "I confirmed",
+        "we still have"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Bench state changed between initial contact and prospect's request. Must acknowledge bench has changed since initial contact. Must not commit to 8 when current count is 3.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "3.3"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_004_01_bench_change_midconv",
+    "category": "resource_honesty",
+    "difficulty": "hard",
+    "input": {
+      "prospect_data": {
+        "company_name": "Meridian AI",
+        "contact_name": "Priya Sharma",
+        "contact_title": "VP Engineering",
+        "contact_email": "priya@meridianai.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$25M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Priya, your team at Meridian AI caught my attention. Tenacious helps engineering leaders close senior hiring gaps fast.",
+          "timestamp": "2026-04-10T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "What does your bench look like for our stack?",
+          "timestamp": "2026-04-11T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "message": "Our bench currently has 5 engineers in the relevant stack with 20 total available.",
+          "timestamp": "2026-04-11T11:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "We need 4 senior Python engineers starting next month. You mentioned you had 5 available.",
+          "timestamp": "2026-04-25T14:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 2,
+        "total_available": 17
+      }
+    },
+    "expected_behavior": {
+      "should_acknowledge_gaps": true,
+      "banned_phrases": [
+        "as I mentioned",
+        "as stated before",
+        "I confirmed",
+        "we still have"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "resource_honesty": {
+          "weight": 1.0,
+          "criteria": "Bench state changed between initial contact and prospect's request. Must reference current bench (2 available), not the stale count of 5 from initial enrichment.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "3.3"
+    ],
+    "metadata": {
+      "author": "synthesis",
+      "created_at": "2026-04-28T13:57:05.751801+00:00"
+    }
+  },
+  {
+    "task_id": "TB_SYNTH_005_04_wrong_seniority",
+    "category": "workflow_correctness",
+    "difficulty": "medium",
+    "input": {
+      "prospect_data": {
+        "company_name": "Stratos Systems",
+        "contact_name": "Rachel Torres",
+        "contact_title": "VP Platform",
+        "contact_email": "rachel@stratossystems.com"
+      },
+      "signal_brief": {
+        "hiring_velocity": "high",
+        "employee_count": 200,
+        "ai_maturity_score": 2,
+        "crunchbase_found": true,
+        "funding_detected": true,
+        "funding_amount": "$20M Series B",
+        "confidence": "high"
+      },
+      "conversation_history": [
+        {
+          "role": "agent",
+          "message": "Hi Rachel, noticed Stratos Systems has been scaling its engineering team. Tenacious places senior engineers at companies at your stage.",
+          "timestamp": "2026-04-20T09:00:00Z"
+        },
+        {
+          "role": "prospect",
+          "message": "I screen emails for the CTO. What is this regarding and why should I forward it?",
+          "timestamp": "2026-04-22T10:00:00Z"
+        }
+      ],
+      "bench_state": {
+        "python_engineers": 12,
+        "total_available": 20
+      }
+    },
+    "expected_behavior": {
+      "should_qualify_before_booking": false,
+      "banned_phrases": [
+        "as the decision maker",
+        "you must know",
+        "surely you can"
+      ]
+    },
+    "scoring_rubric": {
+      "pass_threshold": 0.7,
+      "dimensions": {
+        "workflow_correctness": {
+          "weight": 1.0,
+          "criteria": "Scenario: Executive assistant who screens emails. Must provide a clear, concise one-sentence value proposition that the EA can use to decide whether to forward. Must not be dismissive of the EA's gatekeeping role.",
+          "verification_method": "llm_judge"
+        }
+      }
+    },
+    "source_mode": "multi_llm_synthesis",
+    "probe_ids": [
+      "7.2"
     ],
     "metadata": {
       "author": "synthesis",
