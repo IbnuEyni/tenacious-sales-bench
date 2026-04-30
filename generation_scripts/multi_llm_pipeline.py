@@ -107,18 +107,19 @@ PIPELINE_SEED = property(get_seed)  # backwards-compatible alias for documentati
 # ── Dedup helpers ─────────────────────────────────────────────────────────────
 
 def _discriminative_text(task: dict) -> str:
-    """Extract only the fields that determine correct answer (not shared templates).
+    """Extract only the content that makes each task unique.
 
-    Operates on signal_brief + bench_state + expected_behavior to avoid flagging
-    tasks that share domain vocabulary in conversation_history templates.
+    Uses prospect replies + expected_behavior only.
+    Excludes signal_brief and bench_state — these contain shared template
+    values (employee_count=200, funding_amount=$20M Series B) that appear
+    across many tasks and cause false-positive dedup rejections.
     """
     parts = []
-    sb = task.get("input", {}).get("signal_brief", {})
-    if sb:
-        parts.append(json.dumps(sb, sort_keys=True))
-    bs = task.get("input", {}).get("bench_state", {})
-    if bs:
-        parts.append(json.dumps(bs, sort_keys=True))
+    # Only prospect replies — the unique test stimulus per task
+    for msg in task.get("input", {}).get("conversation_history", []):
+        if msg.get("role") == "prospect":
+            parts.append(msg.get("message", ""))
+    # Expected behavior — defines what makes this task's rubric unique
     eb = task.get("expected_behavior", {})
     if eb:
         parts.append(json.dumps(eb, sort_keys=True))
@@ -284,10 +285,12 @@ def run_pipeline(batch: int, dry_run: bool = False) -> dict:
         candidates: list[dict] = json.load(f)
     logger.info("Loaded %d candidates from %s", len(candidates), batch_file.name)
 
-    # Load all existing tasks for pairwise dedup
+    # Load all existing tasks for pairwise dedup — exclude the current batch file
     existing: list[dict] = []
     for json_file in sorted((repo_root / "dataset").glob("*.json")):
         if json_file.name in ("schema.json", "contamination_check.json"):
+            continue
+        if json_file.name == batch_file.name:  # skip current batch — candidates come from here
             continue
         try:
             data = json.load(open(json_file))

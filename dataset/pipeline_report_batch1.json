@@ -5,79 +5,27 @@
   "judge_model": "qwen/qwen3-235b-a22b",
   "judge_threshold": 3.5,
   "candidates": 17,
-  "accepted": 0,
-  "rejected_dedup": 17,
+  "accepted": 13,
+  "rejected_dedup": 4,
   "rejected_judge": 0,
-  "rejection_rate_dedup": 1.0,
+  "rejection_rate_dedup": 0.235,
   "rejection_rate_judge": 0.0,
   "dedup_details": [
     {
-      "task_id": "TB_SYNTH_002_03_adversarial_persona",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_002_06_adversarial_persona",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_002_01_adversarial_persona",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_002_02_adversarial_persona",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_003_05_self_monitor_agent_ignores_decisi",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_003_04_self_monitor_agent_books_call_wit",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_003_03_self_monitor_agent_repeats_same_p",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_002_05_adversarial_persona",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_002_04_adversarial_persona",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
+      "task_id": "TB_SYNTH_001_01_emoji_cold_outreach",
+      "reason": "n-gram overlap with TB_SYNTH_001_04_emoji_cold_outreach: 4 shared 10-gram(s): ['\"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\", \"\\\\ud83d\\\\udc4b\", \"\\\\ud83d\\\\udcaa\", \"\\\\u26a1\", \"\\\\ud83c\\\\udf1f\", \"\\\\ud83e\\\\udd1d\"], \"max_subject_length\": 60}', '\"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\", \"\\\\ud83d\\\\udc4b\", \"\\\\ud83d\\\\udcaa\", \"\\\\u26a1\", \"\\\\ud83c\\\\udf1f\", \"\\\\ud83e\\\\udd1d\"], \"max_subject_length\":']"
     },
     {
       "task_id": "TB_SYNTH_001_02_emoji_cold_outreach",
-      "reason": "n-gram overlap with TB_FINAL_040_tone_emoji_followup: 6 shared 10-gram(s): ['\"high\"} {\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\",', '{\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\",']"
+      "reason": "n-gram overlap with TB_SYNTH_001_04_emoji_cold_outreach: 4 shared 10-gram(s): ['\"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\", \"\\\\ud83d\\\\udc4b\", \"\\\\ud83d\\\\udcaa\", \"\\\\u26a1\", \"\\\\ud83c\\\\udf1f\", \"\\\\ud83e\\\\udd1d\"], \"max_subject_length\": 60}', '\"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\", \"\\\\ud83d\\\\udc4b\", \"\\\\ud83d\\\\udcaa\", \"\\\\u26a1\", \"\\\\ud83c\\\\udf1f\", \"\\\\ud83e\\\\udd1d\"], \"max_subject_length\":']"
     },
     {
       "task_id": "TB_SYNTH_001_03_emoji_cold_outreach",
-      "reason": "n-gram overlap with TB_FINAL_040_tone_emoji_followup: 6 shared 10-gram(s): ['\"high\"} {\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\",', '{\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\",']"
-    },
-    {
-      "task_id": "TB_SYNTH_003_02_self_monitor_agent_over_qualifies",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_003_06_self_monitor_agent_fabricates_urg",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
+      "reason": "n-gram overlap with TB_SYNTH_001_04_emoji_cold_outreach: 4 shared 10-gram(s): ['\"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\", \"\\\\ud83d\\\\udc4b\", \"\\\\ud83d\\\\udcaa\", \"\\\\u26a1\", \"\\\\ud83c\\\\udf1f\", \"\\\\ud83e\\\\udd1d\"], \"max_subject_length\": 60}', '\"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\", \"\\\\ud83d\\\\udc4b\", \"\\\\ud83d\\\\udcaa\", \"\\\\u26a1\", \"\\\\ud83c\\\\udf1f\", \"\\\\ud83e\\\\udd1d\"], \"max_subject_length\":']"
     },
     {
       "task_id": "TB_SYNTH_001_05_emoji_cold_outreach",
-      "reason": "n-gram overlap with TB_FINAL_040_tone_emoji_followup: 6 shared 10-gram(s): ['\"high\"} {\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\",', '{\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\",']"
-    },
-    {
-      "task_id": "TB_SYNTH_003_01_self_monitor_prospect_gave_final_",
-      "reason": "n-gram overlap with TB_FINAL_019_timezone_amsterdam: 4 shared 10-gram(s): ['\"high\", \"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\":', '\"crunchbase_found\": true, \"employee_count\": 200, \"funding_amount\": \"$20m series b\", \"funding_detected\": true,']"
-    },
-    {
-      "task_id": "TB_SYNTH_001_01_emoji_cold_outreach",
-      "reason": "n-gram overlap with TB_FINAL_040_tone_emoji_followup: 6 shared 10-gram(s): ['\"high\"} {\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\",', '{\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\",']"
-    },
-    {
-      "task_id": "TB_SYNTH_001_04_emoji_cold_outreach",
-      "reason": "n-gram overlap with TB_FINAL_040_tone_emoji_followup: 6 shared 10-gram(s): ['\"high\"} {\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\",', '{\"python_engineers\": 12, \"total_available\": 20} {\"banned_phrases\": [\"\\\\ud83d\\\\ude80\", \"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\",']"
+      "reason": "n-gram overlap with TB_SYNTH_001_04_emoji_cold_outreach: 4 shared 10-gram(s): ['\"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\", \"\\\\ud83d\\\\udc4b\", \"\\\\ud83d\\\\udcaa\", \"\\\\u26a1\", \"\\\\ud83c\\\\udf1f\", \"\\\\ud83e\\\\udd1d\"], \"max_subject_length\": 60}', '\"\\\\ud83d\\\\udca1\", \"\\\\ud83c\\\\udfaf\", \"\\\\u2705\", \"\\\\ud83d\\\\udd25\", \"\\\\ud83d\\\\udc4b\", \"\\\\ud83d\\\\udcaa\", \"\\\\u26a1\", \"\\\\ud83c\\\\udf1f\", \"\\\\ud83e\\\\udd1d\"], \"max_subject_length\":']"
     }
   ],
   "judge_details": []

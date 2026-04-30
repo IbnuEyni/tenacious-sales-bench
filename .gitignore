@@ -1,2 +1,11 @@
-__pycache__/\n*.pyc\n*.pyo\n.env\n.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+.env
+.DS_Store
 evaluation/__pycache__/
+# Held-out partition — never commit unencrypted
+tenacious_bench_v0.1/held_out/
+dataset/partitions/held_out.json
+# Pipeline reports contain rejection details — keep local
+dataset/pipeline_report_batch*.json
