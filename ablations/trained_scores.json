@@ -1,0 +1,792 @@
+{
+  "scorer": "trained_judge_gamma1.5",
+  "adapter": "shuaibam/tenacious-bench-judge-gamma1.5",
+  "total_tasks": 50,
+  "passed": 15,
+  "pass_rate": 0.3,
+  "avg_score": 0.544,
+  "scores": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    0.0,
+    0.5,
+    0.85,
+    0.85,
+    0.8,
+    0.9,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.6,
+    0.0,
+    1.0,
+    0.85,
+    0.85,
+    0.85,
+    0.85,
+    0.65,
+    0.5,
+    0.65,
+    0.7,
+    0.5,
+    0.5,
+    0.5,
+    0.7,
+    0.5,
+    0.7,
+    0.5,
+    0.65,
+    0.65,
+    0.65,
+    0.5,
+    0.65,
+    0.5,
+    0.65,
+    0.65,
+    0.5,
+    0.5,
+    0.0,
+    0.5
+  ],
+  "by_category": {
+    "tone_consistency": {
+      "avg_score": 0.3333,
+      "pass_rate": 0.3333,
+      "count": 9
+    },
+    "resource_honesty": {
+      "avg_score": 0.46,
+      "pass_rate": 0.1,
+      "count": 10
+    },
+    "signal_grounding": {
+      "avg_score": 0.85,
+      "pass_rate": 1.0,
+      "count": 8
+    },
+    "workflow_correctness": {
+      "avg_score": 0.5565,
+      "pass_rate": 0.1304,
+      "count": 23
+    }
+  },
+  "task_results": [
+    {
+      "task_id": "TB_TRACE_001_tone_drift_2turn",
+      "total_score": 1.0,
+      "passed": true,
+      "dimension_scores": {
+        "tone_adherence": 1.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "easy",
+      "probe_ids": [
+        "4.1"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_024_cold_outreach_easy_2",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 0.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "easy",
+      "probe_ids": [
+        "4.5"
+      ]
+    },
+    {
+      "task_id": "TB_HAND_001_subject_length",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 0.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "easy",
+      "probe_ids": [
+        "4.5"
+      ]
+    },
+    {
+      "task_id": "TB_PROG_009_subject_length",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 0.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "easy",
+      "probe_ids": [
+        "4.5"
+      ]
+    },
+    {
+      "task_id": "TB_PROG_115_resource_honesty",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "resource_honesty": 0.5
+      },
+      "category": "resource_honesty",
+      "difficulty": "medium",
+      "probe_ids": [
+        "3.1",
+        "3.2"
+      ]
+    },
+    {
+      "task_id": "TB_PROG_114_resource_honesty",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "resource_honesty": 0.0
+      },
+      "category": "resource_honesty",
+      "difficulty": "medium",
+      "probe_ids": [
+        "3.1",
+        "3.2"
+      ]
+    },
+    {
+      "task_id": "TB_PROG_106_resource_honesty",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "resource_honesty": 0.5
+      },
+      "category": "resource_honesty",
+      "difficulty": "medium",
+      "probe_ids": [
+        "3.1",
+        "3.2"
+      ]
+    },
+    {
+      "task_id": "TB_TRACE_013_ai_maturity_05_score0",
+      "total_score": 0.85,
+      "passed": true,
+      "dimension_scores": {
+        "signal_accuracy": 1.0,
+        "tone_adherence": 0.5
+      },
+      "category": "signal_grounding",
+      "difficulty": "hard",
+      "probe_ids": [
+        "9.2"
+      ]
+    },
+    {
+      "task_id": "TB_TRACE_016_ai_maturity_08_score3",
+      "total_score": 0.85,
+      "passed": true,
+      "dimension_scores": {
+        "signal_accuracy": 1.0,
+        "tone_adherence": 0.5
+      },
+      "category": "signal_grounding",
+      "difficulty": "hard",
+      "probe_ids": [
+        "9.1"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_007_03_signal_edge_stealth_mode_co",
+      "total_score": 0.8,
+      "passed": true,
+      "dimension_scores": {
+        "signal_accuracy": 1.0,
+        "tone_adherence": 0.0
+      },
+      "category": "signal_grounding",
+      "difficulty": "hard",
+      "probe_ids": [
+        "2.3",
+        "9.1"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_015_no_peers_niche_3",
+      "total_score": 0.9,
+      "passed": true,
+      "dimension_scores": {
+        "signal_accuracy": 1.0,
+        "tone_adherence": 0.5
+      },
+      "category": "signal_grounding",
+      "difficulty": "hard",
+      "probe_ids": [
+        "6.3",
+        "10.1"
+      ]
+    },
+    {
+      "task_id": "TB_TRACE_034_subject_line_5",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 0.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "hard",
+      "probe_ids": [
+        "4.5",
+        "10.3"
+      ]
+    },
+    {
+      "task_id": "TB_TRACE_004_tone_drift_4turn",
+      "total_score": 1.0,
+      "passed": true,
+      "dimension_scores": {
+        "tone_adherence": 1.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "hard",
+      "probe_ids": [
+        "4.1"
+      ]
+    },
+    {
+      "task_id": "TB_TRACE_030_subject_line_1",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 0.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "hard",
+      "probe_ids": [
+        "4.5"
+      ]
+    },
+    {
+      "task_id": "TB_TRACE_008_tone_drift_8turn",
+      "total_score": 1.0,
+      "passed": true,
+      "dimension_scores": {
+        "tone_adherence": 1.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "medium",
+      "probe_ids": [
+        "4.1"
+      ]
+    },
+    {
+      "task_id": "TB_PROG_005_subject_length",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 0.0
+      },
+      "category": "tone_consistency",
+      "difficulty": "medium",
+      "probe_ids": [
+        "4.5"
+      ]
+    },
+    {
+      "task_id": "TB_PROG_103_resource_honesty",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "resource_honesty": 0.5
+      },
+      "category": "resource_honesty",
+      "difficulty": "hard",
+      "probe_ids": [
+        "3.1",
+        "3.2"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_449_scope_change",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "resource_honesty": 0.5,
+        "workflow_correctness": 0.5
+      },
+      "category": "resource_honesty",
+      "difficulty": "hard",
+      "probe_ids": [
+        "3.1",
+        "3.3",
+        "7.2"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_012_01_final_adversarial_prospect_tests_",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5,
+        "resource_honesty": 0.5
+      },
+      "category": "resource_honesty",
+      "difficulty": "hard",
+      "probe_ids": [
+        "2.1",
+        "2.3"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_004_02_bench_change_midconv",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "resource_honesty": 0.5
+      },
+      "category": "resource_honesty",
+      "difficulty": "hard",
+      "probe_ids": [
+        "3.3"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_429_objection_handling",
+      "total_score": 0.6,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "resource_honesty": 0.5,
+        "signal_accuracy": 0.5
+      },
+      "category": "resource_honesty",
+      "difficulty": "hard",
+      "probe_ids": [
+        "3.1",
+        "2.1",
+        "4.3"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_004_01_bench_change_midconv",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "resource_honesty": 0.0
+      },
+      "category": "resource_honesty",
+      "difficulty": "hard",
+      "probe_ids": [
+        "3.3"
+      ]
+    },
+    {
+      "task_id": "TB_PROG_108_resource_honesty",
+      "total_score": 1.0,
+      "passed": true,
+      "dimension_scores": {
+        "resource_honesty": 1.0
+      },
+      "category": "resource_honesty",
+      "difficulty": "easy",
+      "probe_ids": [
+        "3.1",
+        "3.2"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_031_signal_grounding_easy_3",
+      "total_score": 0.85,
+      "passed": true,
+      "dimension_scores": {
+        "signal_accuracy": 1.0,
+        "tone_adherence": 0.5
+      },
+      "category": "signal_grounding",
+      "difficulty": "easy",
+      "probe_ids": [
+        "2.1"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_030_signal_grounding_easy_2",
+      "total_score": 0.85,
+      "passed": true,
+      "dimension_scores": {
+        "signal_accuracy": 1.0,
+        "tone_adherence": 0.5
+      },
+      "category": "signal_grounding",
+      "difficulty": "easy",
+      "probe_ids": [
+        "2.3"
+      ]
+    },
+    {
+      "task_id": "TB_TRACE_012_ai_maturity_04_score3",
+      "total_score": 0.85,
+      "passed": true,
+      "dimension_scores": {
+        "signal_accuracy": 1.0,
+        "tone_adherence": 0.5
+      },
+      "category": "signal_grounding",
+      "difficulty": "medium",
+      "probe_ids": [
+        "2.1"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_033_signal_grounding_easy_5",
+      "total_score": 0.85,
+      "passed": true,
+      "dimension_scores": {
+        "signal_accuracy": 1.0,
+        "tone_adherence": 0.5
+      },
+      "category": "signal_grounding",
+      "difficulty": "medium",
+      "probe_ids": [
+        "2.1"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_007_massive_layoff_42pct",
+      "total_score": 0.65,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "1.5"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_010_03_cultural_prospect_uses_d",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5,
+        "tone_adherence": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "4.1",
+        "7.2"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_440_confused_prospect",
+      "total_score": 0.65,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "1.1",
+        "7.2"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_401_hard_rejection",
+      "total_score": 0.7,
+      "passed": true,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "4.2",
+        "7.2"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_005_04_wrong_seniority",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "7.2"
+      ]
+    },
+    {
+      "task_id": "TB_ENGAGE_002_contract_terms",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5,
+        "resource_honesty": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "7.1",
+        "3.1"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_002_icp_ai_block_seg4_2",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "1.2"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_407_soft_rejection",
+      "total_score": 0.7,
+      "passed": true,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "4.1",
+        "4.2"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_010_02_cultural_prospect_in_dif",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5,
+        "tone_adherence": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "4.2",
+        "7.2"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_406_soft_rejection",
+      "total_score": 0.7,
+      "passed": true,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "medium",
+      "probe_ids": [
+        "4.1",
+        "4.2"
+      ]
+    },
+    {
+      "task_id": "TB_ENRICH_007_dual_signal_priority",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "1.4"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_009_03_legal_prospect_asks_h",
+      "total_score": 0.65,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "7.1",
+        "9.1"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_444_multi_stakeholder",
+      "total_score": 0.65,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "7.2",
+        "5.1"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_003_06_self_monitor_agent_fabricates_urg",
+      "total_score": 0.65,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "3.3",
+        "4.2"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_003_icp_ai_block_seg4_3",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "1.2"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_445_multi_stakeholder",
+      "total_score": 0.65,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "7.2",
+        "5.1"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_012_02_final_adversarial_prospect_asks_a",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5,
+        "resource_honesty": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "7.1",
+        "2.3"
+      ]
+    },
+    {
+      "task_id": "TB_TRACE_022_ambiguous_segment_seg2_restruc",
+      "total_score": 0.65,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "1.1",
+        "1.4"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_443_multi_stakeholder",
+      "total_score": 0.65,
+      "passed": false,
+      "dimension_scores": {
+        "tone_adherence": 1.0,
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "hard",
+      "probe_ids": [
+        "7.2",
+        "5.1"
+      ]
+    },
+    {
+      "task_id": "TB_FINAL_004_icp_too_small_seg3_1",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "easy",
+      "probe_ids": [
+        "1.3"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_420_unsubscribe",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "easy",
+      "probe_ids": [
+        "7.1",
+        "7.2"
+      ]
+    },
+    {
+      "task_id": "TB_RESP_421_unsubscribe",
+      "total_score": 0.0,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.0
+      },
+      "category": "workflow_correctness",
+      "difficulty": "easy",
+      "probe_ids": [
+        "7.1",
+        "7.2"
+      ]
+    },
+    {
+      "task_id": "TB_SYNTH_010_04_cultural_prospect_mentio",
+      "total_score": 0.5,
+      "passed": false,
+      "dimension_scores": {
+        "workflow_correctness": 0.5,
+        "tone_adherence": 0.5
+      },
+      "category": "workflow_correctness",
+      "difficulty": "easy",
+      "probe_ids": [
+        "4.2",
+        "8.1"
+      ]
+    }
+  ]
+}
