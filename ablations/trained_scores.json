@@ -4,18 +4,18 @@
   "total_tasks": 50,
   "passed": 15,
   "pass_rate": 0.3,
-  "avg_score": 0.544,
+  "avg_score": 0.568,
   "scores": [
     1.0,
     0.0,
     0.0,
     0.0,
     0.5,
-    0.0,
+    0.5,
     0.5,
     0.85,
     0.85,
-    0.8,
+    0.9,
     0.9,
     0.0,
     1.0,
@@ -26,9 +26,9 @@
     0.5,
     0.5,
     0.5,
-    0.6,
-    0.0,
-    1.0,
+    0.7,
+    0.5,
+    0.5,
     0.85,
     0.85,
     0.85,
@@ -54,7 +54,7 @@
     0.65,
     0.5,
     0.5,
-    0.0,
+    0.5,
     0.5
   ],
   "by_category": {
@@ -64,17 +64,17 @@
       "count": 9
     },
     "resource_honesty": {
-      "avg_score": 0.46,
+      "avg_score": 0.52,
       "pass_rate": 0.1,
       "count": 10
     },
     "signal_grounding": {
-      "avg_score": 0.85,
+      "avg_score": 0.8625,
       "pass_rate": 1.0,
       "count": 8
     },
     "workflow_correctness": {
-      "avg_score": 0.5565,
+      "avg_score": 0.5783,
       "pass_rate": 0.1304,
       "count": 23
     }
@@ -148,10 +148,10 @@
     },
     {
       "task_id": "TB_PROG_114_resource_honesty",
-      "total_score": 0.0,
+      "total_score": 0.5,
       "passed": false,
       "dimension_scores": {
-        "resource_honesty": 0.0
+        "resource_honesty": 0.5
       },
       "category": "resource_honesty",
       "difficulty": "medium",
@@ -204,11 +204,11 @@
     },
     {
       "task_id": "TB_SYNTH_007_03_signal_edge_stealth_mode_co",
-      "total_score": 0.8,
+      "total_score": 0.9,
       "passed": true,
       "dimension_scores": {
         "signal_accuracy": 1.0,
-        "tone_adherence": 0.0
+        "tone_adherence": 0.5
       },
       "category": "signal_grounding",
       "difficulty": "hard",
@@ -358,12 +358,12 @@
     },
     {
       "task_id": "TB_RESP_429_objection_handling",
-      "total_score": 0.6,
-      "passed": false,
+      "total_score": 0.7,
+      "passed": true,
       "dimension_scores": {
         "tone_adherence": 1.0,
-        "resource_honesty": 0.5,
-        "signal_accuracy": 0.5
+        "resource_honesty": 1.0,
+        "signal_accuracy": 0.0
       },
       "category": "resource_honesty",
       "difficulty": "hard",
@@ -375,10 +375,10 @@
     },
     {
       "task_id": "TB_SYNTH_004_01_bench_change_midconv",
-      "total_score": 0.0,
+      "total_score": 0.5,
       "passed": false,
       "dimension_scores": {
-        "resource_honesty": 0.0
+        "resource_honesty": 0.5
       },
       "category": "resource_honesty",
       "difficulty": "hard",
@@ -388,10 +388,10 @@
     },
     {
       "task_id": "TB_PROG_108_resource_honesty",
-      "total_score": 1.0,
-      "passed": true,
+      "total_score": 0.5,
+      "passed": false,
       "dimension_scores": {
-        "resource_honesty": 1.0
+        "resource_honesty": 0.5
       },
       "category": "resource_honesty",
       "difficulty": "easy",
@@ -761,10 +761,10 @@
     },
     {
       "task_id": "TB_RESP_421_unsubscribe",
-      "total_score": 0.0,
+      "total_score": 0.5,
       "passed": false,
       "dimension_scores": {
-        "workflow_correctness": 0.0
+        "workflow_correctness": 0.5
       },
       "category": "workflow_correctness",
       "difficulty": "easy",

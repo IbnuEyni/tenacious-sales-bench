@@ -125,10 +125,26 @@ def main():
 
     # ── Delta B: trained vs prompted ──────────────────────────────────
     if trained and prompted:
-        trained_scores  = [r["total_score"] for r in trained["task_results"]]
-        prompted_scores = [r["total_score"] for r in prompted["task_results"]]
+        trained_scores = [r["total_score"] for r in trained["task_results"]]
 
-        delta_b = paired_bootstrap(prompted_scores, trained_scores)
+        # Handle case where prompted_scores only has summary stats (no task_results)
+        if "task_results" in prompted:
+            prompted_scores = [r["total_score"] for r in prompted["task_results"]]
+            delta_b = paired_bootstrap(prompted_scores, trained_scores)
+            delta_b["method"] = "paired_bootstrap"
+        else:
+            # Fall back to simple difference when per-task scores unavailable
+            obs_delta = trained["avg_score"] - prompted["avg_score"]
+            delta_b = {
+                "delta": round(obs_delta, 4),
+                "ci_lower": None,
+                "ci_upper": None,
+                "p_value": None,
+                "significant": False,
+                "method": "summary_only_no_bootstrap",
+                "note": "Per-task scores not available — bootstrap skipped",
+            }
+
         delta_b["prompted_pass_rate"] = prompted["pass_rate"]
         delta_b["trained_pass_rate"]  = trained["pass_rate"]
         delta_b["prompted_avg_score"] = prompted["avg_score"]
@@ -146,9 +162,12 @@ def main():
         print(f"Prompted avg score: {prompted['avg_score']:.4f}  pass={prompted['pass_rate']:.1%}")
         print(f"Trained avg score:  {trained['avg_score']:.4f}  pass={trained['pass_rate']:.1%}")
         print(f"Delta:              {delta_b['delta']:+.4f}")
-        print(f"95% CI:             [{delta_b['ci_lower']:+.4f}, {delta_b['ci_upper']:+.4f}]")
-        print(f"p-value:            {delta_b['p_value']:.4f}")
-        print(f"Significant:        {'YES ✅' if delta_b['significant'] else 'NO ❌'}")
+        if delta_b.get('ci_lower') is not None:
+            print(f"95% CI:             [{delta_b['ci_lower']:+.4f}, {delta_b['ci_upper']:+.4f}]")
+            print(f"p-value:            {delta_b['p_value']:.4f}")
+            print(f"Significant:        {'YES ✅' if delta_b['significant'] else 'NO ❌'}")
+        else:
+            print(f"Bootstrap:          SKIPPED (per-task scores not available)")
         print(f"Interpretation:     {delta_b['interpretation']}")
     else:
         logger.warning("trained_scores.json or prompted_scores.json not found — skipping Delta B")
