@@ -1,0 +1,124 @@
+{
+  "version": "1.0",
+  "description": "Maps every numeric claim in the CEO memo and blog post to its source artifact",
+  "claims": [
+    {
+      "claim": "250 tasks, 100% valid",
+      "value": "250/250",
+      "source_file": "validate_tasks.py output",
+      "source_artifact": "dataset/partitions/manifest.json",
+      "verification": "python3 validate_tasks.py"
+    },
+    {
+      "claim": "All 33 Week 10 probes covered",
+      "value": "33/33",
+      "source_file": "week10-artifacts/probe_library.md",
+      "source_artifact": "dataset/partitions/manifest.json",
+      "verification": "python3 -c \"import json; tasks=[t for f in ['dataset/partitions/train.json','dataset/partitions/dev.json','dataset/partitions/held_out.json'] for t in json.load(open(f))]; probes=set(p for t in tasks for p in t.get('probe_ids',[])); print(len(probes))\""
+    },
+    {
+      "claim": "Contamination check PASSED — 0 violations",
+      "value": "0 violations",
+      "source_file": "dataset/contamination_check.json",
+      "source_artifact": "dataset/contamination_check.json",
+      "verification": "python3 dataset/contamination_check.py"
+    },
+    {
+      "claim": "Probe 4.5: 100% failure rate on subject line length",
+      "value": "1/1 = 100%",
+      "source_file": "week10-artifacts/failure_taxonomy.md",
+      "source_artifact": "week10-artifacts/probe_library.md",
+      "trace_ids": ["out_email_send_c0033ad8_5"]
+    },
+    {
+      "claim": "$72K-$336K annual revenue at risk from tone failures",
+      "value": "$72,000-$336,000",
+      "source_file": "week10-artifacts/probe_library.md",
+      "source_artifact": "week10-artifacts/failure_taxonomy.md",
+      "note": "Probe 4.5: 0.4-0.7 lost replies/week × $180K-$480K ACV"
+    },
+    {
+      "claim": "16% aggregate trigger rate across tested probes",
+      "value": "13/80 = 16.25%",
+      "source_file": "week10-artifacts/failure_taxonomy.md",
+      "source_artifact": "week10-artifacts/failure_taxonomy.md"
+    },
+    {
+      "claim": "Training: 599 preference pairs from 200 tasks",
+      "value": "599 pairs",
+      "source_file": "training/training_manifest.json",
+      "source_artifact": "training/training_data.jsonl",
+      "verification": "wc -l training/training_data.jsonl"
+    },
+    {
+      "claim": "Best gamma: 1.5, reward accuracy 100%, margin 4.166",
+      "value": "gamma=1.5, accuracy=1.000, margin=4.166",
+      "source_file": "ablations/training_run.json",
+      "source_artifact": "ablations/training_run.json"
+    },
+    {
+      "claim": "Baseline pass rate: 34%",
+      "value": "17/50 = 34.0%",
+      "source_file": "ablations/baseline_scores.json",
+      "source_artifact": "ablations/baseline_scores.json",
+      "verification": "python3 ablations/score_baseline.py"
+    },
+    {
+      "claim": "Trained judge pass rate: 30%",
+      "value": "15/50 = 30.0%",
+      "source_file": "ablations/trained_scores.json",
+      "source_artifact": "ablations/trained_scores.json"
+    },
+    {
+      "claim": "Delta A: +0.043, p=0.065, not significant",
+      "value": "delta=+0.043, CI=[-0.012,+0.103], p=0.065",
+      "source_file": "ablations/ablation_results.json",
+      "source_artifact": "ablations/ablation_results.json",
+      "verification": "python3 ablations/compute_deltas.py"
+    },
+    {
+      "claim": "Delta B: -0.079, prompting beats training",
+      "value": "delta=-0.079",
+      "source_file": "ablations/ablation_results.json",
+      "source_artifact": "ablations/ablation_results.json"
+    },
+    {
+      "claim": "Effect size doubled from 370 to 599 pairs",
+      "value": "+0.019 -> +0.043 (2.3x)",
+      "source_file": "ablations/ablation_results.json",
+      "source_artifact": "ablations/ablation_results.json",
+      "note": "Run 1 (370 pairs): delta=+0.019. Run 2 (599 pairs): delta=+0.043"
+    },
+    {
+      "claim": "Budget: $0.15 spent of $10.00",
+      "value": "$0.15",
+      "source_file": "cost_log.json",
+      "source_artifact": "cost_log.json",
+      "verification": "python3 cost_tracker.py"
+    },
+    {
+      "claim": "Training time: ~30 min on Colab T4",
+      "value": "30.0 min",
+      "source_file": "ablations/training_run.json",
+      "source_artifact": "ablations/training_run.json"
+    },
+    {
+      "claim": "Adapter size: ~74MB",
+      "value": "73.9MB",
+      "source_file": "HuggingFace upload log",
+      "source_artifact": "https://huggingface.co/shuaibam/tenacious-bench-judge-v2-599pairs"
+    },
+    {
+      "claim": "Inter-rater agreement: 91.7%",
+      "value": "76/83 = 91.7%",
+      "source_file": "inter_rater_agreement.md",
+      "source_artifact": "inter_rater_agreement.md"
+    },
+    {
+      "claim": "SimPO minimum tested at ~1000 pairs",
+      "value": "~1000 pairs",
+      "source_file": "synthesis_memos/06_simpo_orpo.md",
+      "source_artifact": "Meng et al. NeurIPS 2024, Appendix B"
+    }
+  ]
+}

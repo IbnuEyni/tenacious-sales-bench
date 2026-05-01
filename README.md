@@ -42,6 +42,10 @@ Existing benchmarks (τ²-Bench, AgentBench) fail to evaluate critical dimension
 | Held-out partition | 50 tasks (sealed) |
 | Probes covered | 33 / 33 |
 | Budget spent | $0.15 / $10.00 |
+| Training pairs | 599 (train + dev) |
+| Best γ | 1.5 (accuracy=100%, margin=4.166) |
+| Delta A | +0.043, p=0.065 |
+| Delta B | -0.079 (honest finding) |
 
 ## Environment
 
