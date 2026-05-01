@@ -1,25 +1,28 @@
 {
-  "timestamp": "2026-04-30T07:37:34.826292+00:00",
+  "timestamp": "2026-04-30T20:46:25.925086+00:00",
   "seed": 42,
   "train_tasks": 126,
-  "total_pairs": 370,
-  "avg_pairs_per_task": 2.94,
+  "dev_tasks": 74,
+  "total_tasks": 200,
+  "total_pairs": 599,
+  "avg_pairs_per_task": 3.0,
   "category_distribution": {
-    "tone_consistency": 56,
-    "resource_honesty": 95,
-    "signal_grounding": 88,
-    "workflow_correctness": 131
+    "tone_consistency": 89,
+    "resource_honesty": 150,
+    "signal_grounding": 137,
+    "workflow_correctness": 223
   },
   "pair_type_distribution": {
-    "core": 126,
-    "negation_variant": 98,
-    "dimension_workflow_correctness": 8,
-    "dimension_tone_adherence": 53,
-    "hard_variant_1": 34,
-    "hard_variant_2": 33,
-    "dimension_signal_accuracy": 9,
-    "dimension_resource_honesty": 9
+    "core": 200,
+    "negation_variant": 160,
+    "dimension_workflow_correctness": 16,
+    "dimension_tone_adherence": 88,
+    "hard_variant_1": 54,
+    "hard_variant_2": 53,
+    "dimension_signal_accuracy": 15,
+    "dimension_resource_honesty": 13
   },
   "simpo_format_path": "/home/shuaib/Desktop/python/10Acd/tenacious-sales-bench/training/training_data.jsonl",
-  "metadata_path": "/home/shuaib/Desktop/python/10Acd/tenacious-sales-bench/training/preference_pairs_with_metadata.json"
+  "metadata_path": "/home/shuaib/Desktop/python/10Acd/tenacious-sales-bench/training/preference_pairs_with_metadata.json",
+  "note": "train + dev combined; held-out (50 tasks) remains sealed"
 }

@@ -417,17 +417,25 @@ def main():
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
     train_path = PROJECT_ROOT / "dataset" / "partitions" / "train.json"
+    dev_path   = PROJECT_ROOT / "dataset" / "partitions" / "dev.json"
+
     with open(train_path) as f:
         train_tasks = json.load(f)
+    with open(dev_path) as f:
+        dev_tasks = json.load(f)
 
-    logger.info("Loaded %d train tasks", len(train_tasks))
+    # Combine train + dev for preference pair generation.
+    # Held-out (50 tasks) remains sealed and is never included here.
+    all_tasks = train_tasks + dev_tasks
+    logger.info("Loaded %d train + %d dev = %d total tasks",
+                len(train_tasks), len(dev_tasks), len(all_tasks))
 
     all_pairs: list[dict] = []
-    for task in train_tasks:
+    for task in all_tasks:
         pairs = generate_pairs(task)
         all_pairs.extend(pairs)
 
-    logger.info("Generated %d total pairs from %d tasks", len(all_pairs), len(train_tasks))
+    logger.info("Generated %d total pairs from %d tasks", len(all_pairs), len(all_tasks))
 
     # Stats
     cats: dict[str, int] = {}
@@ -463,12 +471,15 @@ def main():
         "timestamp": NOW,
         "seed": SEED,
         "train_tasks": len(train_tasks),
+        "dev_tasks": len(dev_tasks),
+        "total_tasks": len(all_tasks),
         "total_pairs": len(all_pairs),
-        "avg_pairs_per_task": round(len(all_pairs) / len(train_tasks), 2),
+        "avg_pairs_per_task": round(len(all_pairs) / len(all_tasks), 2),
         "category_distribution": cats,
         "pair_type_distribution": types,
         "simpo_format_path": str(simpo_path),
         "metadata_path": str(meta_path),
+        "note": "train + dev combined; held-out (50 tasks) remains sealed",
     }
     with open(out_dir / "training_manifest.json", "w") as f:
         json.dump(manifest, f, indent=2)
