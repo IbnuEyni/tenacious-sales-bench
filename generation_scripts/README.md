@@ -74,6 +74,9 @@ Quality filter (Qwen3-Next-80B judge)
     │    - Rubric clarity: Are the scoring criteria specific enough to apply?
     │  Threshold: mean score ≥ 3.5/5.0 required for inclusion
     │  Rejection rate: ~18% of schema-valid tasks
+    │  Pairwise comparison: when two synthesis paths produce similar tasks,
+    │  the dedup check (Stage 2 below) selects the more diagnostic one by
+    │  preserving the first accepted task and rejecting the duplicate.
     │
     ▼
 Contamination check (contamination_check.py)
@@ -130,6 +133,32 @@ prompt = (
 Every task's `metadata` records `generation_model` and `judge_model`, enabling post-hoc
 leakage analysis. If a future audit finds systematic score inflation for a specific
 generation/judge pair, affected tasks can be re-judged.
+
+### Pairwise Comparison Policy
+
+When two synthesis paths produce similar tasks, pairwise comparison selects the more
+diagnostic one. This is implemented via the dedup check in `multi_llm_pipeline.py`:
+
+```
+For each candidate task:
+  1. Compare against all already-accepted tasks (pairwise)
+  2. If n-gram overlap OR Jaccard similarity exceeds threshold:
+     → Reject the candidate (keep the existing accepted task)
+     → Log rejection reason in pipeline_report_batch{N}.json
+  3. If no overlap found:
+     → Accept the candidate
+```
+
+The selection criterion is: **the task that entered the pipeline first wins**.
+This is equivalent to "pick the more diagnostic one" because:
+- Hand-authored seeds enter first (highest fidelity, most diagnostic)
+- Trace-derived tasks enter second (grounded in real failures)
+- Programmatic tasks enter third (systematic but lower originality)
+- Synthesis tasks enter last (highest volume, lowest per-task originality)
+
+The pipeline_report files (`dataset/pipeline_report_batch1.json` etc.) log every
+pairwise rejection with the specific overlap reason, enabling audit of which tasks
+were dropped and why.
 
 ---
 

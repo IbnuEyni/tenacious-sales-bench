@@ -37,5 +37,36 @@
   "delta_c": {
     "note": "No Week 10 \u03c4\u00b2-Bench score available \u2014 Delta C skipped",
     "interpretation": "Informational only \u2014 not required for deployment decision"
+  },
+  "cost_pareto": {
+    "description": "Per-task cost and latency with vs without trained judge component",
+    "hardware": "Google Colab T4 (inference)",
+    "n_tasks": 50,
+    "baseline_heuristic": {
+      "avg_latency_s": 0.001,
+      "cost_per_task_usd": 0.0,
+      "pass_rate": 0.34,
+      "avg_score": 0.525,
+      "method": "Pure Python regex + heuristic fallback, no GPU"
+    },
+    "trained_judge_gamma1_5": {
+      "avg_latency_s": 1.37,
+      "cost_per_task_usd": 0.0,
+      "pass_rate": 0.3,
+      "avg_score": 0.568,
+      "method": "Qwen2.5-1.5B-Instruct + LoRA adapter inference on T4",
+      "note": "Cost is /bin/bash on free Colab T4; ~/bin/bash.0005 on RunPod 4090 at /bin/bash.34/hr"
+    },
+    "prompted_base_model": {
+      "avg_latency_s": 1.54,
+      "cost_per_task_usd": 0.0,
+      "pass_rate": 0.58,
+      "avg_score": 0.647,
+      "method": "Qwen2.5-1.5B-Instruct base model inference on T4, no LoRA"
+    },
+    "pareto_verdict": "Prompted base model dominates on both quality (58% pass rate) and latency (1.54s vs 1.37s is negligible). Trained judge does not achieve a favorable cost-quality tradeoff at current data scale (599 pairs). Heuristic baseline is fastest (0.001s) but lowest quality (34%). Recommendation: use prompted base model as quality gate until trained judge is retrained at ~1000 pairs.",
+    "latency_overhead_vs_baseline": "1370x slower than heuristic (1.37s vs 0.001s)",
+    "quality_lift_vs_baseline": "+0.043 avg score (+8.2% relative)",
+    "cost_per_quality_point": "/bin/bash additional cost for +0.043 score improvement"
   }
 }
