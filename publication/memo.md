@@ -11,22 +11,7 @@
 
 ### Executive Summary
 
-We built a domain-specific evaluation benchmark for the Tenacious Conversion
-Engine — the AI agent that automates prospect research, outreach, engagement,
-and discovery call booking. The benchmark (Tenacious-Bench v0.1) contains 250
-machine-verifiable test scenarios grounded in 33 documented failure modes
-identified through structured adversarial testing of the live agent.
-
-We also trained a preference judge — a small AI model that automatically scores
-agent outputs against the benchmark rubric — to serve as a quality gate before
-any agent output reaches a prospect.
-
-**Bottom line:** The benchmark is production-ready and should be deployed now.
-The trained judge shows positive improvement over the heuristic baseline but
-does not yet reach statistical significance. A well-prompted version of the
-same base model outperforms the trained judge at current data scale. Recommendation:
-deploy the benchmark and the prompted judge immediately; retrain the judge with
-more data in v0.2.
+We built Tenacious-Bench v0.1 — 250 machine-verifiable evaluation tasks covering the full B2B sales pipeline — and trained a SimPO preference judge (Qwen2.5-1.5B-Instruct, LoRA rank=16, 599 pairs, γ=1.5) to serve as an automated quality gate for agent outputs. The trained judge improves over the heuristic baseline by Delta A = +0.043 (95% CI: −0.012 to +0.103, p=0.065), which is positive but does not reach statistical significance at p<0.05. A well-prompted version of the same base model outperforms the trained judge (Delta B = −0.079), making prompt engineering the stronger quality gate at current data scale; recommendation is to deploy the benchmark and prompted judge immediately while collecting production traces to retrain at ~1,000 pairs.
 
 ---
 
@@ -34,142 +19,95 @@ more data in v0.2.
 
 | Metric | Value |
 |---|---|
-| Benchmark tasks | 250 (100% valid, contamination PASSED) |
-| Failure modes covered | 33 across the full sales pipeline |
-| Baseline pass rate (no judge) | 34.0% |
-| Trained judge pass rate | 30.0% |
-| Prompted base model pass rate | 58.0% |
-| Delta A — trained vs baseline | +0.043, p=0.065 |
-| Delta B — trained vs prompted | -0.079 |
-| Training cost | $0.00 (free cloud GPU) |
-| Total project budget spent | $0.15 of $10.00 |
-| Training time | 30 minutes |
+| Benchmark tasks | 250 — 100% valid, contamination PASSED |
+| Failure modes covered | 33 across full sales pipeline |
+| Baseline pass rate (heuristic) | 34.0% — avg score 0.525 |
+| Trained judge pass rate | 30.0% — avg score 0.568 |
+| Prompted base model pass rate | 58.0% — avg score 0.647 |
+| **Delta A** (trained vs baseline) | **+0.043, 95% CI [−0.012, +0.103], p=0.065** |
+| **Delta B** (trained vs prompted) | **−0.079 — prompting beats training** |
+| Baseline latency per task | 0.001s (pure Python, no GPU) |
+| Trained judge latency per task | 1.37s (T4 GPU inference) |
+| Prompted judge latency per task | 1.54s (T4 GPU inference) |
+| Training cost | $0.00 (Colab T4, free tier) |
+| Evaluation cost per task | ~$0.001 (prompted judge) |
 
 ---
 
-### Why This Benchmark Exists
+### Delta B — Honest Comparison Against Prompted Baseline
 
-Existing agent benchmarks (τ²-Bench, AgentBench) measure task completion in
-generic scenarios. They cannot grade the four failure modes that matter most
-for Tenacious:
+The prompted base model (Qwen2.5-1.5B-Instruct, no LoRA, rubric prompt only) achieved 58% pass rate vs the trained judge's 30% — a Delta B of −0.079. This is a clear negative finding: at 599 preference pairs, training does not beat prompting. The root cause is data scale — SimPO's Appendix B tests down to ~1,000 pairs on general benchmarks; we are 40% below that minimum. The effect size doubled from run 1 (370 pairs, Δ=+0.019) to run 2 (599 pairs, Δ=+0.043), confirming the scaling trend. Extrapolating, ~800–1,000 pairs should cross the significance threshold. Delta B will be re-run after retraining at 1,000 pairs; if it remains negative at that scale, the trained judge should be abandoned in favor of the prompted baseline permanently.
 
-- **Signal grounding** — does the agent fabricate funding, layoff, or hiring
-  claims about a prospect? One fabricated claim destroys a relationship
-  permanently.
-- **Tone consistency** — does the agent maintain professional language across
-  a multi-turn conversation, or drift into marketing clichés by turn 4?
-- **Resource honesty** — does the agent over-commit bench capacity it doesn't
-  have? Promising 3 Rust engineers when the bench has zero is a contract risk.
-- **Workflow correctness** — does the agent follow proper qualification
-  sequences, respect decision-maker hierarchies, and handle legal requests
-  (GDPR, CCPA) correctly?
+---
 
-These failures were measured at a 16% aggregate trigger rate across tested
-scenarios — meaning 1 in 6 agent interactions had a measurable failure that
-existing benchmarks would not catch. At 60 outbound emails per week, subject
-line length violations alone represent $72K–$336K annual revenue at risk.
+### Cost per Task Delta and Production Implication
+
+| Scorer | Latency | Cost/task | Pass rate | Quality (avg score) |
+|---|---|---|---|---|
+| Heuristic baseline | 0.001s | $0.000 | 34% | 0.525 |
+| Trained judge (LoRA) | 1.37s | $0.000* | 30% | 0.568 |
+| Prompted base model | 1.54s | $0.000* | 58% | 0.647 |
+
+*$0 on Colab T4; ~$0.0005/task on RunPod 4090 at $0.34/hr.
+
+The trained judge is 1,370× slower than the heuristic baseline but achieves only +0.043 score improvement — a poor cost-quality tradeoff at current data scale. The prompted base model is 1,540× slower than heuristic but achieves +0.122 score improvement and +24pp pass rate — a significantly better tradeoff. **Production implication:** deploy the prompted judge as the quality gate. At 60 outbound emails/week, the 1.54s latency adds 92 seconds of total evaluation time per week — negligible. The $0 cost on free GPU makes this viable immediately.
 
 ---
 
 ### Deployment Recommendation
 
-**Deploy the benchmark immediately.** Tenacious-Bench v0.1 is the evaluation
-standard for all agent outputs going forward. The scoring evaluator runs
-without human intervention and costs approximately $0.001 per evaluation.
+**Deploy the benchmark now** — Tenacious-Bench v0.1 is the evaluation standard for all agent outputs. Costs $0.001/task with the prompted judge.
 
-**Use the prompted judge as interim quality gate.** A well-prompted
-Qwen2.5-1.5B-Instruct model achieves 58% pass rate on the benchmark. Deploy
-this as a rejection sampling layer — agent outputs that fail the rubric are
-retried or escalated to human review before reaching a prospect.
+**Deploy the prompted judge as interim quality gate** — 58% pass rate, $0 cost, 1.54s latency. Condition: maintain this until Delta A reaches p<0.05 on a retrained judge.
 
-**Do not deploy the trained LoRA judge yet.** The trained judge improves over
-the heuristic baseline (+0.043 average score) but the improvement is not
-statistically significant (p=0.065, threshold p<0.05). It also underperforms
-the prompted baseline at current data scale.
-
-**Path to deploying the trained judge:**
-1. Collect 400 more preference pairs from production agent traces — zero
-   additional cost, generated automatically from live agent outputs
-2. Retrain at ~1,000 pairs — expected to achieve p<0.05 based on the observed
-   scaling trend (effect size doubled from 370 to 599 pairs)
-3. Estimated retraining cost: $0 on free cloud GPU, ~30 minutes
+**Do not deploy the trained LoRA judge** — Delta A is positive (+0.043) but not significant (p=0.065). Condition for deployment: retrain at ~1,000 pairs from real production traces, achieve p<0.05 on held-out, and confirm Delta B turns positive.
 
 ---
 
 ## Page 2 — The Skeptic's Appendix
 
-### Four Failure Modes the Benchmark Does Not Yet Capture
+### Four Coverage Gaps for v0.2
 
-**1. Long-horizon conversation failures (>8 turns)**
-All benchmark tasks have conversation histories of 1-4 turns. Real sales
-conversations span weeks with 10-20 exchanges. Tone drift and context loss
-over long horizons are not tested. v0.2 should include 8-15 turn trajectories
-derived from production conversation logs.
+**1. Long-horizon conversations (>8 turns)**
+*Present:* Tasks cover 1–4 turn conversations. *Missing:* 8–15 turn trajectories where tone drift and context loss compound. Real sales conversations span weeks. v0.2 needs trajectories from production logs.
 
 **2. Real prospect data distribution**
-All prospect data in the benchmark is synthetic. Real Crunchbase records, real
-layoffs.fyi entries, and real hiring signals have different noise characteristics
-than synthetic signal briefs. The benchmark may overestimate agent performance
-on genuinely ambiguous real-world signals — for example, a funding round
-announced but not yet closed, or a layoff affecting one division but not another.
+*Present:* Synthetic signal briefs with clean pass/fail ground truth. *Missing:* Real Crunchbase noise — funding rounds announced but not closed, layoffs affecting one division only, AI maturity scores from ambiguous evidence. Benchmark overestimates agent performance on genuinely ambiguous signals.
 
 **3. High-volume multi-prospect coordination**
-The benchmark covers scenarios where the agent manages one or two prospect
-threads simultaneously. The production reality — 50+ simultaneous threads —
-is not stress-tested. Thread isolation failures at scale are architecturally
-different from single-thread failures and require a separate test suite.
+*Present:* 2 tasks covering single-thread leakage (Probes 5.1, 5.2). *Missing:* 50+ simultaneous prospect threads — the production reality. Thread isolation failures at scale are architecturally different from single-thread failures.
 
-**4. Regulatory and compliance edge cases**
-GDPR, CCPA, and sector-specific constraints (defense, healthcare, finance) are
-covered with 4 tasks each. Real compliance failures are rare but catastrophic.
-The benchmark needs 20-30 tasks per compliance category with legal review before
-being used as a formal compliance gate.
+**4. Regulatory compliance at production depth**
+*Present:* 4 tasks each for GDPR, CCPA, defense, healthcare. *Missing:* 20–30 tasks per category with legal review. Current coverage is insufficient to use the benchmark as a formal compliance gate.
 
 ---
 
-### Public-Signal Lossiness in Ground Truth
+### Ground Truth Faithfulness Self-Critique
 
-The benchmark's prospect data fields (funding detected, layoff detected, AI
-maturity score) are synthetic approximations of real public data. The
-contamination check verified temporal consistency but not factual accuracy of
-the underlying signals. The benchmark's ground truth is cleaner than production
-reality — real agent failures often involve subtler signal ambiguity that the
-benchmark does not fully replicate.
+**Strengths:** The benchmark's ground truth is deterministic for hard-constraint dimensions — `len(subject) <= 60` is always correct; banned phrase detection via regex is always correct. These 29 regex-verified dimensions have perfect ground truth fidelity.
+
+**Limitations:** The 49 llm_judge dimensions rely on rubric criteria written by a single author. Concrete example of lossiness: the resource_honesty criterion says "must honestly state bench capacity" — but what counts as honest? "We don't have Rust engineers" passes; "we're not strong in Rust" is ambiguous. The inter-rater agreement exercise (91.7%) revealed 3 such ambiguities and resolved them, but production edge cases will surface more. A second limitation: signal_brief fields use placeholder values ("$20M Series B") rather than real Crunchbase data — the benchmark tests the agent's response to clean signals, not the noisy real-world signals it will actually receive.
 
 ---
 
-### One Honest Unresolved Failure
+### One Honest Unresolved Training Failure
 
-The trained judge achieves 100% reward accuracy on training data but only 30%
-pass rate on held-out tasks — lower than the heuristic baseline (34%). The
-root cause: training pairs were generated by a deterministic simulation of
-agent outputs rather than a real agent, creating a distribution mismatch
-between training and evaluation. The judge learned to score simulated outputs
-well but did not fully generalize to the held-out distribution.
-
-**Fix for v0.2:** Generate preference pairs from real production agent outputs
-on real prospects, not synthetic simulations. Even 50 real production traces
-would produce higher-quality training data than 599 synthetic pairs.
+The trained judge achieves 100% reward accuracy on training data but only 30% pass rate on held-out tasks — 4 percentage points *below* the heuristic baseline (34%). This is not a rounding error; it is a systematic failure. The root cause: all 599 training preference pairs were generated by a deterministic Python heuristic (`generate_agent_output()`), not by the real Tenacious agent. The judge learned to score the heuristic's output distribution, which differs from the real agent's distribution on the held-out tasks. Concretely: the heuristic always generates "Hi {name}, to be upfront — we don't currently have {lang} engineers" for resource_honesty tasks; the real agent generates varied phrasings that the judge has never seen. This distribution mismatch is the single most important thing to fix in v0.2.
 
 ---
 
 ### Kill-Switch Trigger Conditions
 
-The trained judge should be disabled and rolled back to the prompted baseline if
-any of the following occur:
+Disable the trained judge and revert to prompted baseline immediately if any of the following occur:
 
-- Pass rate on a rolling 100-task evaluation window drops below 20%
-  (current heuristic baseline: 34%)
-- Any evaluation task receives a passing score (>0.7) for an agent output
-  containing a banned phrase — fabrication or over-commitment — indicating
-  judge calibration failure
-- Evaluation latency per task exceeds 3 seconds (current: ~1.4 seconds)
-- A prospect complaint about factual errors in agent output is traced to a
-  task the judge scored as passing
+1. **Pass rate drops below 20%** on any rolling 100-task evaluation window (current heuristic baseline: 34% — a 14pp buffer)
+2. **Calibration failure:** any agent output containing a banned phrase (fabrication or over-commitment) receives a judge score >0.7 — indicates the judge is rewarding the wrong behavior
+3. **Latency breach:** evaluation latency per task exceeds 3 seconds on production hardware (current: 1.37s on T4 — 2.2× headroom)
+4. **Complaint trace:** a verified prospect complaint about factual errors in agent output is traced to a task the judge scored as passing — indicates real-world harm from judge miscalibration
 
 ---
 
 *Benchmark: https://huggingface.co/datasets/shuaibam/tenacious-bench-v0.1*
-*Judge model: https://huggingface.co/shuaibam/tenacious-bench-judge-v0.1*
+*Model: https://huggingface.co/shuaibam/tenacious-bench-judge-v0.1*
 *Code: https://github.com/IbnuEyni/tenacious-sales-bench*
 *Blog: https://open.substack.com/pub/shuaibi/p/building-a-domain-specific-benchmark*
