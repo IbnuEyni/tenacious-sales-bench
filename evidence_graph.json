@@ -17,7 +17,7 @@
       "verification": "python3 -c \"import json; tasks=[t for f in ['dataset/partitions/train.json','dataset/partitions/dev.json','dataset/partitions/held_out.json'] for t in json.load(open(f))]; probes=set(p for t in tasks for p in t.get('probe_ids',[])); print(len(probes))\""
     },
     {
-      "claim": "Contamination check PASSED — 0 violations",
+      "claim": "Contamination check PASSED \u2014 0 violations",
       "value": "0 violations",
       "source_file": "dataset/contamination_check.json",
       "source_artifact": "dataset/contamination_check.json",
@@ -28,14 +28,16 @@
       "value": "1/1 = 100%",
       "source_file": "week10-artifacts/failure_taxonomy.md",
       "source_artifact": "week10-artifacts/probe_library.md",
-      "trace_ids": ["out_email_send_c0033ad8_5"]
+      "trace_ids": [
+        "out_email_send_c0033ad8_5"
+      ]
     },
     {
       "claim": "$72K-$336K annual revenue at risk from tone failures",
       "value": "$72,000-$336,000",
       "source_file": "week10-artifacts/probe_library.md",
       "source_artifact": "week10-artifacts/failure_taxonomy.md",
-      "note": "Probe 4.5: 0.4-0.7 lost replies/week × $180K-$480K ACV"
+      "note": "Probe 4.5: 0.4-0.7 lost replies/week \u00d7 $180K-$480K ACV"
     },
     {
       "claim": "16% aggregate trigger rate across tested probes",
@@ -106,7 +108,7 @@
       "claim": "Adapter size: ~74MB",
       "value": "73.9MB",
       "source_file": "HuggingFace upload log",
-      "source_artifact": "https://huggingface.co/shuaibam/tenacious-bench-judge-v2-599pairs"
+      "source_artifact": "https://huggingface.co/shuaibam/tenacious-bench-judge-v0.1"
     },
     {
       "claim": "Inter-rater agreement: 91.7%",
@@ -120,5 +122,13 @@
       "source_file": "synthesis_memos/06_simpo_orpo.md",
       "source_artifact": "Meng et al. NeurIPS 2024, Appendix B"
     }
-  ]
+  ],
+  "publication_urls": {
+    "dataset": "https://huggingface.co/datasets/shuaibam/tenacious-bench-v0.1",
+    "model": "https://huggingface.co/shuaibam/tenacious-bench-judge-v0.1",
+    "blog_post": "https://open.substack.com/pub/shuaibi/p/building-a-domain-specific-benchmark",
+    "community_engagement": "https://huggingface.co/shuaibam/tenacious-bench-judge-v0.1/discussions/1",
+    "code": "https://github.com/IbnuEyni/tenacious-sales-bench",
+    "github_issue": "https://github.com/sierra-research/tau-bench/issues/83"
+  }
 }

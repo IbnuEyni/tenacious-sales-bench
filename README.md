@@ -174,6 +174,13 @@ Week 10 artifacts preserved in `week10-artifacts/`:
 - [ ] Act IV: LoRA training on Qwen 3.5 2B via Unsloth on Colab T4
 - [ ] Act IV: Delta A/B/C ablations on held-out partition
 - [ ] Act V: HuggingFace dataset + model publication
+
+## Publication Artifacts
+
+- **Dataset**: [shuaibam/tenacious-bench-v0.1](https://huggingface.co/datasets/shuaibam/tenacious-bench-v0.1)
+- **Model**: [shuaibam/tenacious-bench-judge-v0.1](https://huggingface.co/shuaibam/tenacious-bench-judge-v0.1) — SimPO judge, γ=1.5, 599 pairs
+- **Blog**: [Building a Domain-Specific Benchmark for B2B Sales Agents](https://open.substack.com/pub/shuaibi/p/building-a-domain-specific-benchmark)
+- **Community**: [HuggingFace Discussion](https://huggingface.co/shuaibam/tenacious-bench-judge-v0.1/discussions/1) | [τ²-Bench GitHub Issue #83](https://github.com/sierra-research/tau-bench/issues/83)
 - [ ] Act V: Technical blog post + community engagement
 
 ## Reproducibility
